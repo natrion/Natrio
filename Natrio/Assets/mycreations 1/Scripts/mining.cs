@@ -80,7 +80,7 @@ public class mining : MonoBehaviour
                 textHealthcopy.GetComponent<TextMesh>().text = health.ToString();
             }
             
-            print(health);
+            
             /////////////////////////////////////////////////////////////////////item
             if (health < 1 & item)
             {
@@ -105,6 +105,7 @@ public class mining : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            ////////////////////////////////////////////////////////////////////////////item3
             if (health < 1 & item3)
             {
                 for (int i = 0; i < how_many_items3; i++)

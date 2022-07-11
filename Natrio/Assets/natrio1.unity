@@ -425,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129777611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -490,7 +490,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.014601469, y: 0}
@@ -552,7 +552,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.011067212, y: -0.060391903}
   serializedVersion: 2
-  m_Radius: 0.38173407
+  m_Radius: 0.38
 --- !u!212 &138818968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350423832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: -2, z: 0}
+  m_LocalPosition: {x: 15, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1838922378}
@@ -1310,9 +1310,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fac24a30b187c4fa16a45bd6c9f956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 0
-  biom_Diversity: 0
   copyChunk: {fileID: 350423832}
+  oakTree: {fileID: 1275431929}
+  berryTree: {fileID: 1068787603}
+  oakBush: {fileID: 138818962}
+  berryBush: {fileID: 1145138234}
+  oakSmallBushes: {fileID: 1121522941}
+  berrySmallBushes: {fileID: 1099942374}
+  vegetationNumber: 5
+  size: 5
+  seed: 0
+  biom_Diversity: 15
   playerTransfom: {fileID: 1239367908}
 --- !u!1 &621776048
 GameObject:
@@ -1486,7 +1494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636031732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 594625092}
@@ -3232,9 +3240,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019174129, y: -0.059279352}
+  m_Offset: {x: -0.019174129, y: -0.08}
   serializedVersion: 2
-  m_Radius: 0.39364025
+  m_Radius: 0.38
 --- !u!58 &1145138237
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3719,7 +3727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239367906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1487622326}

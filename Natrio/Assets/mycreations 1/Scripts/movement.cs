@@ -41,7 +41,7 @@ public class movement : MonoBehaviour
         movement2.x = Input.GetAxisRaw("Horizontal");
         movement2.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0) )
         {          
             StartCoroutine(clickanimation());
         }
