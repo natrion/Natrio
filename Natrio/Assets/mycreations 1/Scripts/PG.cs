@@ -15,6 +15,12 @@ public class PG : MonoBehaviour
     public GameObject oakSmallBushes;
     public GameObject berrySmallBushes;
 
+    public GameObject grass1;
+    public GameObject grass2;
+
+    public GameObject poppy1;
+    public GameObject poppy2;
+
     public float  vegetationNumber;
     public float size;
     public float seed;
@@ -40,10 +46,7 @@ public class PG : MonoBehaviour
             float y_ = playerTransfom.position.y / 5;
             x = Mathf.Round(x_ * 1) ;
             y = Mathf.Round(y_ * 1) ;
-            
-            
-
-            
+                        
             for (float X = x-1; X < x+2;X++)
             {
                 for (float Y = y - 1; Y < y+2; Y++)
@@ -86,6 +89,16 @@ public class PG : MonoBehaviour
                                  GameObject OakBushesCopy = Instantiate(oakSmallBushes);
                                  spawning(OakBushesCopy, chunk);
                             }
+                            for (float h = 0; h < PerlinNoise * vegetationNumber * 4; h++)
+                            {
+                                GameObject grass1Copy = Instantiate(grass1);
+                                spawning(grass1Copy, chunk);
+                            }
+                            for (float j = 0; j < PerlinNoise * vegetationNumber * 4; j++)
+                            {
+                                GameObject poppy1Copy = Instantiate(poppy1);
+                                spawning(poppy1Copy, chunk);
+                            }
                         }
                         ////////////////////////////////////////////////////berry_biom
                         if (PerlinNoise > 0.5)
@@ -104,6 +117,16 @@ public class PG : MonoBehaviour
                             {
                                 GameObject OakBushesCopy = Instantiate(berrySmallBushes);
                                 spawning(OakBushesCopy, chunk);
+                            }
+                            for (float h = 0; h < PerlinNoise * vegetationNumber * 4; h++)
+                            {
+                                GameObject grass2Copy = Instantiate(grass2);
+                                spawning(grass2Copy, chunk);
+                            }
+                            for (float j = 0; j < PerlinNoise * vegetationNumber * 4; j++)
+                            {
+                                GameObject poppy2Copy = Instantiate(poppy2);
+                                spawning(poppy2Copy, chunk);
                             }
                         }    
                     }

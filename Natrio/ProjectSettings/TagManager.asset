@@ -41,6 +41,9 @@ TagManager:
   - name: grass
     uniqueID: 1170760141
     locked: 0
+  - name: nature0
+    uniqueID: 2444078099
+    locked: 0
   - name: nature1
     uniqueID: 3802738017
     locked: 0
@@ -61,6 +64,9 @@ TagManager:
     locked: 0
   - name: mechine3
     uniqueID: 407452415
+    locked: 0
+  - name: machine4
+    uniqueID: 664289233
     locked: 0
   - name: nature2
     uniqueID: 198583925
