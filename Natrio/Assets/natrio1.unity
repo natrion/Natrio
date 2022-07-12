@@ -1552,9 +1552,9 @@ MonoBehaviour:
   poppy1: {fileID: 14690537}
   poppy2: {fileID: 792561622}
   vegetationNumber: 5
-  size: 5
-  seed: 1213265
-  biom_Diversity: 15
+  size: 10
+  seed: 0
+  biom_Diversity: 40
   playerTransfom: {fileID: 1239367908}
 --- !u!1 &621776048
 GameObject:
@@ -3399,9 +3399,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012201726, y: 0}
+  m_Offset: {x: -0.012201726, y: -0.014562845}
   serializedVersion: 2
-  m_Radius: 0.4564224
+  m_Radius: 0.44185954
 --- !u!114 &1145138238
 MonoBehaviour:
   m_ObjectHideFlags: 0

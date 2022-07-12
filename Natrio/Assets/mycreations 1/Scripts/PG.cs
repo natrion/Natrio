@@ -31,11 +31,23 @@ public class PG : MonoBehaviour
     public Transform playerTransfom;
     private bool spawn;
     private float PerlinNoise;
+    private bool done;
     void Start()
     {
         spawn = true;
         seed = Random.Range(1f, 400f);
+        done = false;
+        while (done == false )
+        {
+            seed += 111.111f;
+            PerlinNoise = Mathf.PerlinNoise(( size / biom_Diversity) + seed, (size / biom_Diversity) + seed);
+            if (PerlinNoise<0)
+            {
+                done = true;
+            }
+        }
         StartCoroutine(chunkgenerate());
+        print(PerlinNoise);
 
     }
     IEnumerator chunkgenerate()
