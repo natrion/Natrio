@@ -73,7 +73,8 @@ public class PG : MonoBehaviour
 
                         ////////////////////////////////////////////////////oak_biom
                         if (PerlinNoise < 0.5)
-                           {
+                        {
+                            
                             for (float o = 0; o<  PerlinNoise * vegetationNumber;o++)
                             {
                                  GameObject OakTreeCopy = Instantiate(oakTree);

@@ -56,7 +56,10 @@ TagManager:
   - name: playerbehinditem
     uniqueID: 3823514307
     locked: 0
-  - name: items
+  - name: item
+    uniqueID: 3578979481
+    locked: 0
+  - name: item2
     uniqueID: 4098636027
     locked: 0
   - name: player
@@ -67,6 +70,9 @@ TagManager:
     locked: 0
   - name: machine4
     uniqueID: 664289233
+    locked: 0
+  - name: machine5
+    uniqueID: 4000803507
     locked: 0
   - name: nature2
     uniqueID: 198583925

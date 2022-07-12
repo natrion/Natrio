@@ -12,6 +12,9 @@ public class sellthings : MonoBehaviour
     public TextMesh on_platform_text;
     private int coinsfromloop;
     private int price_ofchild;
+    public Transform FolderForItems;
+    private int price_ofchildTransportItem;
+    private Transform child;
     IEnumerator pressed()
     {
 
@@ -32,16 +35,30 @@ public class sellthings : MonoBehaviour
         for (int i =0;  i < number_of_player_childs; i++)
         {
             
-            Transform child= foldersell.transform.GetChild(i);
+            child= foldersell.transform.GetChild(i);
+            price_ofchild = child.GetComponent<item>().how_much_cost; 
 
-            if(child.GetComponent<item>())
-            {  price_ofchild = child.GetComponent<item>().how_much_cost; }
+            if(price_ofchild == 0)
+            { child.parent = FolderForItems; }
 
-            if (child.GetComponent<axecut>())
-            {  price_ofchild = child.GetComponent<axecut>().how_much_cost; }
+            if (child.GetComponent<item>().isItForTransportingItems == true)
+            {
+                int number_transport_item_childs = child.transform.childCount;
 
+                for (int o = 0; o < number_transport_item_childs; o++)
+                {
+                    Transform childTransportItem = child.transform.GetChild(0);
+                    price_ofchildTransportItem = childTransportItem.GetComponent<item>().how_much_cost;
+
+                    if (price_ofchildTransportItem == 0)
+                    { childTransportItem.parent = FolderForItems; }
+
+                    price_ofchild += price_ofchildTransportItem;
+                    childTransportItem.parent = foldersell.transform;
+
+                }
+            }
             coinsfromloop += price_ofchild;
-            
         }
         how_much_coins_on_platform = coinsfromloop;
         string whatshowstring = how_much_coins_on_platform.ToString();
@@ -65,7 +82,6 @@ public class sellthings : MonoBehaviour
             addcoinspotencial();
         }
     }
-
     void Start()
     {
         foldersell = new GameObject("thingsforsell");

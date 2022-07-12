@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class holding : MonoBehaviour
 {
+    public bool isMouseOver;
     public int what_damage;
     private bool cutingpisible;
     private float distanceafter;
@@ -42,7 +43,6 @@ public class holding : MonoBehaviour
 
     public void itemholding(float distance, float normalrotation, Transform holdingobject ,int how_much_costing, bool cutingpisibleinfunction, GameObject itemfunctiion, int damage, float PickUpRadius)
     {
-
         
         distanceafter = distance;
         cutingpisible = cutingpisibleinfunction;
@@ -51,10 +51,10 @@ public class holding : MonoBehaviour
         holdedthing = holdingobject;
         item_Animator = item.GetComponent<Animator>();
 
-        if (pick == false)
-        {
+        if (pick == false  )
+        {           
             if (Input.GetMouseButtonDown(1))
-            {
+            {               
                 if (transform.position.y - holdedthing.position.y < PickUpRadius & transform.position.y - holdedthing.position.y > PickUpRadius * -1 & transform.position.x - holdedthing.position.x > PickUpRadius * -1 & transform.position.x - holdedthing.position.x < PickUpRadius)
                 {
                     
@@ -92,8 +92,12 @@ public class holding : MonoBehaviour
 
             if (calldawn == false)
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(1) )
                 {
+                    if(holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
+                    {
+                        return;
+                    }
                     what_damage = 1;
                     
 
