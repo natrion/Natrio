@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
+    public Plane plane = new Plane(Vector3.up, Vector3.zero);
+
     public GameObject copyChunk;
 
     public GameObject oakTree;
@@ -67,12 +69,20 @@ public class PG : MonoBehaviour
                     for (int onchild = 0; onchild < childs; onchild++)
                     {
                         Transform child = transform.GetChild(onchild);
-         
                         if (child.position == new Vector3(X * 5, Y * 5, 0))
                         {
                             spawn = false;
-                        }  
+                        }
                     }
+                    
+                   
+                    //RaycastHit2D hit = Physics2D.Raycast(new Vector2(X * 5, Y * 5), Vector2.zero);
+                    //float eneter = 0.0f;
+                    //Ray Ray = new Ray(new Vector3(X * 5, Y * 5, 0));
+                    //if (plane.Raycast(Ray, out eneter))
+                    //{
+                    //    spawn = false;
+                    //}
 
                     if  (spawn == true)
                     {

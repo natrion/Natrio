@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - oak_tree
+  - oak_bush
+  - smallbushes
+  - blue_berry_small_bushes
+  - blueberry_bush
+  - appletree
   layers:
   - Default
   - TransparentFX
