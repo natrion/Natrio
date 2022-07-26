@@ -3424,7 +3424,7 @@ MonoBehaviour:
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.08
   PickUpRadius: 0.5
-  damage: 1
+  damage: 0
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
@@ -7777,7 +7777,7 @@ MonoBehaviour:
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.08
   PickUpRadius: 0.5
-  damage: 1
+  damage: 0
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class miningshower : MonoBehaviour
 {
+    private GameObject selectedthing;
     public GameObject copyobjectsfolder;
     Animator m_Animator;
     public GameObject select_zone;
@@ -29,26 +30,33 @@ public class miningshower : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
         if (hit.collider != null)
         {
+            if(selectedthing)
+            {
+                if(selectedthing != hit.collider.gameObject)
+                {
+                    Destroy(select_zone_selected);
+                    rend.enabled = false;
+                }
+            }
             if (hit.collider.gameObject.tag == "Untagged" | hit.collider.gameObject.name == "MainCamera")
             {
-                if (rend & rend)
+                if (rend & select_zone_selected)
                 {
                     Destroy(select_zone_selected);
                     rend.enabled = false;
                 }
             }
             else
-            { 
-
-                textHealthcopy = hit.collider.transform.GetChild(0);
-                m_Animator = hit.collider.gameObject.GetComponent<Animator>();
-                rend = textHealthcopy.GetComponent<MeshRenderer>();
-
-                
+            {         
                 if (player.transform.position.y - hit.collider.transform.position.y < 1f & player.transform.position.y - hit.collider.transform.position.y > -1f & player.transform.position.x - hit.collider.transform.position.x > -1f & player.transform.position.x - transform.position.x < 1f)
                 {
+                    textHealthcopy = hit.collider.transform.GetChild(0);
+                    m_Animator = hit.collider.gameObject.GetComponent<Animator>();
+                    rend = textHealthcopy.GetComponent<MeshRenderer>();
+
+                    selectedthing = hit.collider.gameObject;
                     //doingrealmining
-                    if(Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0))
                     {
                         string tag = hit.collider.gameObject.tag;
                         string tofind = tag + "_full";
@@ -75,7 +83,7 @@ public class miningshower : MonoBehaviour
                     }
                 }
                 //selescthide
-                if (player.transform.position.y - transform.position.y > 1f || player.transform.position.y - transform.position.y < -1f || player.transform.position.x - transform.position.x < -1f || player.transform.position.x - transform.position.x > 1f)
+                if (player.transform.position.y - hit.collider.transform.position.y > 1f || player.transform.position.y - hit.collider.transform.position.y < -1f || player.transform.position.x - hit.collider.transform.position.x < -1f || player.transform.position.x - hit.collider.transform.position.x > 1f)
                 {
                     Destroy(select_zone_selected);
 
@@ -84,13 +92,11 @@ public class miningshower : MonoBehaviour
             }
         }else 
         {
-            if (rend & rend)
+            if (rend & select_zone_selected)
             {
                 Destroy(select_zone_selected );
                 rend.enabled = false;
-            }
-
-            
+            }            
         }
     }
 }
