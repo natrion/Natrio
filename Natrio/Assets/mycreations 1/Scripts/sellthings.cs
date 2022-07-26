@@ -86,5 +86,6 @@ public class sellthings : MonoBehaviour
     {
         foldersell = new GameObject("thingsforsell");
         foldersell.transform.parent = gameObject.transform.parent;
+        FindObjectOfType<showingtext>().showtext(how_many_coins);
     }
 }

@@ -34,19 +34,27 @@ public class PG : MonoBehaviour
     private bool spawn;
     private float PerlinNoise;
     private bool done;
+    public smalldata smalldata;
     void Start()
     {
         spawn = true;
-        seed = Random.Range(1f, 400f);
+        seed = Random.Range(1f, 4000000f);
         done = false;
-        while (done == false )
+        if (smalldata.seedOfLastGame == null)
         {
-            seed += 111.111f;
-            PerlinNoise = Mathf.PerlinNoise(( size / biom_Diversity) + seed, (size / biom_Diversity) + seed);
-            if (PerlinNoise<0)
+            while (done == false)
             {
-                done = true;
+                seed += 111.111f;
+                PerlinNoise = Mathf.PerlinNoise((size / biom_Diversity) + seed, (size / biom_Diversity) + seed);
+                if (PerlinNoise < 0)
+                {
+                    done = true;
+                }
             }
+        }
+        else
+        {
+            seed = smalldata.seedOfLastGame;
         }
         StartCoroutine(chunkgenerate());
         print(PerlinNoise);
@@ -54,8 +62,17 @@ public class PG : MonoBehaviour
     }
     IEnumerator chunkgenerate()
     {
+        
         for (int i = 1; i > 0; i++)
-        { 
+        {
+            if (smalldata.seedOfLastGame != null)
+            {
+                if (smalldata.seedOfLastGame != seed)
+                {
+                    seed = smalldata.seedOfLastGame;
+                }
+            }
+
             float x_ = playerTransfom.position.x / 5;
             float y_ = playerTransfom.position.y / 5;
             x = Mathf.Round(x_ * 1) ;
