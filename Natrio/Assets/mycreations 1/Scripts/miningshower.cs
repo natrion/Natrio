@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class miningshower : MonoBehaviour
 {
+    public GameObject chunkparent;
     private GameObject selectedthing;
     public GameObject copyobjectsfolder;
     Animator m_Animator;
@@ -12,7 +13,7 @@ public class miningshower : MonoBehaviour
     public GameObject player;
     private Transform textHealthcopy;
     private MeshRenderer rend;
-    private bool selectbefore = false;
+ 
     //private float distance;
     //private Plane plane;
     void Update()
@@ -64,8 +65,9 @@ public class miningshower : MonoBehaviour
                         GameObject copyObject = Instantiate(found.gameObject);
                         copyObject.tag = "Untagged";
                         copyObject.transform.position = hit.collider.transform.position;
+                        copyObject.transform.parent = chunkparent.transform;
                         Destroy(hit.collider.gameObject);
-                        selectbefore = false;
+                        
                         return;
                         
                     }
@@ -79,15 +81,17 @@ public class miningshower : MonoBehaviour
                         select_zone_selected.transform.parent = hit.collider.transform;
 
                         rend.enabled = true;
-                        selectbefore = true;
+                        
                     }
                 }
                 //selescthide
                 if (player.transform.position.y - hit.collider.transform.position.y > 1f || player.transform.position.y - hit.collider.transform.position.y < -1f || player.transform.position.x - hit.collider.transform.position.x < -1f || player.transform.position.x - hit.collider.transform.position.x > 1f)
                 {
-                    Destroy(select_zone_selected);
-
-                    rend.enabled = false;
+                    if (rend & select_zone_selected)
+                    {
+                        Destroy(select_zone_selected);
+                        rend.enabled = false;
+                    }
                 }
             }
         }else 

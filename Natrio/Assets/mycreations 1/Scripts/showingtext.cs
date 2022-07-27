@@ -10,6 +10,6 @@ public class showingtext : MonoBehaviour
 
         string whatshowstring = whatshow.ToString();
         coinstext.text = whatshowstring +"c" ;
-        print(whatshowstring);
+        
     }
 }

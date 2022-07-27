@@ -35,37 +35,47 @@ public class PG : MonoBehaviour
     private float PerlinNoise;
     private bool done;
     public smalldata smalldata;
+    private float seedchanger;
+
     void Start()
     {
         spawn = true;
         seed = Random.Range(1f, 4000000f);
         done = false;
-        if (smalldata.seedOfLastGame == null)
+        bool seedexist = float.IsNaN(smalldata.seedOfLastGame);
+        if (seedexist == false)
         {
-            while (done == false)
+            seed = smalldata.seedOfLastGame;
+        }
+        else
+        {            
+            while (done == true)
             {
-                seed += 111.111f;
+                if(PerlinNoise < 0.3f)
+                {
+                    seedchanger = 4.444f;
+                }else
+                {
+                    seedchanger = 111.111f;
+                }
+                seed += seedchanger;
                 PerlinNoise = Mathf.PerlinNoise((size / biom_Diversity) + seed, (size / biom_Diversity) + seed);
-                if (PerlinNoise < 0)
+                if (PerlinNoise < 0.1)
                 {
                     done = true;
                 }
             }
         }
-        else
-        {
-            seed = smalldata.seedOfLastGame;
-        }
         StartCoroutine(chunkgenerate());
-        print(PerlinNoise);
-
+      
     }
     IEnumerator chunkgenerate()
     {
         
         for (int i = 1; i > 0; i++)
         {
-            if (smalldata.seedOfLastGame != null)
+            bool seednotexist = float.IsNaN(smalldata.seedOfLastGame);
+            if (seednotexist == false)
             {
                 if (smalldata.seedOfLastGame != seed)
                 {
