@@ -12,7 +12,15 @@ public class smalldata : MonoBehaviour
     private float PerlinNoise;
     void Start()
     {
-        load();
+        if(QuitPlayCreateButton.Restart == true)
+        {
+            Restart();
+        }
+        else
+        {
+            load();
+        }
+        
     }
     public void save()
     {
