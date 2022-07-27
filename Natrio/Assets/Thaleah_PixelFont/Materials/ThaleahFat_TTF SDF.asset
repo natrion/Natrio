@@ -55,7 +55,7 @@ Material:
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0
-    - _GlowOffset: -0.4
+    - _GlowOffset: 1
     - _GlowOuter: 1
     - _GlowPower: 1
     - _GradientScale: 6
@@ -69,7 +69,7 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
-    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioB: 0.33854166
     - _ScaleRatioC: 0.48363096
     - _ScaleX: 1
     - _ScaleY: 1
@@ -85,7 +85,7 @@ Material:
     - _TextureWidth: 512
     - _UnderlayDilate: 0
     - _UnderlayOffsetX: 1
-    - _UnderlayOffsetY: 0.32
+    - _UnderlayOffsetY: 1
     - _UnderlaySoftness: 0.4
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
