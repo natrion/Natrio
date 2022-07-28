@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class smalldata : MonoBehaviour
 {
+    public GameObject Axe;
+    public GameObject wheelbarrow;
+    public GameObject ItemsFolder;
     public float seedOfLastGame;
     public Transform player;
     public sellthings coinsobject;
     public PG seedobject;
     private float seedchanger = 100f;
     private float PerlinNoise;
+    private GameObject itemcopy;
+    public int OnItem = 0;
+
     void Start()
     {
         if(QuitPlayCreateButton.Restart == true)
@@ -40,6 +46,33 @@ public class smalldata : MonoBehaviour
         transform.parent.position = new Vector3(gd.playerPosition[0], gd.playerPosition[1], 0);
         coinsobject.how_many_coins = gd.playerCoins;
         FindObjectOfType<showingtext>().showtext(coinsobject.how_many_coins);
+
+        
+        bool done = false;
+        
+        while (done == false)
+        {
+            OnItem ++;
+            if (gd.items[OnItem] == null)
+            {
+                done = true;
+            }
+            else
+            {
+                if (gd.items[OnItem].type != 0)
+                {
+                    if (gd.items[OnItem].type == 1)
+                    { itemcopy = Instantiate(Axe); }
+
+                    if (gd.items[OnItem].type == 2)
+                    { itemcopy = Instantiate(wheelbarrow); }
+
+                    itemcopy.transform.position = new Vector3(gd.items[OnItem].position[0], gd.items[OnItem].position[1], 0);
+                    itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.items[OnItem].rotation);
+                }
+                 
+            }  
+        }           
     }
  
     public void Restart()

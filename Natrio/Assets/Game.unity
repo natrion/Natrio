@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 375567050}
   m_Layer: 0
   m_Name: wheelbarrow (1)
-  m_TagString: Untagged
+  m_TagString: wheelbarrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,7 +2152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507702241}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 594625095}
-  how_many_coins: 1000
+  how_many_coins: 0
   on_platform_text: {fileID: 1701874231}
   FolderForItems: {fileID: 73329805}
 --- !u!61 &594625094
@@ -6567,6 +6567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775d8275fa36974aa7815672bc3415c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Axe: {fileID: 1892435382}
+  wheelbarrow: {fileID: 375567048}
+  ItemsFolder: {fileID: 73329804}
   seedOfLastGame: 0
   player: {fileID: 1487622326}
   coinsobject: {fileID: 594625093}
@@ -8877,7 +8880,7 @@ GameObject:
   - component: {fileID: 1892435386}
   m_Layer: 0
   m_Name: axe
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

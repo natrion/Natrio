@@ -39,12 +39,15 @@ public class miningshower : MonoBehaviour
                     rend.enabled = false;
                 }
             }
-            if (hit.collider.gameObject.tag == "Untagged" | hit.collider.gameObject.name == "MainCamera")
+            if (hit.collider.gameObject.tag == "Untagged" | hit.collider.gameObject.name == "MainCamera" | hit.collider.gameObject.name == "Axe" | hit.collider.gameObject.name == "wheelbarrow")
             {
                 if (rend & select_zone_selected)
                 {
-                    Destroy(select_zone_selected);
-                    rend.enabled = false;
+                    if (selectedthing != hit.collider.gameObject)
+                    {
+                        Destroy(select_zone_selected);
+                        rend.enabled = false;
+                    }                    
                 }
             }
             else
