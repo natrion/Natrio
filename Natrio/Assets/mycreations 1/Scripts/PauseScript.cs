@@ -7,8 +7,12 @@ public class PauseScript : MonoBehaviour
 {
     private bool paused =false;
     public GameObject PauseMenu;
+    public GameObject NotSaveQuitWindow;
+   
     void Start()
     {
+        
+        NotSaveQuitWindow.SetActive(false);
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -22,7 +26,10 @@ public class PauseScript : MonoBehaviour
                 PauseMenu.SetActive(false);
                 Time.timeScale = 1f;
                 paused = false;
-            }else
+                NotSaveQuitWindow.SetActive(false);
+                
+            }
+            else
             {
                 PauseMenu.SetActive(true);
                 Time.timeScale = 0f;
@@ -30,11 +37,22 @@ public class PauseScript : MonoBehaviour
             }            
         }       
     }
+    public void NotSaveQuitWindowOpen()
+    {
+        NotSaveQuitWindow.SetActive(true);
+    }
+    public void NotSaveQuitWindowClose()
+    {
+        NotSaveQuitWindow.SetActive(false);
+    }
+ 
     public void UnPaused()
     {
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
+        NotSaveQuitWindow.SetActive(false);
+      
     }
     public void Quit()
     {
