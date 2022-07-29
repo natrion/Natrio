@@ -9,6 +9,7 @@ public class gamedata
     public float[] playerPosition;
     public float seed;
     public itemdata[] items;
+    public chunkdata[] world;
 
     public gamedata(smalldata smalldata , sellthings sellthings)
     {
@@ -54,6 +55,16 @@ public class gamedata
             //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
             //{
             items[itemObjectnumber] = new itemdata(sellthings.foldersell.transform.GetChild(p));
+            //}           
+        }
+
+        int GrassFolderChildCount = smalldata.GrassFolder.transform.childCount;
+        world = new chunkdata[GrassFolderChildCount];
+        for (int a = 0; a < GrassFolderChildCount; a++)
+        {            
+            //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
+            //{
+            world[a] = new chunkdata(smalldata.GrassFolder.transform.GetChild(a));
             //}           
         }
     }

@@ -19,6 +19,11 @@ TagManager:
   - Apple
   - PurpleBerry
   - BlueBerry
+  - Chunk
+  - OakBiomPoppy
+  - OakBiomGrass
+  - BerryBiomPoppy
+  - BerryBiomGrass
   layers:
   - Default
   - TransparentFX

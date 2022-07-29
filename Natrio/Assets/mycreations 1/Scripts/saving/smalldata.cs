@@ -4,6 +4,26 @@ using UnityEngine;
 
 public class smalldata : MonoBehaviour
 {
+
+    public GameObject copyChunk;
+
+    public GameObject oakTree;
+    public GameObject berryTree;
+
+    public GameObject oakBush;
+    public GameObject berryBush;
+
+    public GameObject oakSmallBushes;
+    public GameObject berrySmallBushes;
+
+    public GameObject grass1;
+    public GameObject grass2;
+
+    public GameObject poppy1;
+    public GameObject poppy2;
+
+
+
     public GameObject Axe;
     public GameObject wheelbarrow;
     public GameObject OakLog;
@@ -16,6 +36,7 @@ public class smalldata : MonoBehaviour
 
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
+    public GameObject GrassFolder;
 
     public float seedOfLastGame;
     public Transform player;
@@ -25,13 +46,14 @@ public class smalldata : MonoBehaviour
     private float PerlinNoise;
     private GameObject itemcopy;
     public int OnItem = 0;
-    public sellthings sellthings;
+    
 
     void Start()
     {
         if(QuitPlayCreateButton.Restart == true)
         {
             Restart();
+
         }
         else
         {
@@ -41,8 +63,9 @@ public class smalldata : MonoBehaviour
     }
     public void save()
     {
-        SL.saveGame(new gamedata(this, sellthings));
+        SL.saveGame(new gamedata(this, coinsobject));
     }
+
 
     public void load()
     {
@@ -58,67 +81,104 @@ public class smalldata : MonoBehaviour
         coinsobject.how_many_coins = gd.playerCoins;
         FindObjectOfType<showingtext>().showtext(coinsobject.how_many_coins);
 
-        
-        bool done = false;
-        
-        while (done == false)
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////chunks
+        for (int i = 0; i < gd.world.Length; i++)
         {
-            OnItem ++;
-            if (gd.items[OnItem] == null)
-            {
-                done = true;
-            }
-            else
-            {
-                if (gd.items[OnItem].type != 0)
+            if (gd.world[i] != null)
+
+                if (gd.world[i].type != 0)
                 {
-                    if (gd.items[OnItem].type == 1)
-                    { itemcopy = Instantiate(Axe); }
+                    if (gd.world[i].type == 1)
+                    { itemcopy = Instantiate(copyChunk); }
 
-                    if (gd.items[OnItem].type == 2)
-                    { itemcopy = Instantiate(wheelbarrow); }
+                    if (gd.world[i].type == 2)
+                    { itemcopy = Instantiate(oakTree); }
 
-                    if (gd.items[OnItem].type == 3)
-                    { itemcopy = Instantiate(OakLog); }
+                    if (gd.world[i].type == 3)
+                    { itemcopy = Instantiate(oakBush); }
 
-                    if (gd.items[OnItem].type == 4)
-                    { itemcopy = Instantiate(berryLog); }
+                    if (gd.world[i].type == 4)
+                    { itemcopy = Instantiate(oakSmallBushes); }
 
-                    if (gd.items[OnItem].type == 5)
-                    { itemcopy = Instantiate(Leaves); }
+                    if (gd.world[i].type == 5)
+                    { itemcopy = Instantiate(grass1); }
 
-                    if (gd.items[OnItem].type == 6)
-                    { itemcopy = Instantiate(BerryLeaves); }
+                    if (gd.world[i].type == 6)
+                    { itemcopy = Instantiate(poppy1); }
 
-                    if (gd.items[OnItem].type == 7)
-                    { itemcopy = Instantiate(Apple); }
+                    if (gd.world[i].type == 7)
+                    { itemcopy = Instantiate(berryTree); }
 
-                    if (gd.items[OnItem].type == 8)
-                    { itemcopy = Instantiate(PurpleBerry); }
-                    
-                    if (gd.items[OnItem].type == 9)
-                    { itemcopy = Instantiate(BlueBerry); }
+                    if (gd.world[i].type == 8)
+                    { itemcopy = Instantiate(berryBush); }
 
+                    if (gd.world[i].type == 9)
+                    { itemcopy = Instantiate(berrySmallBushes); }
 
-                    if (gd.items[OnItem].typeFolder == 0)
-                    { itemcopy.transform.parent = ItemsFolder.transform; }
+                    if (gd.world[i].type == 10)
+                    { itemcopy = Instantiate(grass2); }
 
-                    if (gd.items[OnItem].typeFolder == 1)
-                    { itemcopy.transform.parent = ItemsFolder.transform; }
+                    if (gd.world[i].type == 11)
+                    { itemcopy = Instantiate(poppy2); }
 
-                    if (gd.items[OnItem].typeFolder == 2)
-                    { itemcopy.transform.parent = sellthings.foldersell.transform; }
-
-                    if (gd.items[OnItem].typeFolder == 3)
-                    { itemcopy.transform.parent = ItemsFolder.transform; }
-
-                    itemcopy.transform.position = new Vector3(gd.items[OnItem].position[0], gd.items[OnItem].position[1], 0);
-                    itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.items[OnItem].rotation);
-                    
+                    itemcopy.transform.position = new Vector3(gd.world[i].position[0], gd.world[i].position[1], 0);
+                    itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.world[i].rotation);
+                    itemcopy.transform.parent = GrassFolder.transform;
                 }
-                 
-            }  
-        }           
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////items
+        for (int o = 0; o < gd.items.Length; o++)
+        {
+            if (gd.items[o] !=null )
+
+            if (gd.items[o].type != 0 )
+            {
+                if (gd.items[o].type == 1)
+                { itemcopy = Instantiate(Axe); }
+
+                if (gd.items[o].type == 2)
+                { itemcopy = Instantiate(wheelbarrow); }
+
+                if (gd.items[o].type == 3)
+                { itemcopy = Instantiate(OakLog); }
+
+                if (gd.items[o].type == 4)
+                { itemcopy = Instantiate(berryLog); }
+
+                if (gd.items[o].type == 5)
+                { itemcopy = Instantiate(Leaves); }
+
+                if (gd.items[o].type == 6)
+                { itemcopy = Instantiate(BerryLeaves); }
+
+                if (gd.items[o].type == 7)
+                { itemcopy = Instantiate(Apple); }
+
+                if (gd.items[o].type == 8)
+                { itemcopy = Instantiate(PurpleBerry); }
+
+                if (gd.items[o].type == 9)
+                { itemcopy = Instantiate(BlueBerry); }
+
+                if (gd.items[o].typeFolder == 0)
+                { itemcopy.transform.parent = ItemsFolder.transform; }
+
+                if (gd.items[o].typeFolder == 1)
+                { itemcopy.transform.parent = ItemsFolder.transform; }
+
+                if (gd.items[o].typeFolder == 2)
+                { itemcopy.transform.parent = coinsobject.foldersell.transform; }
+
+                if (gd.items[o].typeFolder == 3)
+                { itemcopy.transform.parent = ItemsFolder.transform; }
+
+                itemcopy.transform.position = new Vector3(gd.items[o].position[0], gd.items[o].position[1], 0);
+                itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.items[o].rotation);
+            }
+        }
+        seedobject.StartChunk();
+        print("StartChunk");
+        
     }
  
     public void Restart()
@@ -155,5 +215,6 @@ public class smalldata : MonoBehaviour
             Transform childi = seedobject.transform.GetChild(i);
             Destroy(childi.gameObject);
         }
+        seedobject.StartChunk();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
-    public Plane plane = new Plane(Vector3.up, Vector3.zero);
+    
 
     public GameObject copyChunk;
 
@@ -37,7 +37,7 @@ public class PG : MonoBehaviour
     public smalldata smalldata;
     private float seedchanger;
 
-    void Start()
+    public void StartChunk()
     {
         spawn = true;
         seed = Random.Range(1f, 4000000f);
@@ -190,7 +190,7 @@ public class PG : MonoBehaviour
     private void spawning(GameObject Copy,GameObject chunkCopy)
     {
         Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1) , Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1), 0);
-        Copy.transform.parent = chunkCopy.transform;
+        Copy.transform.parent = transform;
     }
 
 }
