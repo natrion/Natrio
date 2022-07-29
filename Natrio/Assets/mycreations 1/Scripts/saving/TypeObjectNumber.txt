@@ -1,0 +1,25 @@
+type object----------------------------------
+int     |   name of tag
+0 = null
+
+1 = Axe
+2 = wheelbarrow 
+
+3 = OakLog
+4 = berryLog 
+
+5 = Leaves
+6 = BerryLeaves
+
+7 = Apple
+8 = PurpleBerry
+9 = BlueBerry
+type folder----------------------------------
+int     |   name 
+0 = null
+
+1 = items                                                                           (itemfolder)
+
+2 = thingsforsell
+
+3 = playerfolder

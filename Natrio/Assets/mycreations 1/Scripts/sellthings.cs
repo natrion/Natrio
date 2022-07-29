@@ -8,7 +8,7 @@ public class sellthings : MonoBehaviour
     public Animator m_Animator;
     public int how_many_coins = 0;
     private int how_much_coins_on_platform = 0;
-    private GameObject foldersell;
+    public GameObject foldersell;
     public TextMesh on_platform_text;
     private int coinsfromloop;
     private int price_ofchild;
@@ -17,7 +17,6 @@ public class sellthings : MonoBehaviour
     private Transform child;
     IEnumerator pressed()
     {
-
         m_Animator.SetBool("presd", true);
         yield return new WaitForSeconds(1);
 

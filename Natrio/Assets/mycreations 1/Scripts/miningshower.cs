@@ -29,6 +29,8 @@ public class miningshower : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+        
         if (hit.collider != null)
         {
             if(selectedthing)
@@ -39,6 +41,8 @@ public class miningshower : MonoBehaviour
                     rend.enabled = false;
                 }
             }
+
+           
             if (hit.collider.gameObject.tag == "Untagged" | hit.collider.gameObject.name == "MainCamera" | hit.collider.gameObject.name == "Axe" | hit.collider.gameObject.name == "wheelbarrow")
             {
                 if (rend & select_zone_selected)
@@ -50,7 +54,8 @@ public class miningshower : MonoBehaviour
                     }                    
                 }
             }
-            else
+            
+            else if(hit.collider.transform.childCount > 0)
             {         
                 if (player.transform.position.y - hit.collider.transform.position.y < 1f & player.transform.position.y - hit.collider.transform.position.y > -1f & player.transform.position.x - hit.collider.transform.position.x > -1f & player.transform.position.x - transform.position.x < 1f)
                 {

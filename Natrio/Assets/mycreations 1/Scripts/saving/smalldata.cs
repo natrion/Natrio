@@ -6,7 +6,17 @@ public class smalldata : MonoBehaviour
 {
     public GameObject Axe;
     public GameObject wheelbarrow;
+    public GameObject OakLog;
+    public GameObject berryLog;
+    public GameObject Leaves;
+    public GameObject BerryLeaves;
+    public GameObject Apple;
+    public GameObject PurpleBerry;
+    public GameObject BlueBerry;
+
     public GameObject ItemsFolder;
+    public GameObject PlayerFolder;
+
     public float seedOfLastGame;
     public Transform player;
     public sellthings coinsobject;
@@ -15,6 +25,7 @@ public class smalldata : MonoBehaviour
     private float PerlinNoise;
     private GameObject itemcopy;
     public int OnItem = 0;
+    public sellthings sellthings;
 
     void Start()
     {
@@ -30,7 +41,7 @@ public class smalldata : MonoBehaviour
     }
     public void save()
     {
-        SL.saveGame(new gamedata(this));
+        SL.saveGame(new gamedata(this, sellthings));
     }
 
     public void load()
@@ -67,8 +78,43 @@ public class smalldata : MonoBehaviour
                     if (gd.items[OnItem].type == 2)
                     { itemcopy = Instantiate(wheelbarrow); }
 
+                    if (gd.items[OnItem].type == 3)
+                    { itemcopy = Instantiate(OakLog); }
+
+                    if (gd.items[OnItem].type == 4)
+                    { itemcopy = Instantiate(berryLog); }
+
+                    if (gd.items[OnItem].type == 5)
+                    { itemcopy = Instantiate(Leaves); }
+
+                    if (gd.items[OnItem].type == 6)
+                    { itemcopy = Instantiate(BerryLeaves); }
+
+                    if (gd.items[OnItem].type == 7)
+                    { itemcopy = Instantiate(Apple); }
+
+                    if (gd.items[OnItem].type == 8)
+                    { itemcopy = Instantiate(PurpleBerry); }
+                    
+                    if (gd.items[OnItem].type == 9)
+                    { itemcopy = Instantiate(BlueBerry); }
+
+
+                    if (gd.items[OnItem].typeFolder == 0)
+                    { itemcopy.transform.parent = ItemsFolder.transform; }
+
+                    if (gd.items[OnItem].typeFolder == 1)
+                    { itemcopy.transform.parent = ItemsFolder.transform; }
+
+                    if (gd.items[OnItem].typeFolder == 2)
+                    { itemcopy.transform.parent = sellthings.foldersell.transform; }
+
+                    if (gd.items[OnItem].typeFolder == 3)
+                    { itemcopy.transform.parent = ItemsFolder.transform; }
+
                     itemcopy.transform.position = new Vector3(gd.items[OnItem].position[0], gd.items[OnItem].position[1], 0);
                     itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.items[OnItem].rotation);
+                    
                 }
                  
             }  

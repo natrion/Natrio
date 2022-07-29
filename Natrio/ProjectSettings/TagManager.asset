@@ -12,6 +12,13 @@ TagManager:
   - appletree
   - Axe
   - wheelbarrow
+  - OakLog
+  - Leaves
+  - berryLog
+  - BerryLeaves
+  - Apple
+  - PurpleBerry
+  - BlueBerry
   layers:
   - Default
   - TransparentFX
