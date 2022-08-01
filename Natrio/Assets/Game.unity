@@ -1723,13 +1723,15 @@ MonoBehaviour:
   cutingpisible: 0
   player: {fileID: 1487622326}
   how_much_cost: 0
-  StartRotation: 270
+  StartRotation: 90
   HoldingDistanceFromPlayer: 0.32
   PickUpRadius: 0.8
   damage: 0
   side: 1
   isItForTransportingItems: 1
   howMuchItemsTransporting: 5
+  xRotation: 0
+  yRotation: 1
 --- !u!95 &375567052
 Animator:
   serializedVersion: 3
@@ -1791,7 +1793,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 2123c89b4fbf90045b1d540f74ee481e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.35416666, y: 0.22916667}
   m_AdaptiveModeThreshold: 0.5
@@ -2556,6 +2558,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!212 &621776051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3629,6 +3633,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!58 &828647455
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4316,6 +4322,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!58 &1061188936
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5158,7 +5166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239367906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -265, y: -99.52, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1487622326}
@@ -6501,9 +6509,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487622325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1239367908}
   m_RootOrder: 0
@@ -6592,7 +6600,7 @@ MonoBehaviour:
   PlayerFolder: {fileID: 1487622325}
   GrassFolder: {fileID: 607197730}
   seedOfLastGame: 0
-  player: {fileID: 1487622326}
+  player: {fileID: 1239367908}
   coinsobject: {fileID: 594625093}
   seedobject: {fileID: 607197732}
   OnItem: 0
@@ -7460,6 +7468,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!95 &1686704444
 Animator:
   serializedVersion: 3
@@ -8002,6 +8012,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!95 &1787972552
 Animator:
   serializedVersion: 3
@@ -8981,8 +8993,8 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5e95bf6f03910684b83897c4ca4cf03f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
-  m_FlipY: 0
+  m_FlipX: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.4375, y: 0.16666667}
   m_AdaptiveModeThreshold: 0.5
@@ -9008,10 +9020,12 @@ MonoBehaviour:
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.1
   PickUpRadius: 0.5
-  damage: 8
+  damage: 4
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 1
+  yRotation: 0
 --- !u!61 &1892435387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9655,6 +9669,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!95 &2030808814
 Animator:
   serializedVersion: 3
@@ -10040,6 +10056,8 @@ MonoBehaviour:
   side: 0
   isItForTransportingItems: 0
   howMuchItemsTransporting: 0
+  xRotation: 0
+  yRotation: 0
 --- !u!95 &2122804712
 Animator:
   serializedVersion: 3

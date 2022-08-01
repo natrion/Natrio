@@ -57,6 +57,8 @@ public class miningshower : MonoBehaviour
             
             else if(hit.collider.transform.childCount > 0)
             {         
+                if(hit.collider.transform.GetChild(0).GetComponent<MeshRenderer>())
+
                 if (player.transform.position.y - hit.collider.transform.position.y < 1f & player.transform.position.y - hit.collider.transform.position.y > -1f & player.transform.position.x - hit.collider.transform.position.x > -1f & player.transform.position.x - transform.position.x < 1f)
                 {
                     textHealthcopy = hit.collider.transform.GetChild(0);

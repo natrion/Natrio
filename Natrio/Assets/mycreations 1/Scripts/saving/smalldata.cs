@@ -177,7 +177,7 @@ public class smalldata : MonoBehaviour
             }
         }
         seedobject.StartChunk();
-        print("StartChunk");
+        
         
     }
  
