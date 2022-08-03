@@ -30,9 +30,9 @@ public class holding : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         item_Animator.SetBool("cutting", false);
-        //holdedthing.eulerAngles = transform.eulerAngles - new Vector3(0, 0, 180f);
-        //holdedthing.position = transform.position;
-        //holdedthing.position -= holdedthing.up * distanceafter;        
+        holdedthing.eulerAngles = transform.eulerAngles - new Vector3(0, 0, 180f);
+        holdedthing.position = transform.position;
+        holdedthing.position -= holdedthing.up * distanceafter;        
     }
 
     IEnumerator calldawnfunction()
@@ -41,78 +41,40 @@ public class holding : MonoBehaviour
         calldawn = false;
     }
 
-    public void itemholding(float distance, float normalrotation, Transform holdingobject ,int how_much_costing, bool cutingpisibleinfunction, GameObject itemfunctiion, int damage, float PickUpRadius, bool xRotation, bool yRotation)
+    public void itemholding(float distance, float normalrotation, Transform holdingobject ,int how_much_costing, bool cutingpisibleinfunction, GameObject itemfunctiion, int damage, float PickUpRadius)
     {
         
-        
+        distanceafter = distance;
+        cutingpisible = cutingpisibleinfunction;
+        item = itemfunctiion;
+        how_much_cost = how_much_costing;
+        holdedthing = holdingobject;
+        item_Animator = item.GetComponent<Animator>();
 
         if (pick == false  )
-        {
+        {           
             if (Input.GetMouseButtonDown(1))
-            {
-                if (transform.position.y - holdingobject.position.y < PickUpRadius & transform.position.y - holdingobject.position.y > PickUpRadius * -1 & transform.position.x - holdingobject.position.x > PickUpRadius * -1 & transform.position.x - holdingobject.position.x < PickUpRadius)
+            {               
+                if (transform.position.y - holdedthing.position.y < PickUpRadius & transform.position.y - holdedthing.position.y > PickUpRadius * -1 & transform.position.x - holdedthing.position.x > PickUpRadius * -1 & transform.position.x - holdedthing.position.x < PickUpRadius)
                 {
+                    
                     pick = true;
-                    distanceafter = distance;
-                    cutingpisible = cutingpisibleinfunction;
-                    item = itemfunctiion;
-                    how_much_cost = how_much_costing;
-                    holdedthing = holdingobject;
-                    item_Animator = item.GetComponent<Animator>();
-
-                    holdedthing.localScale = new Vector3(1, 1, 0);
+                    calldawn = true;
+                    StartCoroutine(calldawnfunction());
+                    //player_Animator.SetBool("holding", true);
+                    //FindObjectOfType<movement>().changespeed(1f);
+                    holdedthing.parent = transform;
                     holdedthing.eulerAngles = transform.eulerAngles - new Vector3(0, 0, normalrotation);
+                    holdedthing.position = transform.position;
 
-                    if (transform.parent.localScale == new Vector3(1, 1, 0) | transform.eulerAngles == new Vector3(0, 0, 180))
-                    {
-                        if (xRotation ==true)
-                        {
-                            holdedthing.localScale = new Vector3(-1, holdedthing.localScale.y, 0);
-                        }
-                        if (yRotation == true)
-                        {
-                            holdedthing.localScale = new Vector3(holdedthing.localScale.x,-1 , 0);
-                        }
-                    }
-                    else
-                    {
-                        if(transform.parent.localScale == new Vector3(1, 1, 0) & transform.eulerAngles == new Vector3(0, 0, 0))
-                        {
-                            if (xRotation == true)
-                            {
-                                holdedthing.localScale = new Vector3(-1, holdedthing.localScale.y, 0);
-                            }
-                            if (yRotation == true)
-                            {
-                                holdedthing.localScale = new Vector3(holdedthing.localScale.x, -1, 0);
-                            }
-                        }
-                        else
-                        {
-                            holdedthing.localScale = new Vector3(1, 1, 0);
-                        }
-                        
-                    }
+                    holdedthing.position += transform.up * distance;
+                    what_damage = damage;
+
+                    FindObjectOfType<sellthings>().addcoinspotencial();
                 }
-            
-
-                pick = true;
-                calldawn = true;
-                StartCoroutine(calldawnfunction());
-                //player_Animator.SetBool("holding", true);
-                //FindObjectOfType<movement>().changespeed(1f);
-                holdedthing.parent = transform;
-
-                holdedthing.position = transform.position;
-
-                holdedthing.position += transform.up * distance;
-                what_damage = damage;
-
-                FindObjectOfType<sellthings>().addcoinspotencial();
-            }   
+            }
         }   
     }
-
     void Update()
     {
 
@@ -134,7 +96,6 @@ public class holding : MonoBehaviour
                 {
                     if(holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
                     {
-                        pick = false;
                         return;
                     }
                     what_damage = 1;

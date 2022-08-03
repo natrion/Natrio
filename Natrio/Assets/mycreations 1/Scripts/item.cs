@@ -16,9 +16,6 @@ public class item : MonoBehaviour
     public bool side;
     public bool isItForTransportingItems;
     public int howMuchItemsTransporting;
-    public bool xRotation;
-    public bool yRotation;
-
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();   
@@ -61,7 +58,7 @@ public class item : MonoBehaviour
 
         if (number_of_player_childs == 0)
         {
-            FindObjectOfType<holding>().itemholding(HoldingDistanceFromPlayer, StartRotation, transform, how_much_cost, cutingpisible, gameObject, damage, PickUpRadius, xRotation,yRotation);
+            FindObjectOfType<holding>().itemholding(HoldingDistanceFromPlayer, StartRotation, transform, how_much_cost, cutingpisible, gameObject, damage, PickUpRadius);
         }
         else if(player.GetChild(0).GetComponent<item>().isItForTransportingItems)
         {

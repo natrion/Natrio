@@ -72,7 +72,7 @@ public class movement : MonoBehaviour
         {
             animator.SetInteger("front1back2side3", 3);
             animator.SetBool("move", true);
-            transform.eulerAngles = Vector3.forward * -90;
+            transform.eulerAngles = Vector3.forward * 270;
             playertransform.localScale = new Vector3(1, 1, 0);
             if (isdawn == false)
             {
