@@ -15,3 +15,5 @@ int     |   name of tag
 9 = blue_berry_small_bushes 
 10 = BerryBiomGrass
 11 = BerryBiomPoppy
+
+12 = OldOakTree
