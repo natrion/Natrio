@@ -52,6 +52,12 @@ public class holding : MonoBehaviour
             {
                 if (transform.position.y - holdingobject.position.y < PickUpRadius & transform.position.y - holdingobject.position.y > PickUpRadius * -1 & transform.position.x - holdingobject.position.x > PickUpRadius * -1 & transform.position.x - holdingobject.position.x < PickUpRadius)
                 {
+                   
+                    if(holdingobject.GetComponent<Rigidbody2D>() != null )
+                    {
+                        holdingobject.GetComponent<Rigidbody2D>().simulated = false;
+                    }
+
                     pick = true;
                     distanceafter = distance;
                     cutingpisible = cutingpisibleinfunction;
@@ -125,7 +131,17 @@ public class holding : MonoBehaviour
                     item_Animator.SetBool("cutting", true);
                     StartCoroutine(clickanimation());
                 }
+                if (holdedthing.GetComponent<item>().isItForTransportingItems == true & holdedthing.childCount != 0)
+                {
+                    Transform itemInWheelbarrow = holdedthing.GetChild(0);
+                    itemInWheelbarrow.parent = flolderitems.transform;
+                    itemInWheelbarrow.position += transform.up * 0.3f;
 
+                    if (itemInWheelbarrow.GetComponent<Rigidbody2D>() != null)
+                    {
+                        itemInWheelbarrow.GetComponent<Rigidbody2D>().simulated = true;
+                    }
+                }
             }
 
             if (calldawn == false)
@@ -134,7 +150,7 @@ public class holding : MonoBehaviour
                 {
                     if(holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
                     {
-                        pick = false;
+                        pick = true;
                         return;
                     }
                     what_damage = 1;
@@ -154,6 +170,11 @@ public class holding : MonoBehaviour
                         holdedthing.parent = flolderitems.transform;
                         what_damage = 1;
                         FindObjectOfType<sellthings>().addcoinspotencial();
+                    }
+
+                    if (holdedthing.GetComponent<Rigidbody2D>() != null)
+                    {
+                        holdedthing.GetComponent<Rigidbody2D>().simulated = true;
                     }
                     pick = false;
                 }

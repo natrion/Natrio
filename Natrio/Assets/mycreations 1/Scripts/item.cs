@@ -67,6 +67,11 @@ public class item : MonoBehaviour
         {
             if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & Input.GetMouseButtonDown(1) &  isItForTransportingItems == false)
             {
+                if (transform.GetComponent<Rigidbody2D>() != null)
+                {
+                    transform.GetComponent<Rigidbody2D>().simulated = false;
+                }
+
                 transform.parent = player.GetChild(0);
                 transform.position = player.position;
                 transform.position += player.up * HoldingDistanceFromPlayer*2;
