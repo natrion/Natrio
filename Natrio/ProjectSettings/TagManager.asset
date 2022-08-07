@@ -25,6 +25,7 @@ TagManager:
   - BerryBiomPoppy
   - BerryBiomGrass
   - OldOakTree
+  - OldOakBush
   layers:
   - Default
   - TransparentFX
