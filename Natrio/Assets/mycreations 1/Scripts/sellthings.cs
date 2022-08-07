@@ -54,6 +54,10 @@ public class sellthings : MonoBehaviour
 
                     price_ofchild += price_ofchildTransportItem;
                     childTransportItem.parent = foldersell.transform;
+                    if (childTransportItem.GetComponent<Rigidbody2D>() != null)
+                    {
+                        childTransportItem.GetComponent<Rigidbody2D>().simulated = true;
+                    }
 
                 }
             }

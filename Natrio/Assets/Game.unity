@@ -11176,9 +11176,9 @@ GameObject:
   - component: {fileID: 1892435383}
   - component: {fileID: 1892435385}
   - component: {fileID: 1892435387}
-  - component: {fileID: 1892435384}
   - component: {fileID: 1892435386}
   - component: {fileID: 1892435388}
+  - component: {fileID: 1892435384}
   m_Layer: 0
   m_Name: axe
   m_TagString: Axe

@@ -49,7 +49,7 @@ public class itemdata
         position = new float[2];
         position[0] = childItem.position.x;
         position[1] = childItem.position.y;
-        rotation = childItem.rotation.z;
+        rotation = childItem.eulerAngles.z;
 
     }
 }

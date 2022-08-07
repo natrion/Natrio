@@ -29,7 +29,7 @@ public class holding : MonoBehaviour
     IEnumerator clickanimation()
     {
         item_Animator.SetBool("cutting", true);
-        yield return new WaitForSeconds(0.10f);
+        yield return new WaitForSeconds(0.20f);
         item_Animator.SetBool("cutting", false);
         holdedthing.eulerAngles = transform.eulerAngles;
         holdedthing.position = transform.position;
@@ -129,7 +129,6 @@ public class holding : MonoBehaviour
             {               
                 if (cutingpisible == true)
                 {
-                    item_Animator.SetBool("cutting", true);
                     StartCoroutine(clickanimation());
                 }
                 if (holdedthing.GetComponent<item>().isItForTransportingItems == true & holdedthing.childCount != 0)

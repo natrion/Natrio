@@ -173,7 +173,7 @@ public class smalldata : MonoBehaviour
                 { itemcopy.transform.parent = ItemsFolder.transform; }
 
                 itemcopy.transform.position = new Vector3(gd.items[o].position[0], gd.items[o].position[1], 0);
-                itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.items[o].rotation);
+                itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
             }
         }
         seedobject.StartChunk();
