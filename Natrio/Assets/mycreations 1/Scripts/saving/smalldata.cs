@@ -122,7 +122,7 @@ public class smalldata : MonoBehaviour
                     { itemcopy = Instantiate(poppy2); }
 
                     itemcopy.transform.position = new Vector3(gd.world[i].position[0], gd.world[i].position[1], 0);
-                    itemcopy.transform.rotation = Quaternion.Euler(0, 0, gd.world[i].rotation);
+                    itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.world[i].rotation);
                     itemcopy.transform.parent = GrassFolder.transform;
                 }
         }

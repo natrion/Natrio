@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a36a29d4a33bec449824aeffd5ef6171, type: 2}
+  m_Motion: {fileID: 7400000, guid: 00f871e4151ddbe48a8e6f16e9b0cf2d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 56e5e62b564ba6c48880e552dac8e28d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 512157c21f9d11045ace822faa83e230, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -131,7 +131,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: smallbushes
+  m_Name: OldOaksmallbushes
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: destroyd
@@ -199,7 +199,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2fcf17ed0f719974ca04945c07697b75, type: 2}
+  m_Motion: {fileID: 7400000, guid: d1a89abf6b27f524cba40df3fb5afa88, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

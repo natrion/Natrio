@@ -19,9 +19,11 @@ public class PG : MonoBehaviour
 
     public GameObject grass1;
     public GameObject grass2;
+    public GameObject grass3;
 
     public GameObject poppy1;
     public GameObject poppy2;
+    public GameObject poppy3;
 
     public float  vegetationNumber;
     public float size;
@@ -121,7 +123,7 @@ public class PG : MonoBehaviour
                         PerlinNoise = Mathf.PerlinNoise((X*size / biom_Diversity) + seed, (Y*size / biom_Diversity) + seed);
 
                         ////////////////////////////////////////////////////oak_biom
-                        if (PerlinNoise < 0.5)
+                        if (PerlinNoise < 0.3)
                         {
                             
                             for (float o = 0; o<  PerlinNoise * vegetationNumber;o++)
@@ -150,10 +152,15 @@ public class PG : MonoBehaviour
                                 spawning(poppy1Copy, chunk);
                             }
                         }
-                        ////////////////////////////////////////////////////berry_biom
-                        if (PerlinNoise > 0.5)
+                        ////////////////////////////////////////////////////Old_oak_biom
+                        if (PerlinNoise > 0.3 & PerlinNoise < 0.6)
                         {
-                            for (float d= 0; d < PerlinNoise * vegetationNumber; d++)
+                           
+                        }
+                        ////////////////////////////////////////////////////berry_biom
+                        if (PerlinNoise > 0.6)
+                        {
+                            for (float d = 0; d < PerlinNoise * vegetationNumber; d++)
                             {
                                 GameObject OakTreeCopy = Instantiate(berryTree);
                                 spawning(OakTreeCopy, chunk);
@@ -178,7 +185,7 @@ public class PG : MonoBehaviour
                                 GameObject poppy2Copy = Instantiate(poppy2);
                                 spawning(poppy2Copy, chunk);
                             }
-                        }    
+                        }
                     }
                     spawn = true;
                 }
