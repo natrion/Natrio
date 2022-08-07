@@ -10,12 +10,15 @@ public class PG : MonoBehaviour
 
     public GameObject oakTree;
     public GameObject berryTree;
+    public GameObject OldOakTree;
 
     public GameObject oakBush;
     public GameObject berryBush;
+    public GameObject OldOakBush;
 
     public GameObject oakSmallBushes;
     public GameObject berrySmallBushes;
+    public GameObject OldOakSmallBushes;
 
     public GameObject grass1;
     public GameObject grass2;
@@ -123,7 +126,7 @@ public class PG : MonoBehaviour
                         PerlinNoise = Mathf.PerlinNoise((X*size / biom_Diversity) + seed, (Y*size / biom_Diversity) + seed);
 
                         ////////////////////////////////////////////////////oak_biom
-                        if (PerlinNoise < 0.3)
+                        if (PerlinNoise < 0.5)
                         {
                             
                             for (float o = 0; o<  PerlinNoise * vegetationNumber;o++)
@@ -153,12 +156,36 @@ public class PG : MonoBehaviour
                             }
                         }
                         ////////////////////////////////////////////////////Old_oak_biom
-                        if (PerlinNoise > 0.3 & PerlinNoise < 0.6)
+                        if (PerlinNoise > 0.5 & PerlinNoise < 0.7)
                         {
-                           
+                            for (float o1 = 0; o1 < PerlinNoise * vegetationNumber; o1++)
+                            {
+                                GameObject OakTreeCopy = Instantiate(OldOakTree);
+                                spawning(OakTreeCopy, chunk);
+                            }
+                            for (float a1 = 0; a1 < PerlinNoise * vegetationNumber * 2; a1++)
+                            {
+                                GameObject OakBushCopy = Instantiate(OldOakBush);
+                                spawning(OakBushCopy, chunk);
+                            }
+                            for (float s1 = 0; s1 < PerlinNoise * vegetationNumber * 3; s1++)
+                            {
+                                GameObject OakBushesCopy = Instantiate(OldOakSmallBushes);
+                                spawning(OakBushesCopy, chunk);
+                            }
+                            for (float h1 = 0; h1 < PerlinNoise * vegetationNumber * 4; h1++)
+                            {
+                                GameObject grass1Copy = Instantiate(grass3);
+                                spawning(grass1Copy, chunk);
+                            }
+                            for (float j1 = 0; j1 < PerlinNoise * vegetationNumber * 4; j1++)
+                            {
+                                GameObject poppy1Copy = Instantiate(poppy3);
+                                spawning(poppy1Copy, chunk);
+                            }
                         }
                         ////////////////////////////////////////////////////berry_biom
-                        if (PerlinNoise > 0.6)
+                        if (PerlinNoise > 0.7)
                         {
                             for (float d = 0; d < PerlinNoise * vegetationNumber; d++)
                             {
