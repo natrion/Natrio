@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 45560952132df2a45a72b9acb100c2fb, type: 2}
+  m_Motion: {fileID: 7400000, guid: adc03d163458e704c888c0ecf9ba0c2f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 948827bf5e831b04bb459e4df64d47a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: f24fbb7b91719b9459d10b2392e825f2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -85,7 +85,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OldOakbushselectall
+  m_Name: bushselectall
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: destroyd
@@ -93,7 +93,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -183,7 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7969c41b58947e242911b92eb7801200, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3ffb9a06791e0d04385de3569de7b2a2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -210,7 +210,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0b9d2f34a6f9028419bf515fa136f7b3, type: 2}
+  m_Motion: {fileID: 7400000, guid: cd47c484f3e634a4b86da60c2dfe3b90, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

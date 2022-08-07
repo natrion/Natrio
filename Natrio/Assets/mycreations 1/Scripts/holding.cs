@@ -28,12 +28,11 @@ public class holding : MonoBehaviour
 
     IEnumerator clickanimation()
     {
-        item_Animator.SetBool("cutting", true);
-        yield return new WaitForSeconds(0.10f);
+        yield return new WaitForSeconds(0.5f);
         item_Animator.SetBool("cutting", false);
-        holdedthing.eulerAngles = transform.eulerAngles;
-        holdedthing.position = transform.position;
-        holdedthing.position += holdedthing.up * distanceafter;        
+        //holdedthing.eulerAngles = transform.eulerAngles - new Vector3(0, 0, 180f);
+        //holdedthing.position = transform.position;
+        //holdedthing.position -= holdedthing.up * distanceafter;        
     }
 
     IEnumerator calldawnfunction()
