@@ -144,7 +144,7 @@ public class PG : MonoBehaviour
                                  GameObject OakBushesCopy = Instantiate(oakSmallBushes);
                                  spawning(OakBushesCopy, chunk);
                             }
-                            for (float h = 0; h < PerlinNoise * vegetationNumber * 4; h++)
+                            for (float h = 0; h < PerlinNoise * vegetationNumber * 5; h++)
                             {
                                 GameObject grass1Copy = Instantiate(grass1);
                                 spawning(grass1Copy, chunk);
@@ -161,19 +161,19 @@ public class PG : MonoBehaviour
                             for (float o1 = 0; o1 < PerlinNoise * vegetationNumber; o1++)
                             {
                                 GameObject OakTreeCopy = Instantiate(OldOakTree);
-                                spawning(OakTreeCopy, chunk);
+                                spawningLayer(OakTreeCopy, chunk,2);
                             }
                             for (float a1 = 0; a1 < PerlinNoise * vegetationNumber * 2; a1++)
                             {
                                 GameObject OakBushCopy = Instantiate(OldOakBush);
-                                spawning(OakBushCopy, chunk);
+                                spawningLayer(OakBushCopy, chunk,1);
                             }
                             for (float s1 = 0; s1 < PerlinNoise * vegetationNumber * 3; s1++)
                             {
                                 GameObject OakBushesCopy = Instantiate(OldOakSmallBushes);
-                                spawning(OakBushesCopy, chunk);
+                                spawningLayer(OakBushesCopy, chunk,0);
                             }
-                            for (float h1 = 0; h1 < PerlinNoise * vegetationNumber * 4; h1++)
+                            for (float h1 = 0; h1 < PerlinNoise * vegetationNumber * 5; h1++)
                             {
                                 GameObject grass1Copy = Instantiate(grass3);
                                 spawning(grass1Copy, chunk);
@@ -202,7 +202,7 @@ public class PG : MonoBehaviour
                                 GameObject OakBushesCopy = Instantiate(berrySmallBushes);
                                 spawning(OakBushesCopy, chunk);
                             }
-                            for (float h = 0; h < PerlinNoise * vegetationNumber * 4; h++)
+                            for (float h = 0; h < PerlinNoise * vegetationNumber * 5; h++)
                             {
                                 GameObject grass2Copy = Instantiate(grass2);
                                 spawning(grass2Copy, chunk);
@@ -225,6 +225,15 @@ public class PG : MonoBehaviour
     {
         Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1) , Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1), 0);
         Copy.transform.parent = transform;
+    }
+    private void spawningLayer(GameObject Copy, GameObject chunkCopy, int Layer)
+    {
+        Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1), Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1), 0);
+        Copy.transform.parent = transform;
+        int yChunkInt = Mathf.RoundToInt(chunkCopy.transform.position.y);
+        int YthingInt = Mathf.RoundToInt(Copy.transform.position.y);
+        int ipositionInChunk = 5-(YthingInt - (yChunkInt - 2) );
+        Copy.GetComponent<SpriteRenderer>().sortingOrder = (ipositionInChunk*2 ) +Layer;
     }
 
 }

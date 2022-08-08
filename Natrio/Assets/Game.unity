@@ -2140,7 +2140,7 @@ GameObject:
   - component: {fileID: 360187150}
   m_Layer: 0
   m_Name: OldOakBiomGrass
-  m_TagString: OakBiomPoppy
+  m_TagString: OldOakBiomGrass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3411,7 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutingpisible: 0
   player: {fileID: 1487622326}
-  how_much_cost: 4
+  how_much_cost: 8
   StartRotation: 90
   HoldingDistanceFromPlayer: 0.1
   PickUpRadius: 0.5
@@ -4173,7 +4173,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792059238}
-  m_Text: 40
+  m_Text: 320
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -4429,8 +4429,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -164101965
-  m_SortingLayer: -2
+  m_SortingLayerID: 211346255
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ccf8e9c8ac534064aa5258856f59e702, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 320
   item: {fileID: 621776048}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -4728,7 +4728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutingpisible: 0
   player: {fileID: 1487622326}
-  how_much_cost: 4
+  how_much_cost: 6
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.08
   PickUpRadius: 0.5
@@ -5351,7 +5351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055132312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -3, z: 0}
+  m_LocalPosition: {x: 4, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1838922378}
@@ -5442,7 +5442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutingpisible: 0
   player: {fileID: 1487622326}
-  how_much_cost: 6
+  how_much_cost: 8
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.08
   PickUpRadius: 0.5
@@ -5612,7 +5612,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068174008}
-  m_Text: 50
+  m_Text: 40
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -5738,7 +5738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 120
   item: {fileID: 621776048}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -6511,7 +6511,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254881516}
-  m_Text: 50
+  m_Text: 40
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -6862,7 +6862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 160
   item: {fileID: 621776048}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -7391,7 +7391,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321690059}
-  m_Text: 30
+  m_Text: 120
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -8157,7 +8157,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534061593}
-  m_Text: 40
+  m_Text: 160
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -9232,7 +9232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutingpisible: 0
   player: {fileID: 1487622326}
-  how_much_cost: 2
+  how_much_cost: 4
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.2
   PickUpRadius: 0.5
@@ -9934,7 +9934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 40
   item: {fileID: 249776153}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -11127,7 +11127,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889813890}
-  m_Text: 80
+  m_Text: 320
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -11228,7 +11228,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 245bc8980cc899b4cb1f7d74cda03c77, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -11395,7 +11395,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928333404}
-  m_Text: 15
+  m_Text: 120
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -11861,7 +11861,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021750333}
-  m_Text: 20
+  m_Text: 160
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -11965,7 +11965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutingpisible: 0
   player: {fileID: 1487622326}
-  how_much_cost: 5
+  how_much_cost: 7
   StartRotation: 0
   HoldingDistanceFromPlayer: 0.08
   PickUpRadius: 0.5

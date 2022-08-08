@@ -27,6 +27,7 @@ TagManager:
   - OldOakTree
   - OldOakBush
   - OldOaksmallbushes
+  - OldOakBiomGrass
   layers:
   - Default
   - TransparentFX
