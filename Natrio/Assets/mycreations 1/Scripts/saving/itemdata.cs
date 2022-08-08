@@ -34,6 +34,10 @@ public class itemdata
         { type = 8; }
         if (childItem.gameObject.CompareTag("BlueBerry"))
         { type = 9; }
+        if (childItem.gameObject.CompareTag("OldOakLog"))
+        { type = 10; }
+        if (childItem.gameObject.CompareTag("OldOakleaves"))
+        { type = 11; }
 
         typeFolder = 0;
 

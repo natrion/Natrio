@@ -17,3 +17,7 @@ int     |   name of tag
 11 = BerryBiomPoppy
 
 12 = OldOakTree
+13 = OldOakBush
+14 = OldOaksmallbushes
+15 = OldOakBiomGrass
+16 = OldOakBiomPoppy

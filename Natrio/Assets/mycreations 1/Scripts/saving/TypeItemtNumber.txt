@@ -14,6 +14,10 @@ int     |   name of tag
 7 = Apple
 8 = PurpleBerry
 9 = BlueBerry
+
+10 = OldOakLog
+11 = OldOakleaves
+
 type folder----------------------------------
 int     |   name 
 0 = null

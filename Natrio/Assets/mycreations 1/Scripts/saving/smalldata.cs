@@ -22,17 +22,27 @@ public class smalldata : MonoBehaviour
     public GameObject poppy1;
     public GameObject poppy2;
 
-
+    public GameObject OldOakTree;
+    public GameObject OldOakBush;
+    public GameObject OldOaksmallbushes;
+    public GameObject grass3;
+    public GameObject poppy3;
 
     public GameObject Axe;
     public GameObject wheelbarrow;
+
     public GameObject OakLog;
     public GameObject berryLog;
+
     public GameObject Leaves;
     public GameObject BerryLeaves;
+
     public GameObject Apple;
     public GameObject PurpleBerry;
     public GameObject BlueBerry;
+
+    public GameObject OldOakLog;
+    public GameObject OldOakleaves;
 
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
@@ -88,9 +98,10 @@ public class smalldata : MonoBehaviour
 
                 if (gd.world[i].type != 0)
                 {
+                    //////////////////////////////////////
                     if (gd.world[i].type == 1)
                     { itemcopy = Instantiate(copyChunk); }
-
+                    //////////////////////////////////////////////oakbiom
                     if (gd.world[i].type == 2)
                     { itemcopy = Instantiate(oakTree); }
 
@@ -105,6 +116,7 @@ public class smalldata : MonoBehaviour
 
                     if (gd.world[i].type == 6)
                     { itemcopy = Instantiate(poppy1); }
+                    ///////////////////////////////////////////////berryBiom
 
                     if (gd.world[i].type == 7)
                     { itemcopy = Instantiate(berryTree); }
@@ -120,10 +132,27 @@ public class smalldata : MonoBehaviour
 
                     if (gd.world[i].type == 11)
                     { itemcopy = Instantiate(poppy2); }
+                    ///////////////////////////////////////////////OldOakBiom
+                    
+                    if (gd.world[i].type == 12)
+                    { itemcopy = Instantiate(OldOakTree); }
+
+                    if (gd.world[i].type == 13)
+                    { itemcopy = Instantiate(OldOakBush); }
+
+                    if (gd.world[i].type == 14)
+                    { itemcopy = Instantiate(OldOaksmallbushes); }
+
+                    if (gd.world[i].type == 15)
+                    { itemcopy = Instantiate(grass3); }
+
+                    if (gd.world[i].type == 16)
+                    { itemcopy = Instantiate(poppy3); }
 
                     itemcopy.transform.position = new Vector3(gd.world[i].position[0], gd.world[i].position[1], 0);
                     itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.world[i].rotation);
                     itemcopy.transform.parent = GrassFolder.transform;
+                    itemcopy.GetComponent<SpriteRenderer>().sortingOrder = gd.world[i].Layer;
                 }
         }
         /////////////////////////////////////////////////////////////////////////////////////////////////////////items
@@ -159,6 +188,12 @@ public class smalldata : MonoBehaviour
 
                 if (gd.items[o].type == 9)
                 { itemcopy = Instantiate(BlueBerry); }
+
+                if (gd.items[o].type == 10)
+                { itemcopy = Instantiate(OldOakLog); }
+
+                if (gd.items[o].type == 11)
+                { itemcopy = Instantiate(OldOakleaves); }
 
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }

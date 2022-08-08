@@ -28,6 +28,9 @@ TagManager:
   - OldOakBush
   - OldOaksmallbushes
   - OldOakBiomGrass
+  - OldOakLog
+  - OldOakleaves
+  - OldOakBiomPoppy
   layers:
   - Default
   - TransparentFX

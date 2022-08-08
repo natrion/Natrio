@@ -15,6 +15,7 @@ using UnityEngine;
 [System.Serializable]
 public class chunkdata
 {
+    public int Layer;
     public byte type;
     public float[] position;
     public float rotation;
@@ -55,12 +56,26 @@ public class chunkdata
 
         if (childItem.gameObject.CompareTag("BerryBiomPoppy"))
         { type = 11; }
+        /////////////////////////////////////OldOakBiom
+        if (childItem.gameObject.CompareTag("OldOakTree"))
+        { type = 12; }
 
+        if (childItem.gameObject.CompareTag("OldOakBush"))
+        { type = 13; }
+
+        if (childItem.gameObject.CompareTag("OldOaksmallbushes"))
+        { type = 14; }
+
+        if (childItem.gameObject.CompareTag("OldOakBiomGrass"))
+        { type = 15; }
+
+        if (childItem.gameObject.CompareTag("OldOakBiomPoppy"))
+        { type = 16; }
 
         position = new float[2];
         position[0] = childItem.position.x;
         position[1] = childItem.position.y;
         rotation = childItem.eulerAngles.z;
-
+        Layer = childItem.GetComponent<SpriteRenderer>().sortingOrder;
     }
 }
