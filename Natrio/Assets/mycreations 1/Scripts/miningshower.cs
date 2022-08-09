@@ -16,17 +16,24 @@ public class miningshower : MonoBehaviour
     public GameObject player;
     private Transform textHealthcopy;
     private MeshRenderer rend;
- 
+
+    private AudioSource[] Audio;
+    private AudioSource Punch;
+    private AudioSource PunchToNothing;
+    void Start()
+    {
+        Audio = transform.parent.GetComponents<AudioSource>();
+        Punch = Audio[0];
+        PunchToNothing = Audio[2];
+    }
     //private float distance;
     //private Plane plane;
     void Update()
     {
-        //void OnMouseStart
-
-
-
-        //void OnMouseOver()
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            PunchToNothing.Play();
+        }
 
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -72,6 +79,7 @@ public class miningshower : MonoBehaviour
                     //doingrealmining
                     if (Input.GetMouseButtonDown(0))
                     {
+                        Punch.Play();
                         string tag = hit.collider.gameObject.tag;
                         string tofind = tag + "_full";
                         Transform found = copyobjectsfolder.transform.Find(tofind);

@@ -21,10 +21,15 @@ public class mining : MonoBehaviour
     private float healthstart ;
     public GameObject item3;
     public int how_many_items3;
+    private AudioSource[] Audio;
+    private AudioSource Punch;
+    private AudioSource DestroySound;
 
     void Start()
     {
-        
+        Audio = player.transform.parent.GetComponents<AudioSource>();
+        Punch = Audio[0];
+        DestroySound = Audio[1];
         textHealthcopy = transform.GetChild(0);
         rend = textHealthcopy.GetComponent<MeshRenderer>();
         textHealthcopy.GetComponent<TextMesh>().text = health.ToString();
@@ -71,6 +76,7 @@ public class mining : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) &  player.transform.position.y - transform.position.y < 1f & player.transform.position.y - transform.position.y > -1f & player.transform.position.x - transform.position.x > -1f & player.transform.position.x - transform.position.x < 1f)
         {
+            Punch.Play();
             damage = FindObjectOfType<holding>().what_damage; 
             health -= damage;
             healthpercent = ((health * 5) / healthstart);
@@ -84,6 +90,7 @@ public class mining : MonoBehaviour
             /////////////////////////////////////////////////////////////////////item
             if (health < 1 & item)
             {
+                DestroySound.Play();
                 for (int i = 0; i < how_many_items; i++)
                 { 
                     GameObject duplicated = Instantiate(item);
@@ -96,6 +103,7 @@ public class mining : MonoBehaviour
             /////////////////////////////////////////////////////////////////////item2
             if (health < 1 & item2)
             {
+                DestroySound.Play();
                 for (int i = 0; i < how_many_items2; i++)
                 {
                     GameObject duplicated = Instantiate(item2);
@@ -108,6 +116,7 @@ public class mining : MonoBehaviour
             ////////////////////////////////////////////////////////////////////////////item3
             if (health < 1 & item3)
             {
+                DestroySound.Play();
                 for (int i = 0; i < how_many_items3; i++)
                 {
                     GameObject duplicated = Instantiate(item3);

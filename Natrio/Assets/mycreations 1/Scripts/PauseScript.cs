@@ -8,10 +8,11 @@ public class PauseScript : MonoBehaviour
     private bool paused =false;
     public GameObject PauseMenu;
     public GameObject NotSaveQuitWindow;
-   
+    private AudioSource clickButtonAudio;
+
     void Start()
     {
-        
+        clickButtonAudio = transform.GetComponent<AudioSource>();
         NotSaveQuitWindow.SetActive(false);
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -39,23 +40,26 @@ public class PauseScript : MonoBehaviour
     }
     public void NotSaveQuitWindowOpen()
     {
+        clickButtonAudio.Play();
         NotSaveQuitWindow.SetActive(true);
     }
     public void NotSaveQuitWindowClose()
     {
+        clickButtonAudio.Play();
         NotSaveQuitWindow.SetActive(false);
     }
  
     public void UnPaused()
     {
+        clickButtonAudio.Play();
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
         NotSaveQuitWindow.SetActive(false);
-      
     }
     public void Quit()
     {
+        clickButtonAudio.Play();
         SceneManager.LoadScene("Menu");
     }
 }
