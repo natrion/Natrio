@@ -30,6 +30,11 @@ public class miningshower : MonoBehaviour
     //private Plane plane;
     void Update()
     {
+        if(PauseScript.paused==true)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             PunchToNothing.Play();

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseScript : MonoBehaviour
 {
-    private bool paused =false;
+    public static bool paused =false;
     public GameObject PauseMenu;
     public GameObject NotSaveQuitWindow;
     private AudioSource clickButtonAudio;
@@ -36,7 +37,7 @@ public class PauseScript : MonoBehaviour
                 Time.timeScale = 0f;
                 paused = true;
             }            
-        }       
+        }
     }
     public void NotSaveQuitWindowOpen()
     {

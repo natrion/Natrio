@@ -17,8 +17,16 @@ public class holding : MonoBehaviour
    // private Animator player_Animator;
     private GameObject item;
     private Animator item_Animator;
+
+    private AudioSource[] Audio;
+    private AudioSource GrabAudio;
+    private AudioSource DropAudio;
+
     void Start()
     {
+        Audio = flolderitems.GetComponents<AudioSource>();
+        GrabAudio = Audio[0];
+        DropAudio = Audio[1];
         //player_Animator = gameObject.GetComponent<Animator>();
         pick = false;
         calldawn = false;       
@@ -58,7 +66,7 @@ public class holding : MonoBehaviour
                     {
                         holdingobject.GetComponent<Rigidbody2D>().simulated = false;
                     }
-
+                    GrabAudio.Play();
                     pick = true;
                     distanceafter = distance;
                     cutingpisible = cutingpisibleinfunction;
@@ -148,7 +156,8 @@ public class holding : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(1) )
                 {
-                    if(holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
+                    DropAudio.Play();
+                    if (holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
                     {
                         pick = true;
                         return;

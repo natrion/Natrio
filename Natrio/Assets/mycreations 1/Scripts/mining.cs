@@ -53,7 +53,11 @@ public class mining : MonoBehaviour
 
     void OnMouseOver()
     {
-        
+        if (PauseScript.paused == true)
+        {
+            return;
+        }
+
         if (player.transform.position.y - transform.position.y < 1f & player.transform.position.y - transform.position.y > -1f & player.transform.position.x - transform.position.x > -1f & player.transform.position.x - transform.position.x < 1f)
         {
             int number_of_player_childs = transform.childCount;

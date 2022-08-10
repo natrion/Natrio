@@ -13,7 +13,16 @@ public class movement : MonoBehaviour
     public GameObject player;
     const string LAYER_NAME1 = "player";
     const string LAYER_NAME2 = "playerbehinditem";
+    private Vector2 movement2Was;
+    private AudioSource[] Audio;
+    private AudioSource StepAudio;
 
+    void Start()
+    {
+        Audio = transform.parent.GetComponents<AudioSource>();
+        StepAudio = Audio[3];
+
+    }
     public void changespeed(float setspeed)
     {
         movespeed = setspeed;
@@ -49,13 +58,28 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(movement2Was != movement2)
+        {
+            if(movement2.x == 0 & movement2.y == 0)
+            {
+                StepAudio.loop = false;
+                StepAudio.Stop();
+            }
+            else 
+            {
+                StepAudio.loop = true;
+                if (!StepAudio.isPlaying) { StepAudio.Play(); }
+            }
+        }
+        movement2Was = movement2;
         SpriteRenderer mySpriteRenderer = player.GetComponent<SpriteRenderer>();
         rb.MovePosition(rb.position + movement2 * movespeed * Time.fixedDeltaTime);
-        
 
+        
           //-x...........................................................................
         if (movement2.x == -1)
         {
+
             animator.SetInteger("front1back2side3", 3);
             animator.SetBool("move", true);
             transform.eulerAngles = Vector3.forward * 90;
@@ -70,6 +94,7 @@ public class movement : MonoBehaviour
         //x...........................................................................
         else if (movement2.x == 1)
         {
+
             animator.SetInteger("front1back2side3", 3);
             animator.SetBool("move", true);
             transform.eulerAngles = Vector3.forward * -90;
@@ -84,6 +109,7 @@ public class movement : MonoBehaviour
         //-y...........................................................................
         else if (movement2.y == -1)
         {
+
             animator.SetInteger("front1back2side3", 1);
             animator.SetBool("move", true);
             transform.eulerAngles = Vector3.forward * 180;
@@ -101,6 +127,7 @@ public class movement : MonoBehaviour
         //y...........................................................................
         else if (movement2.y == 1)
         {
+
             animator.SetInteger("front1back2side3", 2);
             animator.SetBool("move", true);
             transform.eulerAngles = Vector3.forward * 0;

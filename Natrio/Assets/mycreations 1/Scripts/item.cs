@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class item : MonoBehaviour
 {
+    public GameObject itemfolder;
+
     public bool cutingpisible;
     Animator m_Animator;
     public Transform player;
@@ -19,8 +21,10 @@ public class item : MonoBehaviour
     public bool xRotation;
     public bool yRotation;
 
+
     void Start()
     {
+
         m_Animator = gameObject.GetComponent<Animator>();   
     }
     void Update()
@@ -44,6 +48,8 @@ public class item : MonoBehaviour
     {
         if (player.transform.position.y - transform.position.y < PickUpRadius & player.transform.position.y - transform.position.y > PickUpRadius*-1 & player.transform.position.x - transform.position.x > PickUpRadius * -1 & player.transform.position.x - transform.position.x < PickUpRadius)
         {
+            
+
             m_Animator.SetBool("isselect", true);
             FindObjectOfType<holding>().isMouseOver = true;
         }         
@@ -51,20 +57,29 @@ public class item : MonoBehaviour
 
     void OnMouseExit()
     {
+       
+
         m_Animator.SetBool("isselect", false);
         FindObjectOfType<holding>().isMouseOver = false;
     }
 
     void OnMouseOver()
     {
+
+        if (PauseScript.paused == true)
+        {
+            return;
+        }
         int number_of_player_childs = player.childCount;
 
         if (number_of_player_childs == 0)
         {
+            
             FindObjectOfType<holding>().itemholding(HoldingDistanceFromPlayer, StartRotation, transform, how_much_cost, cutingpisible, gameObject, damage, PickUpRadius, xRotation,yRotation);
         }
         else if(player.GetChild(0).GetComponent<item>().isItForTransportingItems)
         {
+            
             if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & Input.GetMouseButtonDown(1) &  isItForTransportingItems == false)
             {
                 if (transform.GetComponent<Rigidbody2D>() != null)

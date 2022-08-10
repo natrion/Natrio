@@ -24,6 +24,11 @@ public class buyscript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+            if (PauseScript.paused == true)
+            {
+                return;
+            }
+
             StartCoroutine(pressed());
             print("pressed");
             money = FindObjectOfType<sellthings>().how_many_coins;

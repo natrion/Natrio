@@ -70,6 +70,10 @@ public class sellthings : MonoBehaviour
     }
     void OnMouseOver()
     {
+        if (PauseScript.paused == true)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(1))
         {
             StartCoroutine(pressed());
