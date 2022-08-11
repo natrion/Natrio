@@ -37,7 +37,7 @@ public class holding : MonoBehaviour
     IEnumerator clickanimation()
     {
         item_Animator.SetBool("cutting", true);
-        yield return new WaitForSeconds(0.20f);
+        yield return new WaitForSeconds(0.40f);
         item_Animator.SetBool("cutting", false);
         holdedthing.eulerAngles = transform.eulerAngles;
         holdedthing.position = transform.position;
