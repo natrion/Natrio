@@ -31,6 +31,9 @@ TagManager:
   - OldOakLog
   - OldOakleaves
   - OldOakBiomPoppy
+  - AxeT2
+  - wheelbarrowT2
+  - wheelbarrowT3
   layers:
   - Default
   - TransparentFX

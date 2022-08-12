@@ -18,6 +18,10 @@ int     |   name of tag
 10 = OldOakLog
 11 = OldOakleaves
 
+12 = AxeT2
+13 = wheelbarrowT2
+14 = wheelbarrowT3
+
 type folder----------------------------------
 int     |   name 
 0 = null

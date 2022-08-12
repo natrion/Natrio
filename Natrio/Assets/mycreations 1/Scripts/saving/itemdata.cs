@@ -39,6 +39,13 @@ public class itemdata
         if (childItem.gameObject.CompareTag("OldOakleaves"))
         { type = 11; }
 
+        if (childItem.gameObject.CompareTag("AxeT2"))
+        { type = 12; }
+        if (childItem.gameObject.CompareTag("wheelbarrowT2"))
+        { type = 13; }
+        if (childItem.gameObject.CompareTag("wheelbarrowT3"))
+        { type = 14; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")

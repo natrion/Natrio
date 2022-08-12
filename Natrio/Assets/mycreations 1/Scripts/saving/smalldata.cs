@@ -31,6 +31,11 @@ public class smalldata : MonoBehaviour
     public GameObject Axe;
     public GameObject wheelbarrow;
 
+    public GameObject AxeT2;
+    public GameObject wheelbarrowT2;
+
+    public GameObject wheelbarrowT3;
+
     public GameObject OakLog;
     public GameObject berryLog;
 
@@ -195,6 +200,16 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 11)
                 { itemcopy = Instantiate(OldOakleaves); }
 
+                if (gd.items[o].type == 12)
+                { itemcopy = Instantiate(AxeT2); }
+
+                if (gd.items[o].type == 13)
+                { itemcopy = Instantiate(wheelbarrowT2); }
+
+                if (gd.items[o].type == 14)
+                { itemcopy = Instantiate(wheelbarrowT3); }
+
+                /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
 
