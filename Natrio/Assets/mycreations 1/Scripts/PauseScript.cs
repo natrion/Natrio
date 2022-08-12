@@ -13,6 +13,7 @@ public class PauseScript : MonoBehaviour
 
     void Start()
     {
+        paused = false;
         clickButtonAudio = transform.GetComponent<AudioSource>();
         NotSaveQuitWindow.SetActive(false);
         PauseMenu.SetActive(false);

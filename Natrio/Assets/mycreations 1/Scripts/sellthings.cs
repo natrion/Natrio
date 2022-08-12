@@ -51,9 +51,10 @@ public class sellthings : MonoBehaviour
 
                     if (price_ofchildTransportItem == 0)
                     { childTransportItem.parent = FolderForItems; }
+                    else { childTransportItem.parent = foldersell.transform; }
 
                     price_ofchild += price_ofchildTransportItem;
-                    childTransportItem.parent = foldersell.transform;
+                    
                     if (childTransportItem.GetComponent<Rigidbody2D>() != null)
                     {
                         childTransportItem.GetComponent<Rigidbody2D>().simulated = true;
