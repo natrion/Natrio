@@ -17,10 +17,11 @@ public class ItemCreator : MonoBehaviour
     private float y;
     private bool On = false;
     private SpriteRenderer PointerRend;
+    private bool functionRunning =false;
+
     void Start()
     {
         PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        PointerRend.enabled = false;
         m_Animator = gameObject.GetComponent<Animator>();
     }
     void OnMouseExit()
@@ -32,13 +33,17 @@ public class ItemCreator : MonoBehaviour
     {
         PointerRend.enabled = true;
 
-        if (Input.GetMouseButtonDown(1) & BuildModeIsRunning ==false)
+        if (Input.GetMouseButtonDown(1) & BuildModeIsRunning ==false )
         {
-            if(On == false)
+            if(On == false )
             {
                 On = true;
                 m_Animator.SetBool("On", true);
-                StartCoroutine(CreteItems());
+
+                if (functionRunning ==false)
+                {
+                    StartCoroutine(CreteItems());
+                }
             }
             else
             {
@@ -114,16 +119,24 @@ public class ItemCreator : MonoBehaviour
     {
         while (On ==true)
         {
-            yield return new WaitForSeconds(time);
-            if(On == true) 
+            functionRunning = true;
+
+            m_Animator.SetFloat("PercentToFinish",51 );
+
+            yield return new WaitForSeconds(time / 2);
+            if (On == true) 
             {
                 GameObject copy = Instantiate(ObjectToCreate);
                 copy.transform.parent = itemFolder;
                 copy.transform.position = transform.position ;
                 copy.transform.position += transform.GetChild(0).up* -distance;
-            }            
+            }
 
+            m_Animator.SetFloat("PercentToFinish", 0);m_Animator.SetFloat("PercentToFinish", 0);
+
+            yield return new WaitForSeconds(time / 2);
         }
+        functionRunning = false;
     }
 }
 
