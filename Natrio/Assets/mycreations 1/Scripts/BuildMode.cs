@@ -18,14 +18,17 @@ public class BuildMode : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            BoxCollider2D[] BoxColliders = transform.GetComponents<BoxCollider2D>();
+            if(ItemCreator.BuildModeIsRunning == false)
+            {
+                BoxCollider2D[] BoxColliders = transform.GetComponents<BoxCollider2D>();
 
-            BoxColliders[1].isTrigger = true;
-            BoxColliders[2].isTrigger = true;
+                BoxColliders[1].isTrigger = true;
+                BoxColliders[2].isTrigger = true;
 
-            //m_Animator.SetBool("Select", true);
-            ItemCreator.BuildModeIsRunning = true;
-            StartCoroutine(BuildModeFunction());
+                m_Animator.SetBool("Select", true);
+                ItemCreator.BuildModeIsRunning = true;
+                StartCoroutine(BuildModeFunction());
+            }
         }
     }
 
@@ -47,12 +50,12 @@ public class BuildMode : MonoBehaviour
             Vector2 xY = new Vector2(x, y);
             RaycastHit2D hitXy = Physics2D.Raycast(xY, Vector2.zero);
 
-            //if (hitXy.collider != null)
-           // {
-                //if (hitXy.collider.transform.position != transform.position) 
-                //{ m_Animator.SetBool("SelectRed", true); }
-           // }
-            //else { m_Animator.SetBool("SelectRed", false); }
+           if (hitXy.collider != null)
+           {
+                if (hitXy.collider.transform.position != transform.position) 
+                { m_Animator.SetBool("SelectRed", true); }
+           }
+           else { m_Animator.SetBool("SelectRed", false); }
 
             transform.position = new Vector3(x, y, 0);
 
@@ -66,7 +69,7 @@ public class BuildMode : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
 
-        yield return new WaitForSeconds(0.0001f);
+        yield return new WaitForSeconds(0.01f);
 
         Vector2 BuildModeAutput = new Vector2(x, y);
         RaycastHit2D hit = Physics2D.Raycast(BuildModeAutput, Vector2.zero);
@@ -80,11 +83,13 @@ public class BuildMode : MonoBehaviour
 
         BoxCollider2D[] BoxColliders2 = transform.GetComponents<BoxCollider2D>();
 
+        ItemCreator.BuildModeIsRunning = false;
+
         BoxColliders2[1].isTrigger = false;
         BoxColliders2[2].isTrigger = false;
 
-       // m_Animator.SetBool("SelectRed", false);
-       // m_Animator.SetBool("Select", false);
+        m_Animator.SetBool("SelectRed", false);
+        m_Animator.SetBool("Select", false);
 
     }
 }  

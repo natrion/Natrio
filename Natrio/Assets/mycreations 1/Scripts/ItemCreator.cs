@@ -99,7 +99,9 @@ public class ItemCreator : MonoBehaviour
         }
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 1,0);
+
         yield return new WaitForSeconds(0.0001f);
+
         Vector2 BuildModeAutput = new Vector2(x, y);
         RaycastHit2D hit = Physics2D.Raycast(BuildModeAutput, Vector2.zero);
 
