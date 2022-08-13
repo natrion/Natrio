@@ -61,11 +61,11 @@ public class ItemCreator : MonoBehaviour
                 m_Animator.SetBool("On", false);
                 m_Animator.SetBool("Select", true);
                 BuildModeIsRunning = true;
-                StartCoroutine(BuildMode());
+                StartCoroutine(BuildModeItemCreate());
             }        
         }
     }
-    IEnumerator BuildMode()
+    IEnumerator BuildModeItemCreate()
     {
         PositionOnStrat = transform.position;
         yield return new WaitForSeconds(0.01f);
