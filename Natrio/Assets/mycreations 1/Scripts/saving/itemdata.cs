@@ -46,6 +46,11 @@ public class itemdata
         if (childItem.gameObject.CompareTag("wheelbarrowT3"))
         { type = 14; }
 
+        if (childItem.gameObject.CompareTag("OakFarmPlot"))
+        { type = 15; }
+        if (childItem.gameObject.CompareTag("T1conveyorBelt"))
+        { type = 16; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")
@@ -57,10 +62,16 @@ public class itemdata
         if (childItem.parent.gameObject.name == "playerfolder")
         { typeFolder = 3; }
 
+        if (childItem.gameObject.CompareTag("OakFarmPlot"))
+        {
+            rotation = childItem.GetChild(0).eulerAngles.z;
+        }
+        else
+        {
+            rotation = childItem.eulerAngles.z;
+        }
         position = new float[2];
         position[0] = childItem.position.x;
         position[1] = childItem.position.y;
-        rotation = childItem.eulerAngles.z;
-
     }
 }

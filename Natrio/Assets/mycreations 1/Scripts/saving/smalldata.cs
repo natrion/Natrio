@@ -53,6 +53,9 @@ public class smalldata : MonoBehaviour
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
 
+    public GameObject OakFarmPlot;
+    public GameObject T1conveyorBelt;
+
     public float seedOfLastGame;
     public Transform player;
     public sellthings coinsobject;
@@ -209,6 +212,12 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 14)
                 { itemcopy = Instantiate(wheelbarrowT3); }
 
+                if (gd.items[o].type == 15)
+                { itemcopy = Instantiate(OakFarmPlot); }
+
+                if (gd.items[o].type == 16)
+                { itemcopy = Instantiate(T1conveyorBelt); }
+
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
@@ -222,8 +231,16 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].typeFolder == 3)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
 
+                if (gd.items[o].type == 15)
+                {
+                    itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
+                }
+                else
+                {                    
+                    itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
+                } 
+
                 itemcopy.transform.position = new Vector3(gd.items[o].position[0], gd.items[o].position[1], 0);
-                itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
             }
         }
         seedobject.StartChunk();
