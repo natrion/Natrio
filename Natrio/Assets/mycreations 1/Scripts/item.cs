@@ -78,6 +78,7 @@ public class item : MonoBehaviour
             else if (transform.parent != itemfolder)
             {
                 transform.parent = itemfolder.transform;
+                SellScript.addcoinspotencial();
             }
         }       
     }

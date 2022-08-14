@@ -72,6 +72,7 @@ public class smalldata : MonoBehaviour
     {
         if(QuitPlayCreateButton.Restart == true)
         {
+            sellScript.Startcript();
             Restart();
 
         }

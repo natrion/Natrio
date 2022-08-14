@@ -45,7 +45,7 @@ public class PG : MonoBehaviour
     public void StartChunk()
     {
         spawn = true;
-        seed = Random.Range(1f, 4000000f);
+        seed = Random.Range(1f, 4000000000f);
         done = false;
         bool seedexist = float.IsNaN(smalldata.seedOfLastGame);
         if (seedexist == false)

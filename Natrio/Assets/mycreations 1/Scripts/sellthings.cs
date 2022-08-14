@@ -85,8 +85,10 @@ public class sellthings : MonoBehaviour
 
             Destroy(foldersell);
             foldersell = new GameObject("thingsforsell");
-            foldersell.transform.parent = gameObject.transform.parent;            
-            
+            foldersell.transform.parent = gameObject.transform.parent;
+
+            addcoinspotencial();
+
             how_many_coins += how_much_coins_on_platform;
                         
             FindObjectOfType<showingtext>().showtext(how_many_coins);
@@ -112,6 +114,7 @@ public class sellthings : MonoBehaviour
     {
         if(autoseling == true)
         {
+
             on_platform_text2.enabled = true;
             seling = true;
             StartCoroutine(Autosell());
