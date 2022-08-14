@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class sellthings : MonoBehaviour
 {
+    private float Xdistance;
+    private float Ydistance;
+    private float Distance;
+    public Transform player;
+    public AudioSource Audio;
     public bool autoseling =false;
     public Animator m_Animator;
     public int how_many_coins = 0;
@@ -90,8 +95,23 @@ public class sellthings : MonoBehaviour
             addcoinspotencial();
 
             how_many_coins += how_much_coins_on_platform;
-                        
+
             FindObjectOfType<showingtext>().showtext(how_many_coins);
+
+            Xdistance = transform.position.x - player.position.x;
+            if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
+
+            Ydistance = transform.position.y - player.position.y;
+            if (Ydistance < 0f) { Ydistance = Ydistance * -1; }
+
+            Distance = Xdistance + Ydistance;
+
+            if (Distance < 2)
+            {
+                Audio.volume = ((2 - Distance) / 2) / 4;
+                Audio.Play();
+            }
+
 
             addcoinspotencial();
         }
@@ -141,6 +161,21 @@ public class sellthings : MonoBehaviour
             FindObjectOfType<showingtext>().showtext(how_many_coins);
 
             addcoinspotencial();
+
+            Xdistance =  transform.position.x - player.position.x ;
+            if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
+
+            Ydistance =  transform.position.y - player.position.y;
+            if (Ydistance < 0f) { Ydistance = Ydistance * -1; }
+
+            Distance = Xdistance + Ydistance;
+
+            if (Distance < 2)
+            {
+                Audio.volume = ((2-Distance)/2)/4;
+                Audio.Play();
+            }
+
             yield return new WaitForSeconds(1f);
         }
         on_platform_text2.enabled = false;

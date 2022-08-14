@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class buyscript : MonoBehaviour
 {
+    public AudioSource Audio;
     public Animator m_Animator;
     private GameObject foldersell;
     private int money;
@@ -34,6 +35,7 @@ public class buyscript : MonoBehaviour
             money = FindObjectOfType<sellthings>().how_many_coins;
             if (money>cost-1)
             {
+                Audio.Play();
                 FindObjectOfType<sellthings>().addcoins(cost * -1);
                 GameObject boughtobject = Instantiate(What_buy);
                 boughtobject.transform.parent = folderitems.transform;

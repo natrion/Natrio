@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class ItemCreator : MonoBehaviour
 {
+    private AudioSource[] Audio;
+    private AudioSource isrunning;
+    private AudioSource CutATree;
+    private AudioSource flickbuton;
+
+    private float Xdistance;
+    private float Ydistance;
+    private float Distance;
+
+    public Transform player;
+
 
     public static bool BuildModeIsRunning = false;    
     public Transform itemFolder;
@@ -21,12 +32,18 @@ public class ItemCreator : MonoBehaviour
 
     void Start()
     {
+        Audio = itemFolder.GetComponents<AudioSource>();
+        isrunning = Audio[2];
+        CutATree = Audio[3];
+        flickbuton = Audio[4];
+
         BuildModeIsRunning = false;
         PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         m_Animator = gameObject.GetComponent<Animator>();
 
         if (On ==true)
         {
+            isrunning.Play();
             m_Animator.SetBool("On", true);
 
             if (functionRunning == false)
@@ -35,6 +52,24 @@ public class ItemCreator : MonoBehaviour
             }
         }
         
+    }
+    void Update()
+    {
+        if(On ==true)
+        {
+            Xdistance = transform.position.x - player.position.x;
+            if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
+
+            Ydistance = transform.position.y - player.position.y;
+            if (Ydistance < 0f) { Ydistance = Ydistance * -1; }
+
+            Distance = Xdistance + Ydistance;
+
+            if (Distance < 2)
+            {
+                isrunning.volume = ((2 - Distance) / 2) / 4;
+            }
+        }
     }
     void OnMouseExit()
     {
@@ -49,6 +84,9 @@ public class ItemCreator : MonoBehaviour
         {
             if(On == false )
             {
+                isrunning.Play();
+                flickbuton.Play();
+
                 On = true;
                 m_Animator.SetBool("On", true);
 
@@ -59,6 +97,8 @@ public class ItemCreator : MonoBehaviour
             }
             else
             {
+                isrunning.Stop();
+                flickbuton.Play();
                 On = false;
                 m_Animator.SetBool("On", false);
             }
@@ -144,6 +184,20 @@ public class ItemCreator : MonoBehaviour
                 copy.transform.parent = itemFolder;
                 copy.transform.position = transform.position ;
                 copy.transform.position += transform.GetChild(0).up* -distance;
+
+                Xdistance = transform.position.x - player.position.x;
+                if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
+
+                Ydistance = transform.position.y - player.position.y;
+                if (Ydistance < 0f) { Ydistance = Ydistance * -1; }
+
+                Distance = Xdistance + Ydistance;
+
+                if (Distance < 4)
+                {
+                    CutATree.volume = ((4 - Distance) / 4) / 2;
+                    CutATree.Play();
+                }
             }
 
             m_Animator.SetFloat("PercentToFinish", 0);m_Animator.SetFloat("PercentToFinish", 0);
