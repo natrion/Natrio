@@ -10,11 +10,14 @@ public class sellthings : MonoBehaviour
     private int how_much_coins_on_platform = 0;
     public GameObject foldersell;
     public TextMesh on_platform_text;
+    public MeshRenderer on_platform_text2;
     private int coinsfromloop;
     private int price_ofchild;
     public Transform FolderForItems;
     private int price_ofchildTransportItem;
     private Transform child;
+    private bool seling = false;
+
     IEnumerator pressed()
     {
         m_Animator.SetBool("presd", true);
@@ -89,11 +92,49 @@ public class sellthings : MonoBehaviour
 
             addcoinspotencial();
         }
+
+        if (Input.GetMouseButtonDown(0) & seling == false)
+        {
+            on_platform_text2.enabled = true;
+            seling = true;
+            StartCoroutine(Autosell()); 
+            
+        }else if(Input.GetMouseButtonDown(0))
+        {
+            seling = false;
+        }
     }
+
     void Start()
     {
         foldersell = new GameObject("thingsforsell");
         foldersell.transform.parent = gameObject.transform.parent;
         FindObjectOfType<showingtext>().showtext(how_many_coins);
+    }
+
+    IEnumerator Autosell ()
+    {
+        yield return new WaitForSeconds(1f);
+
+        while (seling == true)
+        {
+            StartCoroutine(pressed());
+
+            Destroy(foldersell);
+            foldersell = new GameObject("thingsforsell");
+            foldersell.transform.parent = gameObject.transform.parent;
+
+            how_many_coins += how_much_coins_on_platform;
+
+            FindObjectOfType<showingtext>().showtext(how_many_coins);
+
+            addcoinspotencial();
+            yield return new WaitForSeconds(1f);
+        }
+        on_platform_text2.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        seling = false;
     }
 }

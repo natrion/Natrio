@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BuildMode : MonoBehaviour
 {
+    public bool isInbildingMode;
+    public bool isConveyorBelt;
+    public float ConveyorSpeed;
     private float x;
     private float y;
     private Vector3 PositionOnStrat;
@@ -20,14 +23,16 @@ public class BuildMode : MonoBehaviour
         {
             if(ItemCreator.BuildModeIsRunning == false)
             {
-                BoxCollider2D[] BoxColliders = transform.GetComponents<BoxCollider2D>();
+                //BoxCollider2D[] BoxColliders = transform.GetComponents<BoxCollider2D>();
 
-                BoxColliders[1].isTrigger = true;
-                BoxColliders[2].isTrigger = true;
+                //BoxColliders[1].isTrigger = true;
+                //BoxColliders[2].isTrigger = true;
 
                 m_Animator.SetBool("Select", true);
                 ItemCreator.BuildModeIsRunning = true;
+                isInbildingMode = true;
                 StartCoroutine(BuildModeFunction());
+                
             }
         }
     }
@@ -81,15 +86,14 @@ public class BuildMode : MonoBehaviour
         else
         { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0); }
 
-        BoxCollider2D[] BoxColliders2 = transform.GetComponents<BoxCollider2D>();
+        //BoxCollider2D[] BoxColliders2 = transform.GetComponents<BoxCollider2D>();
 
         ItemCreator.BuildModeIsRunning = false;
-
-        BoxColliders2[1].isTrigger = false;
-        BoxColliders2[2].isTrigger = false;
+        isInbildingMode = false;
+        //BoxColliders2[1].isTrigger = false;
+        //BoxColliders2[2].isTrigger = false;
 
         m_Animator.SetBool("SelectRed", false);
         m_Animator.SetBool("Select", false);
-
     }
 }  

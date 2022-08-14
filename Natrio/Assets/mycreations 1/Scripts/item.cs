@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class item : MonoBehaviour
 {
+
+    public sellthings SellScript;
+    private GameObject folderforsale;
+
     public GameObject itemfolder;
 
     public bool cutingpisible;
@@ -18,15 +22,32 @@ public class item : MonoBehaviour
     public bool side;
     public bool isItForTransportingItems;
     public int howMuchItemsTransporting;
+
     public bool xRotation;
     public bool yRotation;
-
+    private Rigidbody2D rb;
+    private BuildMode BuildModeScript;
 
     void Start()
     {
-
-        m_Animator = gameObject.GetComponent<Animator>();   
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        m_Animator = gameObject.GetComponent<Animator>();
     }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.GetComponent<BuildMode>() != null)
+        {
+            BuildModeScript = collider.GetComponent<BuildMode>();
+
+            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false)
+            {                
+                Vector3 moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
+                rb.MovePosition(rb.position + new Vector2 (moveTo.x, moveTo.y) );
+            }
+        }
+    }
+
     void Update()
     {
         if(side == true )
@@ -43,6 +64,22 @@ public class item : MonoBehaviour
                 }
             }
         }
+
+        if(transform.parent != player)
+        {
+            if (transform.position.y < 1.4f & transform.position.y > 0.4f & transform.position.x > -1.4f & transform.position.x < -0.4f)
+            {
+                if(how_much_cost !=0 & SellScript.foldersell != null)
+                {
+                    transform.parent = SellScript.foldersell.transform;
+                    SellScript.addcoinspotencial();
+                } 
+            }
+            else if (transform.parent != itemfolder)
+            {
+                transform.parent = itemfolder.transform;
+            }
+        }       
     }
     void OnMouseEnter()
     {
@@ -74,8 +111,9 @@ public class item : MonoBehaviour
 
         if (number_of_player_childs == 0)
         {
+            if(Input.GetMouseButtonDown(1))
+            { FindObjectOfType<holding>().itemholding(HoldingDistanceFromPlayer, StartRotation, transform, how_much_cost, cutingpisible, gameObject, damage, PickUpRadius, xRotation, yRotation); }
             
-            FindObjectOfType<holding>().itemholding(HoldingDistanceFromPlayer, StartRotation, transform, how_much_cost, cutingpisible, gameObject, damage, PickUpRadius, xRotation,yRotation);
         }
         else if(player.GetChild(0).GetComponent<item>().isItForTransportingItems)
         {

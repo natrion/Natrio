@@ -57,8 +57,8 @@ public class holding : MonoBehaviour
 
         if (pick == false  )
         {
-            if (Input.GetMouseButtonDown(1))
-            {
+            
+            
                 if (transform.position.y - holdingobject.position.y < PickUpRadius & transform.position.y - holdingobject.position.y > PickUpRadius * -1 & transform.position.x - holdingobject.position.x > PickUpRadius * -1 & transform.position.x - holdingobject.position.x < PickUpRadius)
                 {
                    
@@ -108,23 +108,20 @@ public class holding : MonoBehaviour
                         }
                         
                     }
-                }
-            
+                    pick = true;
+                    calldawn = true;
+                    StartCoroutine(calldawnfunction());
+                    //player_Animator.SetBool("holding", true);
+                    //FindObjectOfType<movement>().changespeed(1f);
+                    holdedthing.parent = transform;
 
-                pick = true;
-                calldawn = true;
-                StartCoroutine(calldawnfunction());
-                //player_Animator.SetBool("holding", true);
-                //FindObjectOfType<movement>().changespeed(1f);
-                holdedthing.parent = transform;
+                    holdedthing.position = transform.position;
 
-                holdedthing.position = transform.position;
+                    holdedthing.position += transform.up * distance;
+                    what_damage = damage;
 
-                holdedthing.position += transform.up * distance;
-                what_damage = damage;
-
-                FindObjectOfType<sellthings>().addcoinspotencial();
-            }   
+                    FindObjectOfType<sellthings>().addcoinspotencial();
+                }   
         }   
     }
 

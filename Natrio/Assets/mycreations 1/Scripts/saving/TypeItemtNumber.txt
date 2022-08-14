@@ -22,6 +22,9 @@ int     |   name of tag
 13 = wheelbarrowT2
 14 = wheelbarrowT3
 
+15 = OakFarmPlot
+16 = T1conveyorBelt
+
 type folder----------------------------------
 int     |   name 
 0 = null
