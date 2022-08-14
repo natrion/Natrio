@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class gamedata
 {
+    public bool autoseling;
     public int playerCoins;
     public float[] playerPosition;
     public float seed;
@@ -13,6 +14,7 @@ public class gamedata
 
     public gamedata(smalldata smalldata , sellthings sellthings)
     {
+        autoseling = sellthings.autoseling;
         seed = smalldata.seedobject.seed;
         playerCoins = smalldata.coinsobject.how_many_coins;
         playerPosition = new float[2];

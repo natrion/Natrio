@@ -49,13 +49,15 @@ public class smalldata : MonoBehaviour
     public GameObject OldOakLog;
     public GameObject OldOakleaves;
 
+    public GameObject OakFarmPlot;
+    public GameObject T1conveyorBelt;
+
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
 
-    public GameObject OakFarmPlot;
-    public GameObject T1conveyorBelt;
 
+    public sellthings sellScript;
     public float seedOfLastGame;
     public Transform player;
     public sellthings coinsobject;
@@ -87,13 +89,19 @@ public class smalldata : MonoBehaviour
 
     public void load()
     {
+
         gamedata gd = SL.loadGame();
+        
         int childnumber = seedobject.transform.childCount;
+
         for (int i = 0; i < childnumber; i++)
         {
             Transform childi = seedobject.transform.GetChild(i);
             Destroy(childi.gameObject);
         }
+  
+        sellScript.autoseling = gd.autoseling;
+        sellScript.Startcript();
         seedOfLastGame = gd.seed;
         transform.parent.position = new Vector3(gd.playerPosition[0], gd.playerPosition[1], 0);
         coinsobject.how_many_coins = gd.playerCoins;
@@ -234,6 +242,7 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 15)
                 {
                     itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
+                    itemcopy.GetComponent<ItemCreator>().On = gd.items[o].ItemCreatorOn;
                 }
                 else
                 {                    

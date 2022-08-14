@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class sellthings : MonoBehaviour
 {
+    public bool autoseling =false;
     public Animator m_Animator;
     public int how_many_coins = 0;
     private int how_much_coins_on_platform = 0;
@@ -95,6 +96,7 @@ public class sellthings : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) & seling == false)
         {
+            autoseling = true;
             on_platform_text2.enabled = true;
             seling = true;
             StartCoroutine(Autosell()); 
@@ -102,11 +104,18 @@ public class sellthings : MonoBehaviour
         }else if(Input.GetMouseButtonDown(0))
         {
             seling = false;
+            autoseling = true;
         }
     }
 
-    void Start()
+    public void Startcript()
     {
+        if(autoseling == true)
+        {
+            on_platform_text2.enabled = true;
+            seling = true;
+            StartCoroutine(Autosell());
+        }
         foldersell = new GameObject("thingsforsell");
         foldersell.transform.parent = gameObject.transform.parent;
         FindObjectOfType<showingtext>().showtext(how_many_coins);
@@ -136,5 +145,6 @@ public class sellthings : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         seling = false;
+        autoseling = false;
     }
 }

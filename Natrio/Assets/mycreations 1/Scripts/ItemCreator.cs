@@ -15,7 +15,7 @@ public class ItemCreator : MonoBehaviour
     private Vector3 PositionOnStrat;
     private float x;
     private float y;
-    private bool On = false;
+    public bool On = false;
     private SpriteRenderer PointerRend;
     private bool functionRunning =false;
 
@@ -23,6 +23,17 @@ public class ItemCreator : MonoBehaviour
     {
         PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         m_Animator = gameObject.GetComponent<Animator>();
+
+        if (On ==true)
+        {
+            m_Animator.SetBool("On", true);
+
+            if (functionRunning == false)
+            {
+                StartCoroutine(CreteItems());
+            }
+        }
+        
     }
     void OnMouseExit()
     {

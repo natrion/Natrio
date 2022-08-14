@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class itemdata
 {
+    public bool ItemCreatorOn;
     public byte typeFolder;
     public byte type;
     public float[] position;
@@ -65,10 +66,12 @@ public class itemdata
         if (childItem.gameObject.CompareTag("OakFarmPlot"))
         {
             rotation = childItem.GetChild(0).eulerAngles.z;
+            ItemCreatorOn = childItem.GetComponent<ItemCreator>().On;
         }
         else
         {
             rotation = childItem.eulerAngles.z;
+            ItemCreatorOn = false;
         }
         position = new float[2];
         position[0] = childItem.position.x;
