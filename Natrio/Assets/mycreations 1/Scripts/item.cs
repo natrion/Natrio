@@ -65,7 +65,7 @@ public class item : MonoBehaviour
             }
         }
 
-        if(transform.parent != player)
+        if(transform.parent != player & transform.parent.GetComponent< item>() == null)
         {
             if (transform.position.y < 1.4f & transform.position.y > 0.4f & transform.position.x > -1.4f & transform.position.x < -0.4f)
             {

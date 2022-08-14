@@ -21,6 +21,7 @@ public class ItemCreator : MonoBehaviour
 
     void Start()
     {
+        BuildModeIsRunning = false;
         PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         m_Animator = gameObject.GetComponent<Animator>();
 

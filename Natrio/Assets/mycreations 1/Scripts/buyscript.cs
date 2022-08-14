@@ -37,7 +37,7 @@ public class buyscript : MonoBehaviour
                 FindObjectOfType<sellthings>().addcoins(cost * -1);
                 GameObject boughtobject = Instantiate(What_buy);
                 boughtobject.transform.parent = folderitems.transform;
-                boughtobject.transform.position = new Vector3(-1, 1, 0);
+                boughtobject.transform.position = new Vector3(-1, 0, 0);
             }
         }
     }
