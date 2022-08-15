@@ -52,6 +52,9 @@ public class smalldata : MonoBehaviour
     public GameObject OakFarmPlot;
     public GameObject T1conveyorBelt;
 
+    public GameObject T1conveyorBeltRight;
+    public GameObject T1conveyorBeltLeft;
+
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
@@ -227,6 +230,12 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 16)
                 { itemcopy = Instantiate(T1conveyorBelt); }
 
+                if (gd.items[o].type == 17)
+                { itemcopy = Instantiate(T1conveyorBeltRight); }
+
+                if (gd.items[o].type == 18)
+                { itemcopy = Instantiate(T1conveyorBeltLeft); }
+
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
@@ -240,7 +249,7 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].typeFolder == 3)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
 
-                if (gd.items[o].type == 15)
+                if (gd.items[o].type == 15 )
                 {
                     itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
                     itemcopy.GetComponent<ItemCreator>().On = gd.items[o].ItemCreatorOn;

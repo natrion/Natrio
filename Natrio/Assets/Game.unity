@@ -5317,7 +5317,7 @@ MonoBehaviour:
   poppy1: {fileID: 14690537}
   poppy2: {fileID: 792561622}
   poppy3: {fileID: 699199692}
-  vegetationNumber: 5
+  vegetationNumber: 20
   size: 25
   seed: 0
   biom_Diversity: 40
@@ -13015,6 +13015,8 @@ MonoBehaviour:
   OldOakleaves: {fileID: 1627933634}
   OakFarmPlot: {fileID: 559599252}
   T1conveyorBelt: {fileID: 513592355}
+  T1conveyorBeltRight: {fileID: 2019481143}
+  T1conveyorBeltLeft: {fileID: 186593119}
   ItemsFolder: {fileID: 73329804}
   PlayerFolder: {fileID: 1487622325}
   GrassFolder: {fileID: 607197730}

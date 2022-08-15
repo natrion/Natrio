@@ -59,7 +59,7 @@ public class BuildMode : MonoBehaviour
 
            if (hitXy.collider != null)
            {
-                if (hitXy.collider.transform.position != transform.position) 
+                if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent !=transform) 
                 { m_Animator.SetBool("SelectRed", true); }
            }
            else { m_Animator.SetBool("SelectRed", false); }
