@@ -40,11 +40,20 @@ public class item : MonoBehaviour
         {
             BuildModeScript = collider.GetComponent<BuildMode>();
 
-            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false)
+            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false & BuildModeScript.isTurnConveyorBelt == false )
             {                
                 Vector3 moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
                 rb.MovePosition(rb.position + new Vector2 (moveTo.x, moveTo.y) );
             }
+        }
+        else if (collider.transform.parent.GetComponent<BuildMode>() != null)
+        {
+            BuildModeScript = collider.transform.parent.GetComponent<BuildMode>();
+            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false)
+            {
+                Vector3 moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
+                rb.MovePosition(rb.position + new Vector2(moveTo.x, moveTo.y));
+            }        
         }
     }
 

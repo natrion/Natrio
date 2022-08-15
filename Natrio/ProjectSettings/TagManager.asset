@@ -36,6 +36,8 @@ TagManager:
   - wheelbarrowT3
   - OakFarmPlot
   - T1conveyorBelt
+  - T1conveyorBeltRight
+  - T1conveyorBeltLeft
   layers:
   - Default
   - TransparentFX

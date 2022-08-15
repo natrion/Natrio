@@ -6,6 +6,7 @@ public class BuildMode : MonoBehaviour
 {
     public bool isInbildingMode;
     public bool isConveyorBelt;
+    public bool isTurnConveyorBelt;
     public float ConveyorSpeed;
     private float x;
     private float y;
@@ -19,11 +20,12 @@ public class BuildMode : MonoBehaviour
 
     void OnMouseOver()
     {
+        print("MouseOver");
         if (Input.GetMouseButtonDown(0))
         {
             if(ItemCreator.BuildModeIsRunning == false)
             {
-                //BoxCollider2D[] BoxColliders = transform.GetComponents<BoxCollider2D>();
+                //BoxCollider2D[] BoxColliders = transform.GedtComponents<BoxCollider2D>();
 
                 //BoxColliders[1].isTrigger = true;
                 //BoxColliders[2].isTrigger = true;

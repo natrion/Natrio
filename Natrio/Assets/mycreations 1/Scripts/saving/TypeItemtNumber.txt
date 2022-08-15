@@ -24,6 +24,8 @@ int     |   name of tag
 
 15 = OakFarmPlot
 16 = T1conveyorBelt
+17 = T1conveyorBeltRight
+18 = T1conveyorBeltLeft
 
 type folder----------------------------------
 int     |   name 
