@@ -6,6 +6,7 @@ using UnityEngine;
 public class item : MonoBehaviour
 {
 
+    public Transform itemtest;
     public sellthings SellScript;
     private GameObject folderforsale;
 
@@ -76,6 +77,8 @@ public class item : MonoBehaviour
 
         if(transform.parent != player & transform.parent.GetComponent< item>() == null)
         {
+            if(transform.parent != itemtest)
+
             if (transform.position.y < 1.4f & transform.position.y > 0.4f & transform.position.x > -1.4f & transform.position.x < -0.4f)
             {
                 if(how_much_cost !=0 & SellScript.foldersell != null)

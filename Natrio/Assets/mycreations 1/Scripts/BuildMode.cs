@@ -20,7 +20,6 @@ public class BuildMode : MonoBehaviour
 
     void OnMouseOver()
     {
-        print("MouseOver");
         if (Input.GetMouseButtonDown(0))
         {
             if(ItemCreator.BuildModeIsRunning == false)

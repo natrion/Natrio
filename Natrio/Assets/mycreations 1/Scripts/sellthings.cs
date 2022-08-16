@@ -88,9 +88,7 @@ public class sellthings : MonoBehaviour
         {
             StartCoroutine(pressed());
 
-            Destroy(foldersell);
-            foldersell = new GameObject("thingsforsell");
-            foldersell.transform.parent = gameObject.transform.parent;
+            
 
             addcoinspotencial();
 
@@ -112,6 +110,9 @@ public class sellthings : MonoBehaviour
                 Audio.Play();
             }
 
+            Destroy(foldersell);
+            foldersell = new GameObject("thingsforsell");
+            foldersell.transform.parent = gameObject.transform.parent;
 
             addcoinspotencial();
         }
