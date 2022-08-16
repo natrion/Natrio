@@ -27,6 +27,10 @@ int     |   name of tag
 17 = T1conveyorBeltRight
 18 = T1conveyorBeltLeft
 
+19 = T2conveyorBelt
+20 = T2conveyorBeltRight
+21 = T2conveyorBeltLeft
+
 type folder----------------------------------
 int     |   name 
 0 = null
