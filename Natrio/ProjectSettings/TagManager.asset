@@ -38,6 +38,9 @@ TagManager:
   - T1conveyorBelt
   - T1conveyorBeltRight
   - T1conveyorBeltLeft
+  - T2conveyorBelt
+  - T2conveyorBeltRight
+  - T2conveyorBeltLeft
   layers:
   - Default
   - TransparentFX

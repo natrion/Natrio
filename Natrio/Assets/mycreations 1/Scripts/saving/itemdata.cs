@@ -57,6 +57,13 @@ public class itemdata
         if (childItem.gameObject.CompareTag("T1conveyorBeltLeft"))
         { type = 18; }
 
+        if (childItem.gameObject.CompareTag("T2conveyorBelt"))
+        { type = 19; }
+        if (childItem.gameObject.CompareTag("T2conveyorBeltRight"))
+        { type = 20; }
+        if (childItem.gameObject.CompareTag("T2conveyorBeltLeft"))
+        { type = 21; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")

@@ -55,6 +55,10 @@ public class smalldata : MonoBehaviour
     public GameObject T1conveyorBeltRight;
     public GameObject T1conveyorBeltLeft;
 
+    public GameObject T2conveyorBelt;
+    public GameObject T2conveyorBeltRight;
+    public GameObject T2conveyorBeltLeft;
+
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
@@ -236,8 +240,17 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 18)
                 { itemcopy = Instantiate(T1conveyorBeltLeft); }
 
-                /////////////////////////////////////////////////////////filesTypes
-                if (gd.items[o].typeFolder == 0)
+                if (gd.items[o].type == 19)
+                { itemcopy = Instantiate(T2conveyorBelt); }
+
+                if (gd.items[o].type == 20)
+                { itemcopy = Instantiate(T2conveyorBeltRight); }
+
+                if (gd.items[o].type == 21)
+                { itemcopy = Instantiate(T2conveyorBeltLeft); }
+
+                    /////////////////////////////////////////////////////////filesTypes
+                    if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
 
                 if (gd.items[o].typeFolder == 1)
