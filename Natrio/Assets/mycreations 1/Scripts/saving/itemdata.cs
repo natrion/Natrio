@@ -63,6 +63,8 @@ public class itemdata
         { type = 20; }
         if (childItem.gameObject.CompareTag("T2conveyorBeltLeft"))
         { type = 21; }
+        if (childItem.gameObject.CompareTag("T2BerryFarmPlot"))
+        { type = 22; }
 
         typeFolder = 0;
 
@@ -75,7 +77,7 @@ public class itemdata
         if (childItem.parent.gameObject.name == "playerfolder")
         { typeFolder = 3; }
 
-        if (childItem.gameObject.CompareTag("OakFarmPlot"))
+        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot"))
         {
             rotation = childItem.GetChild(0).eulerAngles.z;
             ItemCreatorOn = childItem.GetComponent<ItemCreator>().On;

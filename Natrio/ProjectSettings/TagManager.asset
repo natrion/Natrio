@@ -41,6 +41,7 @@ TagManager:
   - T2conveyorBelt
   - T2conveyorBeltRight
   - T2conveyorBeltLeft
+  - T2BerryFarmPlot
   layers:
   - Default
   - TransparentFX

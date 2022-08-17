@@ -171,13 +171,13 @@ public class sellthings : MonoBehaviour
 
             Distance = Xdistance + Ydistance;
 
-            if (Distance < 2)
+            if (Distance < 1)
             {
                 Audio.volume = ((2-Distance)/2)/4;
                 Audio.Play();
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.25f);
         }
         on_platform_text2.enabled = false;
 

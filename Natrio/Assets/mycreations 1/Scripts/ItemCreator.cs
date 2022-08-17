@@ -19,6 +19,7 @@ public class ItemCreator : MonoBehaviour
     public static bool BuildModeIsRunning = false;    
     public Transform itemFolder;
     public GameObject ObjectToCreate;
+    public GameObject ObjectToCreate2;
     public float time;
     public float distance;
 
@@ -57,6 +58,10 @@ public class ItemCreator : MonoBehaviour
     {
         if(On ==true)
         {
+            if (!isrunning.isPlaying)
+            {
+                isrunning.Play();
+            }
             Xdistance = transform.position.x - player.position.x;
             if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
 
@@ -84,6 +89,7 @@ public class ItemCreator : MonoBehaviour
         {
             if(On == false )
             {
+
                 isrunning.Play();
                 flickbuton.Play();
 
@@ -184,6 +190,14 @@ public class ItemCreator : MonoBehaviour
                 copy.transform.parent = itemFolder;
                 copy.transform.position = transform.position ;
                 copy.transform.position += transform.GetChild(0).up* -distance;
+
+                if(ObjectToCreate2 !=null)
+                {
+                    GameObject copy2 = Instantiate(ObjectToCreate2);
+                    copy2.transform.parent = itemFolder;
+                    copy2.transform.position = transform.position;
+                    copy2.transform.position += transform.GetChild(0).up * -distance;
+                }
 
                 Xdistance = transform.position.x - player.position.x;
                 if (Xdistance < 0f) { Xdistance = Xdistance * -1; }
