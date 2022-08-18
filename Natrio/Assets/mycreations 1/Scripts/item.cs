@@ -28,6 +28,7 @@ public class item : MonoBehaviour
     public bool yRotation;
     private Rigidbody2D rb;
     private BuildMode BuildModeScript;
+    private Vector3 moveTo;
 
     void Start()
     {
@@ -42,8 +43,14 @@ public class item : MonoBehaviour
             BuildModeScript = collider.GetComponent<BuildMode>();
 
             if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false & BuildModeScript.isTurnConveyorBelt == false )
-            {                
-                Vector3 moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
+            {
+                if (rb.mass >2 | rb.mass ==2)
+                {
+                     moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
+                }else
+                {
+                     moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / 2;
+                }
                 rb.MovePosition(rb.position + new Vector2 (moveTo.x, moveTo.y) );
             }
         }

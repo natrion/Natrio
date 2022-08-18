@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BuildMode : MonoBehaviour
 {
+    public int WhatColiderIsSolid = -1;
+    public bool Rotateble;
+    public bool itemSorter;
     public bool isInbildingMode;
     public bool isConveyorBelt;
     public bool isTurnConveyorBelt;
@@ -40,6 +43,12 @@ public class BuildMode : MonoBehaviour
 
     IEnumerator BuildModeFunction()
     {
+        if(WhatColiderIsSolid > -1)
+        {
+            PolygonCollider2D[] PolygonColliders = transform.GetComponents<PolygonCollider2D>();
+            PolygonColliders[WhatColiderIsSolid].isTrigger = true;
+        }
+
         PositionOnStrat = transform.position;
 
         yield return new WaitForSeconds(0.01f);
@@ -69,7 +78,14 @@ public class BuildMode : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                transform.eulerAngles -= Vector3.forward * 90; ;
+                if (Rotateble == true)
+                {
+                    transform.eulerAngles -= Vector3.forward * 90; ;
+                }
+                else
+                {
+                    transform.GetChild(0).eulerAngles -= Vector3.forward * 90; ;
+                } 
             }
         }
 
@@ -96,5 +112,11 @@ public class BuildMode : MonoBehaviour
 
         m_Animator.SetBool("SelectRed", false);
         m_Animator.SetBool("Select", false);
+
+        if (WhatColiderIsSolid > -1)
+        {
+            PolygonCollider2D[] PolygonColliders = transform.GetComponents<PolygonCollider2D>();
+            PolygonColliders[WhatColiderIsSolid].isTrigger = false;
+        }
     }
 }  
