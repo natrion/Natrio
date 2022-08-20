@@ -42,6 +42,7 @@ TagManager:
   - T2conveyorBeltRight
   - T2conveyorBeltLeft
   - T2BerryFarmPlot
+  - ItemSorter
   layers:
   - Default
   - TransparentFX
