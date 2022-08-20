@@ -31,6 +31,7 @@ int     |   name of tag
 20 = T2conveyorBeltRight
 21 = T2conveyorBeltLeft
 22 = T2BerryFarmPlot
+23 = ItemSorter
 
 type folder----------------------------------
 int     |   name 

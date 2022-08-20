@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class itemdata
 {
+    public string text;
     public bool ItemCreatorOn;
     public byte typeFolder;
     public byte type;
@@ -66,6 +67,9 @@ public class itemdata
         if (childItem.gameObject.CompareTag("T2BerryFarmPlot"))
         { type = 22; }
 
+        if (childItem.gameObject.CompareTag("ItemSorter"))
+        { type = 23; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")
@@ -77,16 +81,29 @@ public class itemdata
         if (childItem.parent.gameObject.name == "playerfolder")
         { typeFolder = 3; }
 
+        if (childItem.gameObject.CompareTag("ItemSorter"))
+        {
+            text = childItem.GetChild(1).GetComponent<TextMesh>().text;
+        }
+
         if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot"))
         {
-            rotation = childItem.GetChild(0).eulerAngles.z;
             ItemCreatorOn = childItem.GetComponent<ItemCreator>().On;
         }
         else
         {
-            rotation = childItem.eulerAngles.z;
             ItemCreatorOn = false;
         }
+
+        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("ItemSorter"))
+        {
+            rotation = childItem.GetChild(0).eulerAngles.z;           
+        }
+        else
+        {
+            rotation = childItem.eulerAngles.z;           
+        }
+
         position = new float[2];
         position[0] = childItem.position.x;
         position[1] = childItem.position.y;
