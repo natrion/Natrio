@@ -63,8 +63,8 @@ public class BuildMode : MonoBehaviour
     {
         if(WhatColiderIsSolid > -1 )
         {
-            PolygonCollider2D[] PolygonColliders = transform.GetComponents<PolygonCollider2D>();
-            PolygonColliders[WhatColiderIsSolid].isTrigger = true;
+            Collider2D[] Colliders = transform.GetComponents<Collider2D>();
+            Colliders[WhatColiderIsSolid].isTrigger = true;
         }
 
         PositionOnStrat = transform.position;
@@ -133,8 +133,8 @@ public class BuildMode : MonoBehaviour
 
         if (WhatColiderIsSolid > -1)
         {
-            PolygonCollider2D[] PolygonColliders = transform.GetComponents<PolygonCollider2D>();
-            PolygonColliders[WhatColiderIsSolid].isTrigger = false;
+            Collider2D[] Colliders = transform.GetComponents<Collider2D>();
+            Colliders[WhatColiderIsSolid].isTrigger = false;
         }
     }
 }  
