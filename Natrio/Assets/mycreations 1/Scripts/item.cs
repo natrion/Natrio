@@ -29,7 +29,8 @@ public class item : MonoBehaviour
     private Rigidbody2D rb;
     private BuildMode BuildModeScript;
     private Vector3 moveTo;
-
+    private int EnterBoxColider;
+    private bool inItemFilter = false;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -42,16 +43,49 @@ public class item : MonoBehaviour
         {
             BuildModeScript = collider.GetComponent<BuildMode>();
 
-            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false & BuildModeScript.isTurnConveyorBelt == false )
+            if (BuildModeScript.isConveyorBelt == true & transform.parent != player & BuildModeScript.isInbildingMode == false & BuildModeScript.isTurnConveyorBelt == false)
             {
-                if (rb.mass >2 | rb.mass ==2)
+                if (rb.mass > 2 | rb.mass == 2)
                 {
-                     moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
-                }else
+                    moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / rb.mass;
+                } else
                 {
-                     moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / 2;
+                    moveTo = collider.transform.up * -BuildModeScript.ConveyorSpeed / 2;
                 }
-                rb.MovePosition(rb.position + new Vector2 (moveTo.x, moveTo.y) );
+                rb.MovePosition(rb.position + new Vector2(moveTo.x, moveTo.y));
+            }
+            else if (BuildModeScript.itemSorter == true & BuildModeScript.isInbildingMode == false & transform.parent != player & inItemFilter == false)
+            {
+                float pointerrotation = collider.transform.GetChild(0).rotation.z;
+                if(pointerrotation >-0.1 & pointerrotation < 0.1 ) { EnterBoxColider = 2; }
+                if (pointerrotation < 0) { EnterBoxColider = 1; }
+                if (pointerrotation >0.9 ) { EnterBoxColider = 0; }
+                if (pointerrotation >0 & pointerrotation < 1) { EnterBoxColider = 3; }
+
+
+                BoxCollider2D[] coliders = collider.GetComponents<BoxCollider2D>();
+                BoxCollider2D EnterItemFilterCollider = coliders[EnterBoxColider];
+
+                if(EnterItemFilterCollider == collider)
+                {
+                    inItemFilter = true;
+                    Transform pointer= collider.transform.GetChild(0);
+                    float  RandomNumber = Random.Range(0f, 4f);
+                    print(RandomNumber);
+                    if (RandomNumber < 1)
+                    { 
+                      transform.position = collider.transform.position - pointer.up * 0.4f;
+                    }
+                    if(RandomNumber > 1 & RandomNumber < 2) 
+                    {
+                        transform.position = collider.transform.position + pointer.right * 0.4f; 
+                    }
+                    if (RandomNumber > 3) 
+                    { 
+                    transform.position = collider.transform.position - pointer.right * 0.5f;
+                    }
+                    inItemFilter = false;
+                }
             }
         }
         else if (collider.transform.parent.GetComponent<BuildMode>() != null)

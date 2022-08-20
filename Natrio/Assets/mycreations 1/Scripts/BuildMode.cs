@@ -43,7 +43,7 @@ public class BuildMode : MonoBehaviour
 
     IEnumerator BuildModeFunction()
     {
-        if(WhatColiderIsSolid > -1)
+        if(WhatColiderIsSolid > -1 )
         {
             PolygonCollider2D[] PolygonColliders = transform.GetComponents<PolygonCollider2D>();
             PolygonColliders[WhatColiderIsSolid].isTrigger = true;
@@ -80,7 +80,7 @@ public class BuildMode : MonoBehaviour
             {
                 if (Rotateble == true)
                 {
-                    transform.eulerAngles -= Vector3.forward * 90; ;
+                    transform.eulerAngles -= Vector3.forward * 90; 
                 }
                 else
                 {

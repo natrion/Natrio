@@ -33,13 +33,14 @@ public class ItemCreator : MonoBehaviour
 
     void Start()
     {
+        PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         Audio = itemFolder.GetComponents<AudioSource>();
         isrunning = Audio[2];
         CutATree = Audio[3];
         flickbuton = Audio[4];
 
         BuildModeIsRunning = false;
-        PointerRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        
         m_Animator = gameObject.GetComponent<Animator>();
 
         if (On ==true)
