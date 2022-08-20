@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildMode : MonoBehaviour
 {
+    public Transform playerFolder;
     public int WhatColiderIsSolid = -1;
     public bool Rotateble;
     public bool itemSorter;
@@ -23,6 +24,23 @@ public class BuildMode : MonoBehaviour
 
     void OnMouseOver()
     {
+        if (Input.GetMouseButtonDown(1) )
+        {
+            if(itemSorter == true)
+            {
+
+                if (playerFolder.childCount == 1)
+                {
+                    transform.GetChild(1).GetComponent<TextMesh>().text = "Sorting " + playerFolder.GetChild(0).gameObject.tag;
+                }
+                else
+                {
+                    transform.GetChild(1).GetComponent<TextMesh>().text = "Not Sorting";
+                }    
+                
+            }          
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             if(ItemCreator.BuildModeIsRunning == false)

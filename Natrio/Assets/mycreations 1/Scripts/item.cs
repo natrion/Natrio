@@ -70,20 +70,44 @@ public class item : MonoBehaviour
                 {
                     inItemFilter = true;
                     Transform pointer= collider.transform.GetChild(0);
-                    float  RandomNumber = Random.Range(0f, 4f);
-                    print(RandomNumber);
-                    if (RandomNumber < 1)
-                    { 
-                      transform.position = collider.transform.position - pointer.up * 0.4f;
-                    }
-                    if(RandomNumber > 1 & RandomNumber < 2) 
+
+                    if (collider.transform.GetChild(1).GetComponent<TextMesh>().text == "Not Sorting")
                     {
-                        transform.position = collider.transform.position + pointer.right * 0.4f; 
+                        float RandomNumber = Random.Range(0f, 4f);
+
+                        if (RandomNumber < 1)
+                        {
+                            transform.position = collider.transform.position - pointer.up * 0.4f;
+                        }
+                        if (RandomNumber > 1 & RandomNumber < 2)
+                        {
+                            transform.position = collider.transform.position + pointer.right * 0.4f;
+                        }
+                        if (RandomNumber > 3)
+                        {
+                            transform.position = collider.transform.position - pointer.right * 0.4f;
+                        }
                     }
-                    if (RandomNumber > 3) 
-                    { 
-                    transform.position = collider.transform.position - pointer.right * 0.5f;
-                    }
+                    else
+                    {
+                        if ("Sorting " + gameObject.tag == collider.transform.GetChild(1).GetComponent<TextMesh>().text)
+                        {
+                            transform.position = transform.position = collider.transform.position - pointer.up * 0.4f;
+                        }
+                        else
+                        {
+                            float RandomNumber = Random.Range(0f, 2f);
+
+                            if (RandomNumber < 1)
+                            {
+                                transform.position = collider.transform.position + pointer.right * 0.4f;
+                            }
+                            if (RandomNumber > 1)
+                            {
+                                transform.position = collider.transform.position - pointer.right * 0.4f;
+                            }
+                        }
+                    }                
                     inItemFilter = false;
                 }
             }
