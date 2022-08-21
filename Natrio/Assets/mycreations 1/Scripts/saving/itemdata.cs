@@ -70,6 +70,11 @@ public class itemdata
         if (childItem.gameObject.CompareTag("ItemSorter"))
         { type = 23; }
 
+        if (childItem.gameObject.CompareTag("AutomatickSaw"))
+        { type = 24; }
+        if (childItem.gameObject.CompareTag("oakPlanks"))
+        { type = 25; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")

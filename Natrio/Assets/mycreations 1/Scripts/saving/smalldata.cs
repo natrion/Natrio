@@ -59,7 +59,11 @@ public class smalldata : MonoBehaviour
     public GameObject T2conveyorBeltRight;
     public GameObject T2conveyorBeltLeft;
     public GameObject T2BerryFarmPlot;
+
     public GameObject ItemSorter;
+
+    public GameObject AutomatickSaw;
+    public GameObject oakPlanks;
 
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
@@ -256,6 +260,12 @@ public class smalldata : MonoBehaviour
 
                 if (gd.items[o].type == 23)
                 { itemcopy = Instantiate(ItemSorter); }
+
+                if (gd.items[o].type == 24)
+                { itemcopy = Instantiate(AutomatickSaw); }
+
+                if (gd.items[o].type == 25)
+                { itemcopy = Instantiate(oakPlanks); }
 
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)

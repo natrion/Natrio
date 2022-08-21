@@ -43,6 +43,8 @@ TagManager:
   - T2conveyorBeltLeft
   - T2BerryFarmPlot
   - ItemSorter
+  - AutomatickSaw
+  - oakPlanks
   layers:
   - Default
   - TransparentFX
