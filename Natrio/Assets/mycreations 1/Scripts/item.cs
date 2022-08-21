@@ -30,7 +30,7 @@ public class item : MonoBehaviour
     private BuildMode BuildModeScript;
     private Vector3 moveTo;
     private int EnterBoxColider;
-    private bool inItemFilter = false;
+    private bool FunctionRunning = false;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -54,7 +54,7 @@ public class item : MonoBehaviour
                 }
                 rb.MovePosition(rb.position + new Vector2(moveTo.x, moveTo.y));
             }
-            else if (BuildModeScript.itemSorter == true & BuildModeScript.isInbildingMode == false & transform.parent != player & inItemFilter == false)
+            else if (BuildModeScript.itemSorter == true & BuildModeScript.isInbildingMode == false & transform.parent != player & FunctionRunning == false)
             {
                 float pointerrotation = collider.transform.GetChild(0).rotation.z;
                 if(pointerrotation >-0.1 & pointerrotation < 0.1 ) { EnterBoxColider = 2; }
@@ -68,7 +68,7 @@ public class item : MonoBehaviour
 
                 if(EnterItemFilterCollider == collider)
                 {
-                    inItemFilter = true;
+                    FunctionRunning = true;
                     Transform pointer= collider.transform.GetChild(0);
 
                     if (collider.transform.GetChild(1).GetComponent<TextMesh>().text == "Not Sorting")
@@ -107,9 +107,18 @@ public class item : MonoBehaviour
                                 transform.position = collider.transform.position - pointer.right * 0.4f;
                             }
                         }
-                    }                
-                    inItemFilter = false;
+                    }
+                    FunctionRunning = false;
                 }
+            }
+            else if (BuildModeScript.isItemConvertor == true & BuildModeScript.isInbildingMode == false & transform.parent != player & FunctionRunning == false)
+            {
+                FunctionRunning = true;
+                if (gameObject.CompareTag(BuildModeScript.ConvertingItemTag) )
+                {
+                    StartCoroutine(itemConvertor(BuildModeScript));
+                }
+                
             }
         }
         else if (collider.transform.parent.GetComponent<BuildMode>() != null)
@@ -122,7 +131,26 @@ public class item : MonoBehaviour
             }        
         }
     }
+    IEnumerator itemConvertor(BuildMode curentBuildModeScript)
+    {        
+        yield return new WaitForSeconds(curentBuildModeScript.TimeToConvert);
 
+        float xdistance = transform.position.x - curentBuildModeScript.transform.position.x;
+        float ydistance = transform.position.y - curentBuildModeScript.transform.position.y;
+
+        if (xdistance<1 & xdistance > -1    &   ydistance < 1 & ydistance > -1)
+        {
+            Transform iemToCopy = itemtest.transform.GetChild(curentBuildModeScript.CreatingFromConvertingItemNumber);
+            GameObject CopyCreatingFromConvertingItem = Instantiate(iemToCopy.gameObject);
+            CopyCreatingFromConvertingItem.transform.parent = itemfolder.transform;
+            CopyCreatingFromConvertingItem.transform.position = curentBuildModeScript.transform.position - curentBuildModeScript.transform.up * 0.4f;
+
+            FunctionRunning = false;
+
+            Destroy(gameObject);
+        }
+        else { FunctionRunning = false; }        
+    }
     void Update()
     {
         if(side == true )

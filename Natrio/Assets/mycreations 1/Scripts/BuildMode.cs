@@ -6,9 +6,15 @@ public class BuildMode : MonoBehaviour
 {
     public Transform playerFolder;
     public int WhatColiderIsSolid = -1;
-    public bool Rotateble;
-    public bool itemSorter;
+    public bool Rotateble;   
     public bool isInbildingMode;
+
+    public bool isItemConvertor;
+    public string ConvertingItemTag;
+    public float TimeToConvert;
+    public int CreatingFromConvertingItemNumber;
+
+    public bool itemSorter;
     public bool isConveyorBelt;
     public bool isTurnConveyorBelt;
     public float ConveyorSpeed;
@@ -109,7 +115,7 @@ public class BuildMode : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.0001f);
 
         Vector2 BuildModeAutput = new Vector2(x, y);
         RaycastHit2D hit = Physics2D.Raycast(BuildModeAutput, Vector2.zero);
@@ -124,7 +130,7 @@ public class BuildMode : MonoBehaviour
         //BoxCollider2D[] BoxColliders2 = transform.GetComponents<BoxCollider2D>();
 
         ItemCreator.BuildModeIsRunning = false;
-        isInbildingMode = false;
+        
         //BoxColliders2[1].isTrigger = false;
         //BoxColliders2[2].isTrigger = false;
 
@@ -136,5 +142,7 @@ public class BuildMode : MonoBehaviour
             Collider2D[] Colliders = transform.GetComponents<Collider2D>();
             Colliders[WhatColiderIsSolid].isTrigger = false;
         }
+        yield return new WaitForSeconds(0.1f);
+        isInbildingMode = false;
     }
 }  
