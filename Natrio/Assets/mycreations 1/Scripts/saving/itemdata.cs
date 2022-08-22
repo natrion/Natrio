@@ -75,6 +75,11 @@ public class itemdata
         if (childItem.gameObject.CompareTag("oakPlanks"))
         { type = 25; }
 
+        if (childItem.gameObject.CompareTag("T2AutomatickSaw"))
+        { type = 26; }
+        if (childItem.gameObject.CompareTag("BerryPlanks"))
+        { type = 27; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")

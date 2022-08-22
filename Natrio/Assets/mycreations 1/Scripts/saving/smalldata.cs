@@ -65,6 +65,9 @@ public class smalldata : MonoBehaviour
     public GameObject AutomatickSaw;
     public GameObject oakPlanks;
 
+    public GameObject T2AutomatickSaw;
+    public GameObject BerryPlanks;
+
     public GameObject ItemsFolder;
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
@@ -266,6 +269,12 @@ public class smalldata : MonoBehaviour
 
                 if (gd.items[o].type == 25)
                 { itemcopy = Instantiate(oakPlanks); }
+
+                if (gd.items[o].type == 26)
+                { itemcopy = Instantiate(T2AutomatickSaw); }
+
+                if (gd.items[o].type == 27)
+                { itemcopy = Instantiate(BerryPlanks); }
 
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)

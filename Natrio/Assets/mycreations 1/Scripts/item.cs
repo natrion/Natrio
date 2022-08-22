@@ -56,11 +56,11 @@ public class item : MonoBehaviour
             }
             else if (BuildModeScript.itemSorter == true & BuildModeScript.isInbildingMode == false & transform.parent != player & FunctionRunning == false)
             {
-                float pointerrotation = collider.transform.GetChild(0).rotation.z;
-                if(pointerrotation >-0.1 & pointerrotation < 0.1 ) { EnterBoxColider = 2; }
-                if (pointerrotation < 0) { EnterBoxColider = 1; }
-                if (pointerrotation >0.9 ) { EnterBoxColider = 0; }
-                if (pointerrotation >0 & pointerrotation < 1) { EnterBoxColider = 3; }
+                float pointerrotation = collider.transform.GetChild(0).eulerAngles.z;
+                if(pointerrotation == 0 ) { EnterBoxColider = 2; }
+                if (pointerrotation == 180) { EnterBoxColider = 0; }
+                if (pointerrotation == 270 ) { EnterBoxColider = 1; }
+                if (pointerrotation == 90 ) { EnterBoxColider = 3; }
 
 
                 BoxCollider2D[] coliders = collider.GetComponents<BoxCollider2D>();
@@ -114,11 +114,13 @@ public class item : MonoBehaviour
             else if (BuildModeScript.isItemConvertor == true & BuildModeScript.isInbildingMode == false & transform.parent != player & FunctionRunning == false)
             {
                 FunctionRunning = true;
-                if (gameObject.CompareTag(BuildModeScript.ConvertingItemTag) )
+                for (int i = 0; i < BuildModeScript.ConvertingItemTag.Length; i++)
                 {
-                    StartCoroutine(itemConvertor(BuildModeScript));
-                }
-                
+                    if (gameObject.CompareTag(BuildModeScript.ConvertingItemTag[i]))
+                    {
+                        StartCoroutine(itemConvertor(BuildModeScript , i));
+                    }
+                }                               
             }
         }
         else if (collider.transform.parent.GetComponent<BuildMode>() != null)
@@ -131,16 +133,16 @@ public class item : MonoBehaviour
             }        
         }
     }
-    IEnumerator itemConvertor(BuildMode curentBuildModeScript)
+    IEnumerator itemConvertor(BuildMode curentBuildModeScript , int receptNumber)
     {        
-        yield return new WaitForSeconds(curentBuildModeScript.TimeToConvert);
+        yield return new WaitForSeconds(curentBuildModeScript.TimeToConvert[receptNumber]);
 
         float xdistance = transform.position.x - curentBuildModeScript.transform.position.x;
         float ydistance = transform.position.y - curentBuildModeScript.transform.position.y;
 
         if (xdistance<1 & xdistance > -1    &   ydistance < 1 & ydistance > -1)
         {
-            Transform iemToCopy = itemtest.transform.GetChild(curentBuildModeScript.CreatingFromConvertingItemNumber);
+            Transform iemToCopy = itemtest.transform.GetChild(curentBuildModeScript.CreatingFromConvertingItemNumber[receptNumber]);
             GameObject CopyCreatingFromConvertingItem = Instantiate(iemToCopy.gameObject);
             CopyCreatingFromConvertingItem.transform.parent = itemfolder.transform;
             CopyCreatingFromConvertingItem.transform.position = curentBuildModeScript.transform.position - curentBuildModeScript.transform.up * 0.4f;
@@ -223,22 +225,22 @@ public class item : MonoBehaviour
         }
         else if(player.GetChild(0).GetComponent<item>().isItForTransportingItems)
         {
-            
-            if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & Input.GetMouseButtonDown(1) &  isItForTransportingItems == false)
+            if(Input.GetMouseButtonDown(1) | Input.GetMouseButtonDown(2))
             {
-                if (transform.GetComponent<Rigidbody2D>() != null)
+                if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & isItForTransportingItems == false)
                 {
-                    transform.GetComponent<Rigidbody2D>().simulated = false;
-                }
+                    if (transform.GetComponent<Rigidbody2D>() != null)
+                    {
+                        transform.GetComponent<Rigidbody2D>().simulated = false;
+                    }
 
-                transform.parent = player.GetChild(0);
-                transform.position = player.position;
-                transform.position += player.up * HoldingDistanceFromPlayer*2;
-                transform.eulerAngles = player.eulerAngles - new Vector3(0, 0, StartRotation);
-            }
-            
+                    transform.parent = player.GetChild(0);
+                    transform.position = player.position;
+                    transform.position += player.up * HoldingDistanceFromPlayer * 2;
+                    transform.eulerAngles = player.eulerAngles - new Vector3(0, 0, StartRotation);
+                }
+            }                       
         }
-        return;
-    
+        return;    
     }
 }

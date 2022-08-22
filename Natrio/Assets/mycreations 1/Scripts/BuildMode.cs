@@ -10,9 +10,10 @@ public class BuildMode : MonoBehaviour
     public bool isInbildingMode;
 
     public bool isItemConvertor;
-    public string ConvertingItemTag;
-    public float TimeToConvert;
-    public int CreatingFromConvertingItemNumber;
+
+    public string[] ConvertingItemTag;
+    public float[] TimeToConvert;
+    public int[] CreatingFromConvertingItemNumber;
 
     public bool itemSorter;
     public bool isConveyorBelt;

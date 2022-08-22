@@ -37,6 +37,9 @@ int     |   name of tag
 24 = AutomatickSaw
 25 = oakPlanks
 
+24 = T2AutomatickSaw
+25 = BerryPlanks
+
 type folder----------------------------------
 int     |   name 
 0 = null

@@ -45,6 +45,8 @@ TagManager:
   - ItemSorter
   - AutomatickSaw
   - oakPlanks
+  - T2AutomatickSaw
+  - BerryPlanks
   layers:
   - Default
   - TransparentFX
