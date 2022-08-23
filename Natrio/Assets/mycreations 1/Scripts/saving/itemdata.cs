@@ -80,6 +80,11 @@ public class itemdata
         if (childItem.gameObject.CompareTag("BerryPlanks"))
         { type = 27; }
 
+        if (childItem.gameObject.CompareTag("WoodFloor"))
+        { type = 28; }
+        if (childItem.gameObject.CompareTag("WoodBox"))
+        { type = 29; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")

@@ -37,8 +37,11 @@ int     |   name of tag
 24 = AutomatickSaw
 25 = oakPlanks
 
-24 = T2AutomatickSaw
-25 = BerryPlanks
+26 = T2AutomatickSaw
+27 = BerryPlanks
+
+28 = WoodFloor
+29 = WoodBox
 
 type folder----------------------------------
 int     |   name 

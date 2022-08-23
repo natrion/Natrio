@@ -8,7 +8,7 @@ public class BuildMode : MonoBehaviour
     public int WhatColiderIsSolid = -1;
     public bool Rotateble;   
     public bool isInbildingMode;
-
+    public bool isFloor;
     public bool isItemConvertor;
 
     public string[] ConvertingItemTag;
@@ -92,7 +92,14 @@ public class BuildMode : MonoBehaviour
 
            if (hitXy.collider != null)
            {
-                if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent !=transform) 
+                if(hitXy.collider.GetComponent<BuildMode>() !=null & hitXy.collider.transform != transform & isFloor == false)
+                {
+                    if (hitXy.collider.GetComponent<BuildMode>().isFloor == true)
+                    { m_Animator.SetBool("SelectRed", false); }
+                    else if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent != transform)
+                    { m_Animator.SetBool("SelectRed", true); }
+                }
+                else if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent != transform)
                 { m_Animator.SetBool("SelectRed", true); }
            }
            else { m_Animator.SetBool("SelectRed", false); }
@@ -123,7 +130,15 @@ public class BuildMode : MonoBehaviour
 
         if (hit.collider != null)
         {
-            transform.position = PositionOnStrat;
+            if (hit.collider.GetComponent<BuildMode>() != null & hit.collider.transform != transform & isFloor == false)
+            {
+                if (hit.collider.GetComponent<BuildMode>().isFloor == true)
+                { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0); }
+                else
+                { transform.position = PositionOnStrat; }
+            }
+            else 
+            { transform.position = PositionOnStrat; }
         }
         else
         { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0); }

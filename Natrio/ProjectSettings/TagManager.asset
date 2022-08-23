@@ -47,6 +47,8 @@ TagManager:
   - oakPlanks
   - T2AutomatickSaw
   - BerryPlanks
+  - WoodFloor
+  - WoodBox
   layers:
   - Default
   - TransparentFX
