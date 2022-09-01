@@ -49,6 +49,11 @@ TagManager:
   - BerryPlanks
   - WoodFloor
   - WoodBox
+  - T3conveyorBelt
+  - T3conveyorBeltRight
+  - T3conveyorBeltLeft
+  - T3OldOakFarmPlot
+  - T3AutomatickSaw
   layers:
   - Default
   - TransparentFX

@@ -75,6 +75,11 @@ public class smalldata : MonoBehaviour
     public GameObject PlayerFolder;
     public GameObject GrassFolder;
 
+    public GameObject T3conveyorBelt;
+    public GameObject T3conveyorBeltRight;
+    public GameObject T3conveyorBeltLeft;
+    public GameObject T3OldOakFarmPlot;
+    public GameObject T3AutomatickSaw;
 
     public sellthings sellScript;
     public float seedOfLastGame;
@@ -285,6 +290,21 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 29)
                 { itemcopy = Instantiate(WoodBox); }
 
+                 if (gd.items[o].type == 30)
+                { itemcopy = Instantiate(T3conveyorBelt); }
+
+                if (gd.items[o].type == 31)
+                { itemcopy = Instantiate(T3conveyorBeltRight); }
+
+                if (gd.items[o].type == 32)
+                { itemcopy = Instantiate(T3conveyorBeltLeft); }
+
+                if (gd.items[o].type == 33)
+                { itemcopy = Instantiate(T3OldOakFarmPlot); }
+
+                if (gd.items[o].type == 34)
+                { itemcopy = Instantiate(T3AutomatickSaw); }
+
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
@@ -303,12 +323,12 @@ public class smalldata : MonoBehaviour
                     itemcopy.transform.GetChild(1).GetComponent<TextMesh>().text = gd.items[o].text;
                 }
 
-                if(gd.items[o].type == 15 | gd.items[o].type == 22)
+                if(gd.items[o].type == 15 | gd.items[o].type == 22| gd.items[o].type == 33)
                 {
                     itemcopy.GetComponent<ItemCreator>().On = gd.items[o].ItemCreatorOn;
                 }
 
-                if (gd.items[o].type == 15 | gd.items[o].type == 22 | gd.items[o].type == 23)
+                if (gd.items[o].type == 15 | gd.items[o].type == 22 | gd.items[o].type == 23 | gd.items[o].type == 33)
                 {
                     itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
                     

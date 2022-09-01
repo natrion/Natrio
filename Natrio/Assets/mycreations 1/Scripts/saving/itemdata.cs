@@ -85,6 +85,17 @@ public class itemdata
         if (childItem.gameObject.CompareTag("WoodBox"))
         { type = 29; }
 
+        if (childItem.gameObject.CompareTag("T3conveyorBelt"))
+        { type = 30; }
+        if (childItem.gameObject.CompareTag("T3conveyorBeltRight"))
+        { type = 31; }
+        if (childItem.gameObject.CompareTag("T3conveyorBeltLeft"))
+        { type = 32; }
+        if (childItem.gameObject.CompareTag("T3OldOakFarmPlot"))
+        { type = 33; }
+        if (childItem.gameObject.CompareTag("T3AutomatickSaw"))
+        { type = 34; }
+
         typeFolder = 0;
 
         if (childItem.parent.gameObject.name == "items")
@@ -101,7 +112,7 @@ public class itemdata
             text = childItem.GetChild(1).GetComponent<TextMesh>().text;
         }
 
-        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot"))
+        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("T3OldOakFarmPlot"))
         {
             ItemCreatorOn = childItem.GetComponent<ItemCreator>().On;
         }
@@ -110,7 +121,7 @@ public class itemdata
             ItemCreatorOn = false;
         }
 
-        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("ItemSorter"))
+        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("ItemSorter") | childItem.gameObject.CompareTag("T3OldOakFarmPlot"))
         {
             rotation = childItem.GetChild(0).eulerAngles.z;           
         }
