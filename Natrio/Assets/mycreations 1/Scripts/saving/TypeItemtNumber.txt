@@ -43,6 +43,12 @@ int     |   name of tag
 28 = WoodFloor
 29 = WoodBox
 
+30 = T3conveyorBelt
+31 = T3conveyorBeltRight
+32 = T3conveyorBeltLeft
+33 = T3OldOakFarmPlot
+34 = T3AutomatickSaw
+
 type folder----------------------------------
 int     |   name 
 0 = null
