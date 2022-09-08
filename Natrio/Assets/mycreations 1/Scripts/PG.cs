@@ -108,13 +108,12 @@ public class PG : MonoBehaviour
                     }
                     
                    
-                    //RaycastHit2D hit = Physics2D.Raycast(new Vector2(X * 5, Y * 5), Vector2.zero);
-                    //float eneter = 0.0f;
-                    //Ray Ray = new Ray(new Vector3(X * 5, Y * 5, 0));
-                    //if (plane.Raycast(Ray, out eneter))
-                    //{
-                    //    spawn = false;
-                    //}
+                   // RaycastHit2D hit = Physics2D.Raycast(new Vector2(X * 5, Y * 5), Vector2.zero);
+
+                   //if (hit.collider != null)
+                   //{
+                   //spawn = false;
+                   // }
 
                     if  (spawn == true)
                     {
