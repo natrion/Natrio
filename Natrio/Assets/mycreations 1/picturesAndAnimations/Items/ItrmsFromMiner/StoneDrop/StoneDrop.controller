@@ -56,7 +56,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dirt
+  m_Name: StoneDrop
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isselect
@@ -64,7 +64,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -99,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 150357f08ac2d8e4fad19afef684292f, type: 2}
+  m_Motion: {fileID: 7400000, guid: a215fba4cbb0f1c419f8a92c4bb15a37, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -126,7 +126,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2c134cffe47e7c94ead88088975cb3de, type: 2}
+  m_Motion: {fileID: 7400000, guid: 58a5ea029d1424944bf92a4e63af623c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

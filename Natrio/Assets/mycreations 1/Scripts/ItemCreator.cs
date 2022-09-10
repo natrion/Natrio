@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemCreator : MonoBehaviour
 {
+    private GameObject copy;
+
     private AudioSource[] Audio;
     private AudioSource isrunning;
     private AudioSource CutATree;
@@ -22,6 +24,12 @@ public class ItemCreator : MonoBehaviour
     public GameObject ObjectToCreate2;
     public float time;
     public float distance;
+
+    private bool OnOre = false;
+    public bool isMiner;
+    public string[] ProduseOnThisTag;
+    public GameObject[] ProduseThis;
+    private int onWhatOre = -1;
 
     private Animator m_Animator;
     private Vector3 PositionOnStrat;
@@ -57,7 +65,7 @@ public class ItemCreator : MonoBehaviour
     }
     void Update()
     {
-        if(On ==true)
+        if(On == true)
         {
             if (!isrunning.isPlaying)
             {
@@ -166,9 +174,36 @@ public class ItemCreator : MonoBehaviour
 
         if (hit.collider != null)
         {
-            transform.position = PositionOnStrat;
-        }else
-        { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);  }
+            if(isMiner == true)
+            {
+                onWhatOre = -1;
+                OnOre = false;
+                for (int i = 0; i < ProduseOnThisTag.Length; i++)
+                {
+                    if(hit.collider.gameObject.CompareTag(ProduseOnThisTag[i]))
+                    {
+                        OnOre = true;
+                        onWhatOre = i;
+                    }
+                }           
+            }
+
+            if (OnOre == true)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+            }
+            else
+            {
+                transform.position = PositionOnStrat;
+                
+            }
+
+        }
+        else
+        { 
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+            onWhatOre = -1;
+        }
 
         BuildModeIsRunning = false;
         transform.GetComponent<BoxCollider2D>().isTrigger = false;
@@ -178,7 +213,8 @@ public class ItemCreator : MonoBehaviour
     }
     IEnumerator CreteItems()
     {
-        while (On ==true)
+        
+        while (On == true)
         {
             functionRunning = true;
 
@@ -187,7 +223,17 @@ public class ItemCreator : MonoBehaviour
             yield return new WaitForSeconds(time / 2);
             if (On == true) 
             {
-                GameObject copy = Instantiate(ObjectToCreate);
+                if (isMiner == true)
+                {
+                    if (onWhatOre != -1)
+                    {
+                        copy = Instantiate(ProduseThis[onWhatOre]);
+                    }
+                    else { copy = Instantiate(ObjectToCreate);  }
+                }
+                else { copy = Instantiate(ObjectToCreate); }
+
+                
                 copy.transform.parent = itemFolder;
                 copy.transform.position = transform.position ;
                 copy.transform.position += transform.GetChild(0).up* -distance;

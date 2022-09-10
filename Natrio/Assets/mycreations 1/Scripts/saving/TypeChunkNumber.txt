@@ -21,3 +21,4 @@ int     |   name of tag
 14 = OldOaksmallbushes
 15 = OldOakBiomGrass
 16 = OldOakBiomPoppy
+17 = Stone

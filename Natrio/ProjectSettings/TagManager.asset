@@ -54,6 +54,7 @@ TagManager:
   - T3conveyorBeltLeft
   - T3OldOakFarmPlot
   - T3AutomatickSaw
+  - Stone
   layers:
   - Default
   - TransparentFX
