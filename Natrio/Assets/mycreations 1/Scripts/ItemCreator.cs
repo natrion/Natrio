@@ -151,7 +151,10 @@ public class ItemCreator : MonoBehaviour
 
             if (hitXy.collider != null)
             {
-                if (hitXy.collider.transform.position != transform.position) { m_Animator.SetBool("SelectRed", true); }     
+                if (hitXy.collider.isTrigger ==false)
+                {
+                    if (hitXy.collider.transform.position != transform.position) { m_Animator.SetBool("SelectRed", true); }
+                }                    
             }
             else { m_Animator.SetBool("SelectRed", false); }
 

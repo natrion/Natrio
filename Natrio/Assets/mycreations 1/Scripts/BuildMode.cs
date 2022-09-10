@@ -100,7 +100,16 @@ public class BuildMode : MonoBehaviour
                     { m_Animator.SetBool("SelectRed", true); }
                 }
                 else if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent != transform)
-                { m_Animator.SetBool("SelectRed", true); }
+                {
+                    if (hitXy.collider.GetComponent<SpriteRenderer>().sortingLayerName == "nature0")
+                    {
+                        { m_Animator.SetBool("SelectRed", false); }
+                    }
+                    else
+                    {
+                        { m_Animator.SetBool("SelectRed", true); }
+                    }
+                }
            }
            else { m_Animator.SetBool("SelectRed", false); }
 
@@ -132,13 +141,24 @@ public class BuildMode : MonoBehaviour
         {
             if (hit.collider.GetComponent<BuildMode>() != null & hit.collider.transform != transform & isFloor == false)
             {
-                if (hit.collider.GetComponent<BuildMode>().isFloor == true)
+                if (hit.collider.GetComponent<BuildMode>().isFloor == true  )
                 { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0); }
                 else
-                { transform.position = PositionOnStrat; }
+                {
+                    transform.position = PositionOnStrat;
+                }
             }
             else 
-            { transform.position = PositionOnStrat; }
+            {
+                if (hit.collider.GetComponent<SpriteRenderer>().sortingLayerName == "nature0")
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+                }
+                else
+                {
+                    transform.position = PositionOnStrat;
+                }
+            }
         }
         else
         { transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0); }
