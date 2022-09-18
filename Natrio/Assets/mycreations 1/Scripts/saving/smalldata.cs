@@ -81,6 +81,11 @@ public class smalldata : MonoBehaviour
     public GameObject T3OldOakFarmPlot;
     public GameObject T3AutomatickSaw;
 
+    public GameObject T1Miner;
+    public GameObject DirtDrop;
+    public GameObject StoneDrop;
+    public GameObject Stone;
+
     public sellthings sellScript;
     public float seedOfLastGame;
     public Transform player;
@@ -189,6 +194,9 @@ public class smalldata : MonoBehaviour
 
                     if (gd.world[i].type == 16)
                     { itemcopy = Instantiate(poppy3); }
+
+                    if (gd.world[i].type == 17)
+                    { itemcopy = Instantiate(Stone); }
 
                     itemcopy.transform.position = new Vector3(gd.world[i].position[0], gd.world[i].position[1], 0);
                     itemcopy.transform.eulerAngles = new Vector3(0, 0, gd.world[i].rotation);
@@ -305,6 +313,15 @@ public class smalldata : MonoBehaviour
                 if (gd.items[o].type == 34)
                 { itemcopy = Instantiate(T3AutomatickSaw); }
 
+                if (gd.items[o].type == 35)
+                { itemcopy = Instantiate(T1Miner); }
+
+                if (gd.items[o].type == 36)
+                { itemcopy = Instantiate(DirtDrop); }
+
+                if (gd.items[o].type == 37)
+                { itemcopy = Instantiate(StoneDrop); }
+
                 /////////////////////////////////////////////////////////filesTypes
                 if (gd.items[o].typeFolder == 0)
                 { itemcopy.transform.parent = ItemsFolder.transform; }
@@ -323,12 +340,12 @@ public class smalldata : MonoBehaviour
                     itemcopy.transform.GetChild(1).GetComponent<TextMesh>().text = gd.items[o].text;
                 }
 
-                if(gd.items[o].type == 15 | gd.items[o].type == 22| gd.items[o].type == 33)
+                if(gd.items[o].type == 15 | gd.items[o].type == 22| gd.items[o].type == 33 | gd.items[o].type == 35)
                 {
                     itemcopy.GetComponent<ItemCreator>().On = gd.items[o].ItemCreatorOn;
                 }
 
-                if (gd.items[o].type == 15 | gd.items[o].type == 22 | gd.items[o].type == 23 | gd.items[o].type == 33)
+                if (gd.items[o].type == 15 | gd.items[o].type == 22 | gd.items[o].type == 23 | gd.items[o].type == 33 | gd.items[o].type == 35)
                 {
                     itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
                     

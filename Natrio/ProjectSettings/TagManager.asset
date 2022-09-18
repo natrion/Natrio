@@ -55,6 +55,9 @@ TagManager:
   - T3OldOakFarmPlot
   - T3AutomatickSaw
   - Stone
+  - T1Miner
+  - DirtDrop
+  - StoneDrop
   layers:
   - Default
   - TransparentFX

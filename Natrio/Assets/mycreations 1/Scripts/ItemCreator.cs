@@ -51,6 +51,8 @@ public class ItemCreator : MonoBehaviour
         
         m_Animator = gameObject.GetComponent<Animator>();
 
+        
+
         if (On ==true)
         {
             isrunning.Play();
@@ -61,8 +63,35 @@ public class ItemCreator : MonoBehaviour
                 StartCoroutine(CreteItems());
             }
         }
-        
+
+        StartCoroutine(IsOnDeposit());
     }
+    IEnumerator IsOnDeposit()
+    {
+        Vector3 wasPos = transform.position;
+        transform.position += new Vector3(1, 0, 0);
+
+        yield return new WaitForSeconds(0.0001f);
+
+        RaycastHit2D hit = Physics2D.Raycast(wasPos, Vector2.zero);
+
+        if (isMiner == true & hit.collider != null)
+        {
+            onWhatOre = -1;
+            OnOre = false;
+            for (int i = 0; i<ProduseOnThisTag.Length; i++)
+            {
+                if (hit.collider.gameObject.CompareTag(ProduseOnThisTag[i]))
+                {
+                    OnOre = true;
+                    onWhatOre = i;
+                }
+            }
+        }
+        
+        transform.position -= new Vector3(1, 0, 0);
+    }
+
     void Update()
     {
         if(On == true)

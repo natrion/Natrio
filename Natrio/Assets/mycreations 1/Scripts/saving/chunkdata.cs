@@ -72,6 +72,9 @@ public class chunkdata
         if (childItem.gameObject.CompareTag("OldOakBiomPoppy"))
         { type = 16; }
 
+        if (childItem.gameObject.CompareTag("Stone"))
+        { type = 17; }
+
         position = new float[2];
         position[0] = childItem.position.x;
         position[1] = childItem.position.y;

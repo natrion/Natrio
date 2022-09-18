@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
-    
 
+    
     public GameObject copyChunk;
 
     public GameObject oakTree;
@@ -27,6 +27,8 @@ public class PG : MonoBehaviour
     public GameObject poppy1;
     public GameObject poppy2;
     public GameObject poppy3;
+
+    public GameObject Stone;
 
     public float  vegetationNumber;
     public float size;
@@ -181,6 +183,12 @@ public class PG : MonoBehaviour
                             {
                                 GameObject poppy1Copy = Instantiate(poppy3);
                                 spawning(poppy1Copy, chunk);
+                            }
+                            int random = Random.Range(0, 3);
+                            if (random ==  2)
+                            {
+                                GameObject StoneCopy = Instantiate(Stone);
+                                spawning(StoneCopy, chunk);
                             }
                         }
                         ////////////////////////////////////////////////////berry_biom
