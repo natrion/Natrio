@@ -20,8 +20,15 @@ public class chunkdata
     public float[] position;
     public float rotation;
 
-    public chunkdata(Transform childItem)
+    public chunkdata(Transform childItem ,  GameObject[] NatureThingsC)
     {
+        for (byte i = 1; i < NatureThingsC.Length-1; i++)
+        {
+            if (NatureThingsC[i].CompareTag(childItem.gameObject.tag))
+            {
+                type = i;
+            }
+        }
         if (childItem.gameObject.CompareTag("Chunk"))
         { type = 1; }
 

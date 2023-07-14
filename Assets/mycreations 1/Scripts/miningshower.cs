@@ -68,8 +68,7 @@ public class miningshower : MonoBehaviour
                         rend.enabled = false;
                     }                    
                 }
-            }
-            
+            }        
             else if(hit.collider.transform.childCount > 0)
             {         
                 if(hit.collider.transform.GetChild(0).GetComponent<MeshRenderer>())

@@ -7651,25 +7651,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fac24a30b187c4fa16a45bd6c9f956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bioms:
+  - NatureObjects:
+    - Comoness: 1
+      NatureGameObject: {fileID: 1792638850}
+      SpawningLayerNatureObject: -1
+    - Comoness: 2
+      NatureGameObject: {fileID: 65395299}
+      SpawningLayerNatureObject: -1
+    - Comoness: 3
+      NatureGameObject: {fileID: 332351893}
+      SpawningLayerNatureObject: -1
+    - Comoness: 4
+      NatureGameObject: {fileID: 14690537}
+      SpawningLayerNatureObject: -1
+    - Comoness: 5
+      NatureGameObject: {fileID: 985703429}
+      SpawningLayerNatureObject: -1
+    Deposits:
+    - Rarety: 3
+      DepositGameObject: {fileID: 1190446484}
+    biomFromTo: {x: 0, y: 0.5}
+  - NatureObjects:
+    - Comoness: 1
+      NatureGameObject: {fileID: 380955648}
+      SpawningLayerNatureObject: 2
+    - Comoness: 2
+      NatureGameObject: {fileID: 62460651}
+      SpawningLayerNatureObject: 1
+    - Comoness: 3
+      NatureGameObject: {fileID: 802990918}
+      SpawningLayerNatureObject: 0
+    - Comoness: 4
+      NatureGameObject: {fileID: 699199692}
+      SpawningLayerNatureObject: -1
+    - Comoness: 5
+      NatureGameObject: {fileID: 360187148}
+      SpawningLayerNatureObject: -1
+    Deposits: []
+    biomFromTo: {x: 0.5, y: 0.7}
+  - NatureObjects:
+    - Comoness: 1
+      NatureGameObject: {fileID: 387237414}
+      SpawningLayerNatureObject: -1
+    - Comoness: 2
+      NatureGameObject: {fileID: 1646489944}
+      SpawningLayerNatureObject: -1
+    - Comoness: 3
+      NatureGameObject: {fileID: 504464803}
+      SpawningLayerNatureObject: -1
+    - Comoness: 4
+      NatureGameObject: {fileID: 792561622}
+      SpawningLayerNatureObject: -1
+    - Comoness: 5
+      NatureGameObject: {fileID: 1055132312}
+      SpawningLayerNatureObject: -1
+    Deposits: []
+    biomFromTo: {x: 0.7, y: 1}
   copyChunk: {fileID: 350423832}
-  oakTree: {fileID: 1792638850}
-  berryTree: {fileID: 387237414}
-  OldOakTree: {fileID: 380955648}
-  oakBush: {fileID: 65395299}
-  berryBush: {fileID: 1646489944}
-  OldOakBush: {fileID: 62460651}
-  oakSmallBushes: {fileID: 332351893}
-  berrySmallBushes: {fileID: 504464803}
-  OldOakSmallBushes: {fileID: 802990918}
-  grass1: {fileID: 985703429}
-  grass2: {fileID: 1055132312}
-  grass3: {fileID: 360187148}
-  poppy1: {fileID: 14690537}
-  poppy2: {fileID: 792561622}
-  poppy3: {fileID: 699199692}
-  Stone: {fileID: 1190446484}
   vegetationNumber: 5
-  size: 25
+  size: 10
   seed: 0
   biom_Diversity: 40
   playerTransfom: {fileID: 1239367908}
@@ -19916,22 +19957,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775d8275fa36974aa7815672bc3415c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  copyChunk: {fileID: 350423832}
-  oakTree: {fileID: 1792638850}
-  berryTree: {fileID: 387237414}
-  oakBush: {fileID: 65395299}
-  berryBush: {fileID: 1646489944}
-  oakSmallBushes: {fileID: 332351893}
-  berrySmallBushes: {fileID: 504464803}
-  grass1: {fileID: 985703429}
-  grass2: {fileID: 1055132312}
-  poppy1: {fileID: 14690537}
-  poppy2: {fileID: 792561622}
-  OldOakTree: {fileID: 380955648}
-  OldOakBush: {fileID: 62460651}
-  OldOaksmallbushes: {fileID: 802990918}
-  grass3: {fileID: 360187148}
-  poppy3: {fileID: 699199692}
+  Nature:
+  - {fileID: 0}
+  - {fileID: 350423832}
+  - {fileID: 1792638850}
+  - {fileID: 65395299}
+  - {fileID: 332351893}
+  - {fileID: 985703429}
+  - {fileID: 14690537}
+  - {fileID: 387237414}
+  - {fileID: 1646489944}
+  - {fileID: 504464803}
+  - {fileID: 1055132312}
+  - {fileID: 792561622}
+  - {fileID: 380955648}
+  - {fileID: 62460651}
+  - {fileID: 802990918}
+  - {fileID: 360187148}
+  - {fileID: 699199692}
+  - {fileID: 1190446484}
+  Items:
+  - {fileID: 0}
+  - {fileID: 1892435382}
+  - {fileID: 375567048}
+  - {fileID: 2122804708}
+  - {fileID: 621776048}
+  - {fileID: 1787972549}
+  - {fileID: 1686704441}
+  - {fileID: 1061188934}
+  - {fileID: 2030808811}
+  - {fileID: 828647453}
+  - {fileID: 249776153}
+  - {fileID: 1627933634}
+  - {fileID: 752050471}
+  - {fileID: 271154154}
+  - {fileID: 2092058007}
+  - {fileID: 559599252}
+  - {fileID: 513592355}
+  - {fileID: 2019481143}
+  - {fileID: 186593119}
+  - {fileID: 1248418862}
+  - {fileID: 1649409952}
+  - {fileID: 1834998748}
+  - {fileID: 1835661697}
+  - {fileID: 1871163553}
+  - {fileID: 527140361}
+  - {fileID: 1025151670}
+  - {fileID: 1145799563}
+  - {fileID: 1542384279}
+  - {fileID: 570406114}
+  - {fileID: 1313469802}
+  - {fileID: 932588689}
+  - {fileID: 485644392}
+  - {fileID: 1345724533}
+  - {fileID: 998237950}
+  - {fileID: 1089491192}
+  - {fileID: 821000756}
+  - {fileID: 606203522}
+  - {fileID: 1341801225}
+  Folders:
+  - {fileID: 73329805}
+  - {fileID: 73329805}
+  - {fileID: 636031733}
+  - {fileID: 1487622326}
   Axe: {fileID: 1892435382}
   wheelbarrow: {fileID: 375567048}
   AxeT2: {fileID: 752050471}
@@ -19972,7 +20060,6 @@ MonoBehaviour:
   T1Miner: {fileID: 821000756}
   DirtDrop: {fileID: 606203522}
   StoneDrop: {fileID: 1341801225}
-  Stone: {fileID: 1190446484}
   sellScript: {fileID: 594625093}
   seedOfLastGame: 0
   player: {fileID: 1239367908}

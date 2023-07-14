@@ -101,14 +101,18 @@ public class BuildMode : MonoBehaviour
                 }
                 else if (hitXy.collider.transform.position != transform.position & hitXy.collider.transform.parent != transform)
                 {
-                    if (hitXy.collider.GetComponent<SpriteRenderer>().sortingLayerName == "nature0")
+                    if (hitXy.collider.GetComponent<SpriteRenderer>()!=null)
                     {
-                        { m_Animator.SetBool("SelectRed", false); }
+                        if (hitXy.collider.GetComponent<SpriteRenderer>().sortingLayerName == "nature0")
+                        {
+                            { m_Animator.SetBool("SelectRed", false); }
+                        }
+                        else
+                        {
+                            { m_Animator.SetBool("SelectRed", true); }
+                        }
                     }
-                    else
-                    {
-                        { m_Animator.SetBool("SelectRed", true); }
-                    }
+                    
                 }
            }
            else { m_Animator.SetBool("SelectRed", false); }

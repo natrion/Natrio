@@ -34,7 +34,7 @@ public class gamedata
             itemObjectnumber ++;
             //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
             //{
-                items[itemObjectnumber] = new itemdata(smalldata.ItemsFolder.transform.GetChild(i));
+                items[itemObjectnumber] = new itemdata(smalldata.ItemsFolder.transform.GetChild(i), smalldata.Items);
             //}           
         }
 
@@ -45,7 +45,7 @@ public class gamedata
             itemObjectnumber++;
             //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
             //{
-            items[itemObjectnumber] = new itemdata(smalldata.PlayerFolder.transform.GetChild(o));
+            items[itemObjectnumber] = new itemdata(smalldata.PlayerFolder.transform.GetChild(o), smalldata.Items);
             //}           
         }
 
@@ -56,7 +56,7 @@ public class gamedata
             itemObjectnumber++;
             //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
             //{
-            items[itemObjectnumber] = new itemdata(sellthings.foldersell.transform.GetChild(p));
+            items[itemObjectnumber] = new itemdata(sellthings.foldersell.transform.GetChild(p), smalldata.Items);
             //}           
         }
 
@@ -66,7 +66,7 @@ public class gamedata
         {            
             //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
             //{
-            world[a] = new chunkdata(smalldata.GrassFolder.transform.GetChild(a));
+            world[a] = new chunkdata(smalldata.GrassFolder.transform.GetChild(a) , smalldata.Nature);
             //}           
         }
     }

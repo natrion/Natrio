@@ -35,7 +35,7 @@ public class sellthings : MonoBehaviour
     {
         how_many_coins += howmuchadd;
         FindObjectOfType<showingtext>().showtext(how_many_coins);
-        print(how_many_coins);
+       // print(how_many_coins);
     }
     public void addcoinspotencial ()
     {
