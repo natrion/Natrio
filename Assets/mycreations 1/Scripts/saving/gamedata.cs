@@ -21,44 +21,31 @@ public class gamedata
         playerPosition[0] = smalldata.player.position.x;
         playerPosition[1] = smalldata.player.position.y;
 
+        smalldata.Folders[2] = sellthings.foldersell.transform;
+
+        
+
+        int itemslength = 0;
+        for (int n = 1; n < smalldata.Folders.Length; n++)
+        {
+            itemslength += smalldata.Folders[n].childCount;
+        }
+        items = new itemdata[itemslength+1];
+
+        byte i;
         int itemObjectnumber = 0;
-
-        int SellFolderChildCount = sellthings.foldersell.transform.childCount;
-        int ItemsFolderChildCount = smalldata.ItemsFolder.transform.childCount;
-        int PlayerFolderChildCount = smalldata.PlayerFolder.transform.childCount;
-
-        items = new itemdata[ItemsFolderChildCount + PlayerFolderChildCount+ SellFolderChildCount+1];
-
-        for (int i = 0; i < ItemsFolderChildCount; i++)
+        for ( i = 1; i <  smalldata.Folders.Length; i++)
         {
-            itemObjectnumber ++;
-            //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
-            //{
-                items[itemObjectnumber] = new itemdata(smalldata.ItemsFolder.transform.GetChild(i), smalldata.Items);
-            //}           
-        }
-
-        
-
-        for (int o = 0; o < PlayerFolderChildCount; o++)
-        {
-            itemObjectnumber++;
-            //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
-            //{
-            items[itemObjectnumber] = new itemdata(smalldata.PlayerFolder.transform.GetChild(o), smalldata.Items);
-            //}           
-        }
-
-        
-
-        for (int p = 0; p < SellFolderChildCount; p++)
-        {
-            itemObjectnumber++;
-            //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
-            //{
-            items[itemObjectnumber] = new itemdata(sellthings.foldersell.transform.GetChild(p), smalldata.Items);
-            //}           
-        }
+            for (int d = 0; d < smalldata.Folders[i].childCount; d++)
+            {
+                
+                //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
+                //{
+                items[itemObjectnumber] = new itemdata(smalldata.Folders[i].transform.GetChild(d), smalldata.Items);
+                items[itemObjectnumber].typeFolder = i ;
+                itemObjectnumber++;
+            }
+        }        
 
         int GrassFolderChildCount = smalldata.GrassFolder.transform.childCount;
         world = new chunkdata[GrassFolderChildCount];

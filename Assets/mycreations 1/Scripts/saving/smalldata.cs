@@ -9,6 +9,12 @@ public class smalldata : MonoBehaviour
 
     public GameObject[] Items;
 
+    public bool[] ItemsSorter;  
+
+    public bool[] ItemsThatCanBeCrerating;
+
+    public bool[] ItemsToRotate;
+
     public Transform[] Folders;
 
     public GameObject ItemsFolder;
@@ -94,7 +100,11 @@ public class smalldata : MonoBehaviour
                     /////////////////////////////////////////////////////////filesTypes
                 itemcopy.transform.parent = Folders[gd.items[o].typeFolder];
 
-                if(gd.items[o].type == 23)
+                if (gd.items[o].typeFolder == 3)
+                        itemcopy.transform.parent = Folders[1];
+
+
+                    if (gd.items[o].type == 23)
                 {
                     itemcopy.transform.GetChild(1).GetComponent<TextMesh>().text = gd.items[o].text;
                 }

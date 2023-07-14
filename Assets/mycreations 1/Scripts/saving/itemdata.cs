@@ -21,18 +21,7 @@ public class itemdata
             {
                 type = i;
             }
-        }      
-        
-        typeFolder = 0;
-
-        if (childItem.parent.gameObject.name == "items")
-        { typeFolder = 1; }
-
-        if (childItem.parent.gameObject.name == "thingsforsell")
-        { typeFolder = 2; }
-
-        if (childItem.parent.gameObject.name == "playerfolder")
-        { typeFolder = 3; }
+        }             
 
         if (childItem.gameObject.CompareTag("ItemSorter"))
         {
