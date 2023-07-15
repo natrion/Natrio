@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class mining : MonoBehaviour
 {
+    public Sprite[] DestroyPictures;
+    SpriteRenderer m_SpriteRenderer;
     Animator m_Animator;
     public float health ;
     private float healthpercent;
@@ -34,8 +36,15 @@ public class mining : MonoBehaviour
         rend = textHealthcopy.GetComponent<MeshRenderer>();
         textHealthcopy.GetComponent<TextMesh>().text = health.ToString();
         rend.enabled = false;
-
-        m_Animator = gameObject.GetComponent<Animator>();
+        if (gameObject.GetComponent<Animator>() != null)
+        {
+            m_Animator = gameObject.GetComponent<Animator>();
+        }
+        else
+        {
+            m_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>(); 
+        }
+        
         healthstart = health;
     }
 
@@ -84,7 +93,16 @@ public class mining : MonoBehaviour
             damage = FindObjectOfType<holding>().what_damage; 
             health -= damage;
             healthpercent = ((health * 5) / healthstart);
-            m_Animator.SetFloat("destroyd", 5 - healthpercent);
+
+            if (m_Animator != null)
+            {
+                m_Animator.SetFloat("destroyd", 5 - healthpercent);
+            }
+            else
+            {
+                m_SpriteRenderer.sprite = DestroyPictures[Mathf.RoundToInt((1- health / healthstart) * ((float)DestroyPictures.Length - 1) ) ];
+            }
+            
             if (textHealthcopy)
             {
                 textHealthcopy.GetComponent<TextMesh>().text = health.ToString();

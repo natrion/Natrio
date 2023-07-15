@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
+     
     public Biom[] Bioms;
 
     public GameObject copyChunk;
@@ -32,6 +33,7 @@ public class PG : MonoBehaviour
     [System.Serializable]
     public struct NatureObject
     {
+        public float YplusHight;
         public float Comoness;
         public GameObject NatureGameObject;
         public int SpawningLayerNatureObject;
@@ -140,9 +142,9 @@ public class PG : MonoBehaviour
                                     {
                                         GameObject CopyNatureGameObject = Instantiate(Bioms[c].NatureObjects[a].NatureGameObject);
                                         if (Bioms[c].NatureObjects[a].SpawningLayerNatureObject == -1)                                       
-                                            spawning(CopyNatureGameObject, chunk);                                        
+                                            spawning(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].YplusHight);                                        
                                         else                                        
-                                            spawningLayer(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].SpawningLayerNatureObject);                                                                                
+                                            spawningLayer(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].YplusHight, Bioms[c].NatureObjects[a].SpawningLayerNatureObject);                                                                                
                                     }                                    
                                 }
                                 for (int e = 0; e < Bioms[c].Deposits.Length; e++)//All Deposits
@@ -150,7 +152,7 @@ public class PG : MonoBehaviour
                                     if (Random.Range(0, Bioms[c].Deposits[e].Rarety) == 1)
                                     {
                                         GameObject DepositCopy = Instantiate(Bioms[c].Deposits[e].DepositGameObject);
-                                        spawning(DepositCopy, chunk);
+                                        spawning(DepositCopy, chunk,0);
                                     }                                                          
                                 }
                             }  
@@ -164,19 +166,16 @@ public class PG : MonoBehaviour
         }
 
     }
-    private void spawning(GameObject Copy,GameObject chunkCopy)
+    private void spawning(GameObject Copy,GameObject chunkCopy,float Yplus)
     {
-        Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1) , Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1), 0);
+        Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1) , Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1) + Yplus, 0);
         Copy.transform.parent = transform;
     }
-    private void spawningLayer(GameObject Copy, GameObject chunkCopy, int Layer)
+    private void spawningLayer(GameObject Copy, GameObject chunkCopy,float Yplus, int Layer)
     {
-        Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1), Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1), 0);
+        Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1), Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1) + Yplus, 0);
         Copy.transform.parent = transform;
-        int yChunkInt = Mathf.RoundToInt(chunkCopy.transform.position.y);
-        int YthingInt = Mathf.RoundToInt(Copy.transform.position.y);
-        int ipositionInChunk = 5-(YthingInt - (yChunkInt - 2) );
-        Copy.GetComponent<SpriteRenderer>().sortingOrder = (ipositionInChunk*2 ) +Layer;
+        Copy.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y*-1) + Layer;
     }
 
 }

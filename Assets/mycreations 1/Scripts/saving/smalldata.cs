@@ -9,11 +9,9 @@ public class smalldata : MonoBehaviour
 
     public GameObject[] Items;
 
-    public bool[] ItemsSorter;  
-
     public bool[] ItemsThatCanBeCrerating;
 
-    public bool[] ItemsToRotate;
+    public bool[] ItemsToNotRotate;
 
     public Transform[] Folders;
 
@@ -104,17 +102,17 @@ public class smalldata : MonoBehaviour
                         itemcopy.transform.parent = Folders[1];
 
 
-                    if (gd.items[o].type == 23)
+                if (gd.items[o].type == 23)
                 {
                     itemcopy.transform.GetChild(1).GetComponent<TextMesh>().text = gd.items[o].text;
                 }
 
-                if(gd.items[o].type == 15 | gd.items[o].type == 22| gd.items[o].type == 33 | gd.items[o].type == 35)
+                if(ItemsThatCanBeCrerating[gd.items[o].type]  == true)
                 {
                     itemcopy.GetComponent<ItemCreator>().On = gd.items[o].ItemCreatorOn;
                 }
 
-                if (gd.items[o].type == 15 | gd.items[o].type == 22 | gd.items[o].type == 23 | gd.items[o].type == 33 | gd.items[o].type == 35)
+                if (ItemsToNotRotate[gd.items[o].type] == true)
                 {
                     itemcopy.transform.GetChild(0).eulerAngles = new Vector3(0, 0, gd.items[o].rotation);
                     

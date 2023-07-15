@@ -41,7 +41,7 @@ public class gamedata
                 
                 //if(!smalldata.ItemsFolder.transform.GetChild(i).CompareTag("Untagged"))
                 //{
-                items[itemObjectnumber] = new itemdata(smalldata.Folders[i].transform.GetChild(d), smalldata.Items);
+                items[itemObjectnumber] = new itemdata(smalldata.Folders[i].transform.GetChild(d), smalldata.Items, smalldata.ItemsThatCanBeCrerating, smalldata.ItemsToNotRotate);
                 items[itemObjectnumber].typeFolder = i ;
                 itemObjectnumber++;
             }

@@ -58,6 +58,7 @@ TagManager:
   - T1Miner
   - DirtDrop
   - StoneDrop
+  - OldAppleTree
   layers:
   - Default
   - TransparentFX

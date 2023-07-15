@@ -12,7 +12,7 @@ public class itemdata
     public float[] position;
     public float rotation;
 
-    public itemdata(Transform childItem, GameObject[] ItemC)
+    public itemdata(Transform childItem, GameObject[] ItemC, bool[] ItemsThatCanCrerate, bool[] ItemsToNotRotate)
     {
         type = 0;
         for (byte i = 1; i < ItemC.Length-1; i++)
@@ -28,7 +28,7 @@ public class itemdata
             text = childItem.GetChild(1).GetComponent<TextMesh>().text;
         }
 
-        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("T3OldOakFarmPlot") | childItem.gameObject.CompareTag("T1Miner") )
+        if (ItemsThatCanCrerate[type] == true)
         {
             ItemCreatorOn = childItem.GetComponent<ItemCreator>().On;
         }
@@ -37,7 +37,7 @@ public class itemdata
             ItemCreatorOn = false;
         }
 
-        if (childItem.gameObject.CompareTag("OakFarmPlot") | childItem.gameObject.CompareTag("T2BerryFarmPlot") | childItem.gameObject.CompareTag("ItemSorter") | childItem.gameObject.CompareTag("T3OldOakFarmPlot") | childItem.gameObject.CompareTag("T1Miner"))
+        if (ItemsToNotRotate[type] == true)
         {
             rotation = childItem.GetChild(0).eulerAngles.z;           
         }

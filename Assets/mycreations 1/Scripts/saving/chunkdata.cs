@@ -22,65 +22,13 @@ public class chunkdata
 
     public chunkdata(Transform childItem ,  GameObject[] NatureThingsC)
     {
-        for (byte i = 1; i < NatureThingsC.Length-1; i++)
+        for (byte i = 1; i < NatureThingsC.Length; i++)
         {
             if (NatureThingsC[i].CompareTag(childItem.gameObject.tag))
             {
                 type = i;
             }
         }
-        if (childItem.gameObject.CompareTag("Chunk"))
-        { type = 1; }
-
-        /////////////////////////////////////OakBiom
-        if (childItem.gameObject.CompareTag("oak_tree"))
-        { type = 2; }
-
-        if (childItem.gameObject.CompareTag("oak_bush"))
-        { type = 3; }
-
-        if (childItem.gameObject.CompareTag("smallbushes"))
-        { type = 4; }
-
-        if (childItem.gameObject.CompareTag("OakBiomGrass"))
-        { type = 5; }
-
-        if (childItem.gameObject.CompareTag("OakBiomPoppy"))
-        { type = 6; }
-
-        /////////////////////////////////////BerryBiom
-        if (childItem.gameObject.CompareTag("appletree"))
-        { type = 7; }
-
-        if (childItem.gameObject.CompareTag("blueberry_bush"))
-        { type = 8; }
-
-        if (childItem.gameObject.CompareTag("blue_berry_small_bushes"))
-        { type = 9; }
-
-        if (childItem.gameObject.CompareTag("BerryBiomGrass"))
-        { type = 10; }
-
-        if (childItem.gameObject.CompareTag("BerryBiomPoppy"))
-        { type = 11; }
-        /////////////////////////////////////OldOakBiom
-        if (childItem.gameObject.CompareTag("OldOakTree"))
-        { type = 12; }
-
-        if (childItem.gameObject.CompareTag("OldOakBush"))
-        { type = 13; }
-
-        if (childItem.gameObject.CompareTag("OldOaksmallbushes"))
-        { type = 14; }
-
-        if (childItem.gameObject.CompareTag("OldOakBiomGrass"))
-        { type = 15; }
-
-        if (childItem.gameObject.CompareTag("OldOakBiomPoppy"))
-        { type = 16; }
-
-        if (childItem.gameObject.CompareTag("Stone"))
-        { type = 17; }
 
         position = new float[2];
         position[0] = childItem.position.x;

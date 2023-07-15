@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SL 
 {
 
-    private static string getFileName()
+    public static string getFileName()
     {
         return Application.persistentDataPath + Path.DirectorySeparatorChar + "gamedata.fun";
     }
