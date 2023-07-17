@@ -9,9 +9,6 @@ public class miningshower : MonoBehaviour
     public GameObject copyobjectsfolder;
     Animator m_Animator;
 
-    public GameObject select_zone1;
-    public GameObject select_zone2;
-
     private GameObject select_zone_selected;
     public GameObject player;
     private Transform textHealthcopy;
@@ -101,14 +98,10 @@ public class miningshower : MonoBehaviour
 
                     if (number_of_player_childs == 1)
                     {
-                        if (hit.collider.gameObject.tag == "OldOakTree")
-                        {
-                            select_zone_selected = Instantiate(select_zone2);
-                        }else
-                        {
-                          select_zone_selected = Instantiate(select_zone1);
-                        }
-                        
+                            string tofind = hit.collider.gameObject.tag + "_full";
+                              
+                        select_zone_selected = Instantiate(copyobjectsfolder.transform.Find(tofind).GetComponent<mining>().select_zone);
+           
                         select_zone_selected.transform.position = hit.collider.transform.position;
                         select_zone_selected.transform.parent = hit.collider.transform;
 

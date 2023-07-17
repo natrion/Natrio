@@ -59,6 +59,11 @@ TagManager:
   - DirtDrop
   - StoneDrop
   - OldAppleTree
+  - OldBerryBiomGrass
+  - oldBerryBiomFlower
+  - OldBerryLog
+  - OldBerryLeavs
+  - AxeT3
   layers:
   - Default
   - TransparentFX

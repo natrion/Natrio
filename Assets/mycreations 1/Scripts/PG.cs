@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
-     
+    public float PerlinNoiseMax;
     public Biom[] Bioms;
 
     public GameObject copyChunk;
@@ -69,7 +69,7 @@ public class PG : MonoBehaviour
                     seedchanger = 111.111f;
                 }
                 seed += seedchanger;
-                PerlinNoise = Mathf.PerlinNoise((size / biom_Diversity) + seed, (size / biom_Diversity) + seed);
+                PerlinNoise = Mathf.PerlinNoise((size / biom_Diversity) + seed, (size / biom_Diversity) + seed) * PerlinNoiseMax;
                 if (PerlinNoise < 0.1)
                 {
                     done = true;
@@ -127,7 +127,7 @@ public class PG : MonoBehaviour
                         chunk.transform.parent = transform;
                         
                         
-                        PerlinNoise = Mathf.PerlinNoise((X*size / biom_Diversity) + seed, (Y*size / biom_Diversity) + seed);
+                        PerlinNoise = Mathf.PerlinNoise((X*size / biom_Diversity) + seed, (Y*size / biom_Diversity) + seed) * PerlinNoiseMax;
 
                         int random = Random.Range(0, 3);
 
@@ -138,7 +138,7 @@ public class PG : MonoBehaviour
                             {
                                 for (int a = 0; a < Bioms[c].NatureObjects.Length; a++)//All NatureThings
                                 {
-                                    for (float o = 0; o < PerlinNoise * vegetationNumber * Bioms[c].NatureObjects[a].Comoness; o++)//NatureThing
+                                    for (float o = 0; o < (PerlinNoise/PerlinNoiseMax) * vegetationNumber * Bioms[c].NatureObjects[a].Comoness; o++)//NatureThing
                                     {
                                         GameObject CopyNatureGameObject = Instantiate(Bioms[c].NatureObjects[a].NatureGameObject);
                                         if (Bioms[c].NatureObjects[a].SpawningLayerNatureObject == -1)                                       
