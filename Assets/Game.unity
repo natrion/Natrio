@@ -9132,7 +9132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fac24a30b187c4fa16a45bd6c9f956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PerlinNoiseMax: 1.2
+  PerlinNoiseMax: 1.5
   Bioms:
   - NatureObjects:
     - Ratate: 0
@@ -9240,14 +9240,14 @@ MonoBehaviour:
       YplusHight: 0.2
       Comoness: 2
       NatureGameObject: {fileID: 2025740323}
-      SpawningLayerNatureObject: 1
+      SpawningLayerNatureObject: 2
     - Ratate: 0
       YplusHight: 0.2
       Comoness: 3
       NatureGameObject: {fileID: 1378947634}
-      SpawningLayerNatureObject: 0
+      SpawningLayerNatureObject: 2
     Deposits: []
-    biomFromTo: {x: 1, y: 1.2}
+    biomFromTo: {x: 1, y: 1.5}
   copyChunk: {fileID: 350423832}
   vegetationNumber: 5
   size: 10
@@ -10233,7 +10233,7 @@ Transform:
   m_GameObject: {fileID: 655980637}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 39997, y: -2, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 683582916}
@@ -27476,8 +27476,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 198583925
-  m_SortingLayer: -3
+  m_SortingLayerID: 211346255
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 30f1cd0a5a5e2044ba9f88a5f7366447, type: 3}
   m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
@@ -32581,7 +32581,7 @@ Animator:
   m_GameObject: {fileID: 1711949689}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32ce6a213c9b73b448db097aadabf5d9, type: 2}
+  m_Controller: {fileID: 9100000, guid: eeb72913b00dc064e9f92c4af1fea4d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -33036,7 +33036,7 @@ Transform:
   m_GameObject: {fileID: 1731178602}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 39997, y: -1, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 683582916}
@@ -37416,12 +37416,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyPictures: []
   health: 160
-  item: {fileID: 621776048}
+  item: {fileID: 655980637}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
   player: {fileID: 1487622325}
   how_many_items: 2
-  item2: {fileID: 1686704441}
+  item2: {fileID: 257825672}
   how_many_items2: 2
   item3: {fileID: 2030808811}
   how_many_items3: 4
@@ -37483,8 +37483,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -164101965
-  m_SortingLayer: -2
+  m_SortingLayerID: 211346255
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d87ac1eeffb05d144ae68ff582314616, type: 3}
   m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
@@ -39113,12 +39113,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyPictures: []
   health: 120
-  item: {fileID: 621776048}
+  item: {fileID: 655980637}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
   player: {fileID: 1487622325}
   how_many_items: 2
-  item2: {fileID: 1686704441}
+  item2: {fileID: 257825672}
   how_many_items2: 3
   item3: {fileID: 828647453}
   how_many_items3: 5
@@ -39180,8 +39180,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 198583925
-  m_SortingLayer: -3
+  m_SortingLayerID: 211346255
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 30f1cd0a5a5e2044ba9f88a5f7366447, type: 3}
   m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
@@ -39682,8 +39682,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -164101965
-  m_SortingLayer: -2
+  m_SortingLayerID: 211346255
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d87ac1eeffb05d144ae68ff582314616, type: 3}
   m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
