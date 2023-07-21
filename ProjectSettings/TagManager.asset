@@ -64,6 +64,15 @@ TagManager:
   - OldBerryLog
   - OldBerryLeavs
   - AxeT3
+  - OldBerryBiomSmallBushes
+  - OldBerryBiomSmallBush
+  - T4conveyorBelt
+  - T4conveyorBeltLeft
+  - T4conveyorBeltRight
+  - OldBerryPlank
+  - T4FarmPlot
+  - T4AutomatickSaw
+  - WeelBarowT4
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,7 @@ public class PG : MonoBehaviour
     [System.Serializable]
     public struct NatureObject
     {
+        public bool Ratate;
         public float YplusHight;
         public float Comoness;
         public GameObject NatureGameObject;
@@ -144,7 +145,10 @@ public class PG : MonoBehaviour
                                         if (Bioms[c].NatureObjects[a].SpawningLayerNatureObject == -1)                                       
                                             spawning(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].YplusHight);                                        
                                         else                                        
-                                            spawningLayer(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].YplusHight, Bioms[c].NatureObjects[a].SpawningLayerNatureObject);                                                                                
+                                            spawningLayer(CopyNatureGameObject, chunk, Bioms[c].NatureObjects[a].YplusHight, Bioms[c].NatureObjects[a].SpawningLayerNatureObject);
+
+                                        if (Bioms[c].NatureObjects[a].Ratate == true)
+                                            CopyNatureGameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(Random.Range(0, 360) / 90) * 90);
                                     }                                    
                                 }
                                 for (int e = 0; e < Bioms[c].Deposits.Length; e++)//All Deposits
@@ -153,6 +157,7 @@ public class PG : MonoBehaviour
                                     {
                                         GameObject DepositCopy = Instantiate(Bioms[c].Deposits[e].DepositGameObject);
                                         spawning(DepositCopy, chunk,0);
+                                        DepositCopy.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(Random.Range(0, 360) / 90) * 90);
                                     }                                                          
                                 }
                             }  
