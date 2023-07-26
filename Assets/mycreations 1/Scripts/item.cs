@@ -111,16 +111,27 @@ public class item : MonoBehaviour
                     FunctionRunning = false;
                 }
             }
-            else if (BuildModeScript.isItemConvertor == true & BuildModeScript.isInbildingMode == false & transform.parent != player & FunctionRunning == false)
+            if (BuildModeScript.isItemConvertor == true & BuildModeScript.isInbildingMode == false & transform.parent != player )
             {
-                FunctionRunning = true;
-                for (int i = 0; i < BuildModeScript.ConvertingItemTag.Length; i++)
+                
+                        //StartCoroutine(itemConvertor(BuildModeScript , i));
+                for (int i = 0; i < BuildModeScript.Recepys.Length; i++)
                 {
-                    if (gameObject.CompareTag(BuildModeScript.ConvertingItemTag[i]))
+                    for (int n = 0; n < BuildModeScript.Recepys[i].ConvertingItemTag.Length; n++)
                     {
-                        StartCoroutine(itemConvertor(BuildModeScript , i));
+                        
+                        if (gameObject.CompareTag(BuildModeScript.Recepys[i].ConvertingItemTag[n])  )
+                        {
+                            BuildModeScript.CreateItem(i);
+                            if (BuildModeScript.Recepys[i].howManyItemsThere[n] < BuildModeScript.Recepys[i].howManyItems[n])
+                            {
+                                BuildModeScript.Recepys[i].howManyItemsThere[n] += 1;
+                                BuildModeScript.CreateItem(i);
+                                Destroy(gameObject);
+                            }                           
+                        }
                     }
-                }                               
+                }                                           
             }
         }
         else if (collider.transform.parent.GetComponent<BuildMode>() != null)
@@ -133,26 +144,26 @@ public class item : MonoBehaviour
             }        
         }
     }
-    IEnumerator itemConvertor(BuildMode curentBuildModeScript , int receptNumber)
-    {        
-        yield return new WaitForSeconds(curentBuildModeScript.TimeToConvert[receptNumber]);
+   // IEnumerator itemConvertor(BuildMode curentBuildModeScript , int receptNumber)
+   // {        
+        //yield return new WaitForSeconds(curentBuildModeScript.TimeToConvert[receptNumber]);
 
-        float xdistance = transform.position.x - curentBuildModeScript.transform.position.x;
-        float ydistance = transform.position.y - curentBuildModeScript.transform.position.y;
+       // float xdistance = transform.position.x - curentBuildModeScript.transform.position.x;
+       // float ydistance = transform.position.y - curentBuildModeScript.transform.position.y;
 
-        if (xdistance<1 & xdistance > -1    &   ydistance < 1 & ydistance > -1)
-        {
-            Transform iemToCopy = itemtest.transform.GetChild(curentBuildModeScript.CreatingFromConvertingItemNumber[receptNumber]);
-            GameObject CopyCreatingFromConvertingItem = Instantiate(iemToCopy.gameObject);
-            CopyCreatingFromConvertingItem.transform.parent = itemfolder.transform;
-            CopyCreatingFromConvertingItem.transform.position = curentBuildModeScript.transform.position - curentBuildModeScript.transform.up * 0.4f;
+      //  if (xdistance<1 & xdistance > -1    &   ydistance < 1 & ydistance > -1)
+     //   {
+     //       Transform iemToCopy = itemtest.transform.GetChild(curentBuildModeScript.CreatingFromConvertingItemNumber[receptNumber]);
+     //       GameObject CopyCreatingFromConvertingItem = Instantiate(iemToCopy.gameObject);
+     //       CopyCreatingFromConvertingItem.transform.parent = itemfolder.transform;
+     //       CopyCreatingFromConvertingItem.transform.position = curentBuildModeScript.transform.position - curentBuildModeScript.transform.up * 0.4f;
 
-            FunctionRunning = false;
-
-            Destroy(gameObject);
-        }
-        else { FunctionRunning = false; }        
-    }
+     //       FunctionRunning = false;
+//
+    //        Destroy(gameObject);
+    //    }
+    //    else { FunctionRunning = false; }        
+    //}
     void Update()
     {
         if(side == true )

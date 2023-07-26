@@ -8,6 +8,7 @@ public class QuitPlayCreateButton : MonoBehaviour
 {
     public static bool Restart;
     public GameObject CreateNewWorldWindow;
+    public GameObject CreateNewWorldButton;
     private static bool PlaingFirstTime;
 
     void Start()
@@ -15,17 +16,12 @@ public class QuitPlayCreateButton : MonoBehaviour
         CreateNewWorldWindow.SetActive(false);
         if (File.Exists(SL.getFileName()))
         {
-            PlaingFirstTime = false;
+            PlaingFirstTime = false;          
         }
         else 
-        {
+        {           
             PlaingFirstTime = true;
-
-            if (gameObject.name == "NewWorldButton")
-            {
-                gameObject.SetActive(false);
-            }
-               
+            CreateNewWorldButton.SetActive(false);   
         }
         
             
@@ -35,7 +31,7 @@ public class QuitPlayCreateButton : MonoBehaviour
     {
         if (PlaingFirstTime == true)
         {
-            QuitGame();     
+            CreateNewGame();     
         }else
         {
             Restart = false;

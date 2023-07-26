@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildMode : MonoBehaviour
 {
+    public Transform itemfolder;
     public Transform playerFolder;
     public int WhatColiderIsSolid = -1;
     public bool Rotateble;   
@@ -23,6 +24,65 @@ public class BuildMode : MonoBehaviour
     private float y;
     private Vector3 PositionOnStrat;
     private Animator m_Animator;
+    public bool CreateItemIERunning;
+
+    [System.Serializable]
+    public struct Recepy
+    {
+        public string[] ConvertingItemTag ;
+        public int[] howManyItems;
+
+        public int[] howManyItemsThere ;
+
+        public float TimeToConvert;
+        public GameObject[] CreatingFromConvertingItem;
+        
+        
+
+        
+    }
+
+    public Recepy[] Recepys;
+
+    public void CreateItem(int whatRecepy)
+    {
+        if (CreateItemIERunning == false)
+        {
+            CreateItemIERunning = true;
+            whatRecepyOn = whatRecepy;
+            StartCoroutine(CreateItemIE());
+        }
+    }
+    private int whatRecepyOn;
+    IEnumerator CreateItemIE()
+    {
+        bool createItem = true;
+        for (int i = 0; i < Recepys[whatRecepyOn].howManyItems.Length; i++)
+        {
+            if (Recepys[whatRecepyOn].howManyItems[i] > Recepys[whatRecepyOn].howManyItemsThere[i])
+            {
+                createItem = false;
+            }
+        }
+        
+        if (createItem == true)
+        {
+            yield return new WaitForSeconds(Recepys[whatRecepyOn].TimeToConvert);
+
+            for (int n = 0; n < Recepys[whatRecepyOn].CreatingFromConvertingItem.Length; n++)
+            {
+                GameObject ItemCopy = Instantiate(Recepys[whatRecepyOn].CreatingFromConvertingItem[n]);
+                ItemCopy.transform.position = transform.position - transform.up * 0.4f;
+                ItemCopy.transform.parent = itemfolder;
+            }
+
+            for (int i = 0; i < Recepys[whatRecepyOn].howManyItems.Length; i++)
+            {
+                Recepys[whatRecepyOn].howManyItemsThere[i] = 0;
+            }
+        }
+        CreateItemIERunning = false;
+    }
 
     void Start()
     {
