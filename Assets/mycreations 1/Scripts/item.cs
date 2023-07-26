@@ -236,7 +236,7 @@ public class item : MonoBehaviour
         }
         else if(player.GetChild(0).GetComponent<item>().isItForTransportingItems)
         {
-            if(Input.GetMouseButtonDown(1) | Input.GetMouseButtonDown(2))
+            if(/*Input.GetMouseButtonDown(1) |*/ Input.GetMouseButtonDown(2))
             {
                 if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & isItForTransportingItems == false)
                 {

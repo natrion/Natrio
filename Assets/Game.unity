@@ -3011,6 +3011,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.05
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &186593122
 BoxCollider2D:
@@ -4569,6 +4570,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys:
   - ConvertingItemTag:
     - OakLog
@@ -7214,6 +7216,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.2
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &485644396
 BoxCollider2D:
@@ -7795,6 +7798,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0.05
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &513592360
 BoxCollider2D:
@@ -8172,6 +8176,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys:
   - ConvertingItemTag:
     - OakLog
@@ -8464,6 +8469,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &570406118
 BoxCollider2D:
@@ -19372,6 +19378,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0.2
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &932588693
 BoxCollider2D:
@@ -21202,6 +21209,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys:
   - ConvertingItemTag:
     - OakLog
@@ -22417,6 +22425,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys:
   - ConvertingItemTag:
     - OakLog
@@ -22707,6 +22716,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.4
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1150855073
 BoxCollider2D:
@@ -24552,6 +24562,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0.1
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1248418866
 BoxCollider2D:
@@ -26253,7 +26264,7 @@ MonoBehaviour:
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 500
-  What_buy: {fileID: 752050471}
+  What_buy: {fileID: 128162640}
   folderitems: {fileID: 73329804}
 --- !u!95 &1310406258
 Animator:
@@ -26434,6 +26445,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1313469806
 BoxCollider2D:
@@ -27157,6 +27169,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.2
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1345724537
 BoxCollider2D:
@@ -31384,6 +31397,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.1
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1649409956
 BoxCollider2D:
@@ -32856,6 +32870,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.4
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1721773624
 BoxCollider2D:
@@ -35980,6 +35995,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.1
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1834998752
 BoxCollider2D:
@@ -36832,6 +36848,7 @@ MonoBehaviour:
   isConveyorBelt: 0
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!60 &1871163558
 PolygonCollider2D:
@@ -38542,6 +38559,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 0
   ConveyorSpeed: 0.4
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &1970562140
 BoxCollider2D:
@@ -39268,6 +39286,7 @@ MonoBehaviour:
   isConveyorBelt: 1
   isTurnConveyorBelt: 1
   ConveyorSpeed: 0.05
+  CreateItemIERunning: 0
   Recepys: []
 --- !u!61 &2019481146
 BoxCollider2D:

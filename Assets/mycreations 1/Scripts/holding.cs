@@ -154,29 +154,23 @@ public class holding : MonoBehaviour
                 if (Input.GetMouseButtonDown(1) )
                 {
                     DropAudio.Play();
-                    if (holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
-                    {
-                        pick = true;
-                        return;
-                    }
+                   // if (holdedthing.GetComponent<item>().isItForTransportingItems == true & isMouseOver == true)
+                   // {
+                   //     pick = true;
+                   //     return;
+                   // }
                     what_damage = 1;
                     
 
                    // player_Animator.SetBool("holding", false);
                     
                     FindObjectOfType<movement>().changespeed(2f);
-                    if (holdedthing.position.y < 1.4f & holdedthing.position.y > 0.4f & holdedthing.position.x > -1.4f & holdedthing.position.x < -0.4f)
-                    {
-                        folderforsale = GameObject.Find("thingsforsell");
-                        holdedthing.parent = folderforsale.transform;                                                                            
-                        FindObjectOfType<sellthings>().addcoinspotencial();                                                                                               
-                    }
-                    else
-                    {
+
+                    
                         holdedthing.parent = flolderitems.transform;
                         what_damage = 1;
                         FindObjectOfType<sellthings>().addcoinspotencial();
-                    }
+                    
 
                     if (holdedthing.GetComponent<Rigidbody2D>() != null)
                     {
