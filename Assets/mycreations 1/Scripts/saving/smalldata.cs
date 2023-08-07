@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Unity.Netcode;
 
 public class smalldata : MonoBehaviour
 {
@@ -29,33 +31,42 @@ public class smalldata : MonoBehaviour
     private float PerlinNoise;
     private GameObject itemcopy;
     public int OnItem = 0;
-    
+    public GameObject SaveButton;
+    public GameObject QuitNotSaveButton;
+    public GameObject StartServerButton;
+    public  NetworkComunicator NetworkComunicatorScript;
 
     void Start()
     {
-        if(QuitPlayCreateButton.Restart == true)
+        if (QuitPlayCreateButton.joinToAtheGame == false)
         {
-            sellScript.Startcript();
-            Restart();
+            if (QuitPlayCreateButton.Restart == true)
+            {
+                sellScript.Startcript();
+                Restart();
 
+            }
+            else
+            {
+                load(SL.loadGame());
+            }
         }
         else
         {
-            load();
+            NetworkManager.Singleton.StartClient();
+            SaveButton.SetActive(false);
+            QuitNotSaveButton.SetActive(false);
+            StartServerButton.SetActive(false);          
+            NetworkComunicatorScript.StartConection();
         }
-        
     }
     public void save()
     {
         SL.saveGame(new gamedata(this, coinsobject));
     }
 
-
-    public void load()
+    public void load(gamedata gd)
     {
-
-        gamedata gd = SL.loadGame();
-        
         int childnumber = seedobject.transform.childCount;
 
         for (int i = 0; i < childnumber; i++)

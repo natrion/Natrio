@@ -1,0 +1,17 @@
+type object----------------------------------
+int     |   name of tag
+0 = null
+
+1 = Chunk
+
+2 = oak_tree  
+3 = oak_bush
+4 = smallbushes 
+5 = OakBiomGrass
+6 = OakBiomPoppy
+
+7 = appletree 
+8 = blueberry_bush
+9 = blue_berry_small_bushes 
+10 = BerryBiomGrass
+11 = BerryBiomPoppy

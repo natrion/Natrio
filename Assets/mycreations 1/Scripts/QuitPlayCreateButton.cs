@@ -6,6 +6,7 @@ using System.IO;
 
 public class QuitPlayCreateButton : MonoBehaviour
 {
+    public static bool joinToAtheGame;
     public static bool Restart;
     public GameObject CreateNewWorldWindow;
     public GameObject CreateNewWorldButton;
@@ -13,6 +14,7 @@ public class QuitPlayCreateButton : MonoBehaviour
 
     void Start()
     {
+        joinToAtheGame = false;
         CreateNewWorldWindow.SetActive(false);
         if (File.Exists(SL.getFileName()))
         {
@@ -23,14 +25,12 @@ public class QuitPlayCreateButton : MonoBehaviour
             PlaingFirstTime = true;
             CreateNewWorldButton.SetActive(false);   
         }
-        
-            
-        
     }
     public void PlayGame()
     {
         if (PlaingFirstTime == true)
         {
+            Restart = true;
             CreateNewGame();     
         }else
         {
@@ -55,6 +55,11 @@ public class QuitPlayCreateButton : MonoBehaviour
     public void CreateNewWorldWindowClose()
     {
         CreateNewWorldWindow.SetActive(false);
+    }
+    public void JoinToGame()
+    {
+        joinToAtheGame = true;
+        SceneManager.LoadScene("Game");
     }
 }
 

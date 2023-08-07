@@ -16,7 +16,7 @@ public class movement : MonoBehaviour
     private Vector2 movement2Was;
     private AudioSource[] Audio;
     private AudioSource StepAudio;
-
+    [SerializeField]private NetworkComunicator networkComunicator;
     void Start()
     {
         Audio = transform.parent.GetComponents<AudioSource>();
@@ -58,7 +58,8 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(movement2Was != movement2)
+        networkComunicator.SentInformation(true,false,false,new Vector3(0,0,0), new Vector2(0,0),0);
+        if (movement2Was != movement2)
         {
             if(movement2.x == 0 & movement2.y == 0)
             {

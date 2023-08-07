@@ -62,6 +62,11 @@ public class PauseScript : MonoBehaviour
     public void Quit()
     {
         clickButtonAudio.Play();
+        StartCoroutine(QuitWait());
+    }
+    public IEnumerator QuitWait()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
         SceneManager.LoadScene("Menu");
     }
 }
