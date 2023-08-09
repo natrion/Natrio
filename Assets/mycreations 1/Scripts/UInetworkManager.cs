@@ -13,6 +13,7 @@ public class UInetworkManager : MonoBehaviour
         ServerButton.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.StartServer();
+            gameObject.SetActive(false);
         });
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
-
+using Unity.Netcode.Transports.UTP;
 public class smalldata : MonoBehaviour
 {
 
+    [SerializeField]private UnityTransport unityTransport;
     public GameObject[] Nature;
 
     public GameObject[] Items;
@@ -53,6 +54,8 @@ public class smalldata : MonoBehaviour
         }
         else
         {
+            unityTransport.ConnectionData.Address = QuitPlayCreateButton.ChangeAdress;
+            //unityTransport.ConnectionData.Port = ushort.Parse(QuitPlayCreateButton.ChangePort);
             NetworkManager.Singleton.StartClient();
             SaveButton.SetActive(false);
             QuitNotSaveButton.SetActive(false);

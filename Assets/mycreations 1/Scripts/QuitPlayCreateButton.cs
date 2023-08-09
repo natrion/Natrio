@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-
+using Unity.Netcode.Transports.UTP;
+using UnityEngine.UI;
+using TMPro;
 public class QuitPlayCreateButton : MonoBehaviour
 {
+    public GameObject AdressAndportChangeWindow;
     public static bool joinToAtheGame;
     public static bool Restart;
     public GameObject CreateNewWorldWindow;
@@ -14,6 +17,7 @@ public class QuitPlayCreateButton : MonoBehaviour
 
     void Start()
     {
+        AdressAndportChangeWindow.SetActive(false);
         joinToAtheGame = false;
         CreateNewWorldWindow.SetActive(false);
         if (File.Exists(SL.getFileName()))
@@ -55,6 +59,25 @@ public class QuitPlayCreateButton : MonoBehaviour
     public void CreateNewWorldWindowClose()
     {
         CreateNewWorldWindow.SetActive(false);
+    }
+    public static string ChangeAdress;
+    public static string ChangePort;
+
+    public void OpenAdressAndportChangeWindow()
+    {
+        AdressAndportChangeWindow.SetActive(true);
+    }
+    public void CloseAdressAndportChangeWindow()
+    {
+        AdressAndportChangeWindow.SetActive(false);
+    }
+    public void OnChangeAdress()
+    {
+        ChangeAdress = AdressAndportChangeWindow.transform.GetChild(0).GetComponent<TMP_InputField>().text;
+    }
+    public void OnChangePort()
+    {       
+        ChangePort = AdressAndportChangeWindow.transform.GetChild(1).GetComponent<TMP_InputField>().text;
     }
     public void JoinToGame()
     {

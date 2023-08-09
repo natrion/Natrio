@@ -35,7 +35,7 @@ public class PauseScript : MonoBehaviour
             else
             {
                 PauseMenu.SetActive(true);
-                Time.timeScale = 0f;
+                if (NetworkComunicator.MultyPlayerON ==false) Time.timeScale = 0f;
                 paused = true;
             }            
         }

@@ -24,6 +24,7 @@ public class NetworkComunicator : NetworkBehaviour
     [SerializeField] public List<GameObject> AllObjects;
     private int tatalAmount;
 
+    public static bool MultyPlayerON;
     IEnumerator StartAllObjects()
     {
         yield return null;
@@ -69,8 +70,13 @@ public class NetworkComunicator : NetworkBehaviour
 
     private int playernumber;
 
+    private void Start()
+    {
+        MultyPlayerON = false;
+    }
     public void StartServer()
     {
+        MultyPlayerON = true;
         Players.Add(null);
         ConectedPlayers.Add(true);
     }
@@ -85,8 +91,9 @@ public class NetworkComunicator : NetworkBehaviour
     }
     private IEnumerator StartConectionWait()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(5f);
 
+        MultyPlayerON = true;
         GameStartServerRpc(true, -1);
     }
 
