@@ -1910,6 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 1000
@@ -2307,6 +2308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 1800
@@ -2843,6 +2845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 10
   item: {fileID: 2122804708}
@@ -3093,6 +3096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 50
@@ -3269,6 +3273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -3446,6 +3451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 450
@@ -5016,6 +5022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 150
@@ -5208,6 +5215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 73329805}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -5758,6 +5766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 30
   item: {fileID: 249776153}
@@ -8148,6 +8157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -8308,6 +8318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 270
@@ -8788,6 +8799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -9222,6 +9234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 73329805}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -9322,6 +9335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2220372c4184bab6e5720ae31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   itemFolder: {fileID: 73329805}
   ObjectToCreate: {fileID: 2122804708}
@@ -9558,6 +9572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -9951,6 +9966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f57b072b6561345a2a218c87d76159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   Audio: {fileID: 636031734}
   autoseling: 0
@@ -9960,6 +9976,7 @@ MonoBehaviour:
   on_platform_text: {fileID: 1701874231}
   on_platform_text2: {fileID: 1020334653}
   FolderForItems: {fileID: 73329805}
+  seling: 0
 --- !u!61 &594625094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10399,6 +10416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fac24a30b187c4fa16a45bd6c9f956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   PerlinNoiseMax: 1.5
   Bioms:
   - NatureObjects:
@@ -17141,6 +17159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 150
@@ -18722,6 +18741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 10
@@ -18976,6 +18996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 500
@@ -19259,6 +19280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2220372c4184bab6e5720ae31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   itemFolder: {fileID: 73329805}
   ObjectToCreate: {fileID: 606203522}
@@ -19452,6 +19474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 320
   item: {fileID: 621776048}
@@ -20406,6 +20429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 150
@@ -20576,6 +20600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 150
@@ -20903,6 +20928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 700
@@ -21191,6 +21217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -21826,6 +21853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2220372c4184bab6e5720ae31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   itemFolder: {fileID: 73329805}
   ObjectToCreate: {fileID: 249776153}
@@ -21935,6 +21963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 450
@@ -23166,6 +23195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 73329805}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -23625,6 +23655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 120
   item: {fileID: 621776048}
@@ -24017,6 +24048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 1800
@@ -24265,6 +24297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 5
   item: {fileID: 2122804708}
@@ -24539,6 +24572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 73329805}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -24874,6 +24908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -26868,6 +26903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -27252,6 +27288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 2700
@@ -27535,6 +27572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 20
   item: {fileID: 2122804708}
@@ -27717,6 +27755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 160
   item: {fileID: 621776048}
@@ -27848,6 +27887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 90
@@ -28718,6 +28758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 500
@@ -28909,6 +28950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -29698,6 +29740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -30254,6 +30297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 300
@@ -30605,8 +30649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 1433818324}
   cost: 50
   What_buy: {fileID: 2019481143}
   folderitems: {fileID: 73329804}
@@ -30872,6 +30917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 10000
@@ -31126,6 +31172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 200
@@ -31296,6 +31343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 50
@@ -31762,6 +31810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570b2b4dcafd8d4468079abb88d8ed93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   isMouseOver: 0
   what_damage: 1
   flolderitems: {fileID: 73329804}
@@ -31795,6 +31844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1eb85819b80d24e9208b7486064a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   chunkparent: {fileID: 607197730}
   copyobjectsfolder: {fileID: 1256809455}
   player: {fileID: 1487622325}
@@ -32033,6 +32083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 450
@@ -32974,7 +33025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.55, y: -15.880005}
+  m_AnchoredPosition: {x: 584.5508, y: -15.880859}
   m_SizeDelta: {x: 1151.9, y: 34.3357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570469382
@@ -33150,6 +33201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 400
@@ -33417,6 +33469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 450
@@ -34256,6 +34309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -34584,7 +34638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.7
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -34867,6 +34921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 150
@@ -35741,6 +35796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2220372c4184bab6e5720ae31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   itemFolder: {fileID: 73329805}
   ObjectToCreate: {fileID: 655980637}
@@ -35856,6 +35912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -36521,6 +36578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 80
   item: {fileID: 249776153}
@@ -37242,6 +37300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 40
   item: {fileID: 249776153}
@@ -37515,6 +37574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 15
@@ -38552,6 +38612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 1000
@@ -38820,6 +38881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures:
   - {fileID: 21300000, guid: 52ce633249a2ccd49a45213f07352e41, type: 3}
   - {fileID: 21300000, guid: 18bb85966681ce149bf95b2127db49e6, type: 3}
@@ -39198,6 +39260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 20
@@ -39325,6 +39388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -39577,6 +39641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454e2220372c4184bab6e5720ae31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   player: {fileID: 1239367908}
   itemFolder: {fileID: 73329805}
   ObjectToCreate: {fileID: 621776048}
@@ -40254,6 +40319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: 0
@@ -40954,6 +41020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 160
   item: {fileID: 655980637}
@@ -41085,6 +41152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 30
@@ -41730,6 +41798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22ebf89f3f8a0a4c9a893664c569089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkComunicator: {fileID: 2134321551}
   Audio: {fileID: 607197733}
   m_Animator: {fileID: 0}
   cost: 900
@@ -42186,6 +42255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -42751,6 +42821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd94c4e2fd011f49b69495430a04656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
   health: 120
   item: {fileID: 655980637}
@@ -42951,6 +43022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab638f0e265614144ae514aa8e0b86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NetworkComunicator: {fileID: 2134321551}
   itemfolder: {fileID: 0}
   playerFolder: {fileID: 1487622326}
   WhatColiderIsSolid: -1
@@ -44747,14 +44819,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edec8316e6e9eb4458820cb47d512941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemFolder: {fileID: 73329805}
+  NatureFolder: {fileID: 607197731}
   Smalldata: {fileID: 1487622330}
   Sellthings: {fileID: 594625093}
   CopyPlayer: {fileID: 4471111296969170682, guid: bc725adebab7bd945a4c9159676c0e54,
     type: 3}
   Players: []
   ConectedPlayers: 
-  NuberOfPlayersEver: 0
-  playernumber: 0
+  AllObjects: []
   Player: {fileID: 1239367908}
 --- !u!114 &2134321552
 MonoBehaviour:

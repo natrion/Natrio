@@ -58,7 +58,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        networkComunicator.SentInformation(true,false,false,new Vector3(0,0,0), new Vector2(0,0),0);
+        networkComunicator.SentInformation(true,false,false,0,null);
         if (movement2Was != movement2)
         {
             if(movement2.x == 0 & movement2.y == 0)

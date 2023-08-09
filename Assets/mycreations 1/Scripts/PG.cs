@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PG : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     public float PerlinNoiseMax;
     public Biom[] Bioms;
 
@@ -130,8 +131,8 @@ public class PG : MonoBehaviour
                         GameObject chunk = Instantiate(copyChunk);
                         chunk.transform.position = new Vector3(X * 5, Y * 5, 0);
                         chunk.transform.parent = transform;
-                        
-                        
+                        NetworkComunicator.SentInformation(false, true, false,0, chunk.transform);
+
                         PerlinNoise = Mathf.PerlinNoise((X*size / biom_Diversity) + seed, (Y*size / biom_Diversity) + seed) * PerlinNoiseMax;
 
                         int random = Random.Range(0, 3);
@@ -153,6 +154,7 @@ public class PG : MonoBehaviour
 
                                         if (Bioms[c].NatureObjects[a].Ratate == true)
                                             CopyNatureGameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(Random.Range(0, 360) / 90) * 90);
+                                        NetworkComunicator.SentInformation(false, true, false,0, CopyNatureGameObject.transform);
                                     }                                    
                                 }
                                 for (int e = 0; e < Bioms[c].Deposits.Length; e++)//All Deposits
@@ -162,6 +164,7 @@ public class PG : MonoBehaviour
                                         GameObject DepositCopy = Instantiate(Bioms[c].Deposits[e].DepositGameObject);
                                         spawning(DepositCopy, chunk,0);
                                         DepositCopy.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(Random.Range(0, 360) / 90) * 90);
+                                        NetworkComunicator.SentInformation(false, true, false,0, DepositCopy.transform);
                                     }                                                          
                                 }
                             }  

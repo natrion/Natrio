@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class buyscript : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator networkComunicator;
     public AudioSource Audio;
     public Animator m_Animator;
     private GameObject foldersell;
@@ -40,6 +41,7 @@ public class buyscript : MonoBehaviour
                 GameObject boughtobject = Instantiate(What_buy);
                 boughtobject.transform.parent = folderitems.transform;
                 boughtobject.transform.position = new Vector3(1, 2, 0);
+                networkComunicator.SentInformation(false, true, false,0, boughtobject.transform);
             }
         }
     }

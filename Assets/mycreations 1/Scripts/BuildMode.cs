@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildMode : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     public Transform itemfolder;
     public Transform playerFolder;
     public int WhatColiderIsSolid = -1;
@@ -128,6 +129,7 @@ public class BuildMode : MonoBehaviour
 
     IEnumerator BuildModeFunction()
     {
+        NetworkComunicator.SentInformation(false, false, true, 0, transform);
         if(WhatColiderIsSolid > -1 )
         {
             Collider2D[] Colliders = transform.GetComponents<Collider2D>();
@@ -244,5 +246,6 @@ public class BuildMode : MonoBehaviour
         }
         yield return new WaitForSeconds(0.1f);
         isInbildingMode = false;
+        NetworkComunicator.SentInformation(false, true, false, 0, transform);
     }
 }  

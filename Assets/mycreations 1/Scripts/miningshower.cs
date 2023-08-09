@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class miningshower : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     public GameObject chunkparent;
     private GameObject selectedthing;
     public GameObject copyobjectsfolder;
@@ -89,7 +90,14 @@ public class miningshower : MonoBehaviour
                         copyObject.transform.position = hit.collider.transform.position;
                         copyObject.transform.parent = chunkparent.transform;
                         Destroy(hit.collider.gameObject);
-                        
+                        if (hit.collider.gameObject.GetComponent<dataHolder>() != null)
+                        {
+                            dataHolder DataHolder = copyObject.AddComponent(typeof(dataHolder)) as dataHolder;
+                            DataHolder.dataIdentificator = hit.collider.gameObject.GetComponent<dataHolder>().dataIdentificator;
+                            NetworkComunicator.AllObjects[hit.collider.gameObject.GetComponent<dataHolder>().dataIdentificator] = copyObject;
+                        }
+                       
+
                         return;
                         
                     }

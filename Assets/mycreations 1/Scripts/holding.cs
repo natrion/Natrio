@@ -62,7 +62,7 @@ public class holding : MonoBehaviour
             
                 if (transform.position.y - holdingobject.position.y < PickUpRadius & transform.position.y - holdingobject.position.y > PickUpRadius * -1 & transform.position.x - holdingobject.position.x > PickUpRadius * -1 & transform.position.x - holdingobject.position.x < PickUpRadius)
                 {
-                    networkComunicator.SentInformation(false, false, true, new Vector3(0, 0, 0), new Vector2(1, 0), holdingobject.GetSiblingIndex());
+                    networkComunicator.SentInformation(false, false, true,0,holdingobject);
 
                     if (holdingobject.GetComponent<Rigidbody2D>() != null )
                     {
@@ -148,7 +148,7 @@ public class holding : MonoBehaviour
                     {
                         itemInWheelbarrow.GetComponent<Rigidbody2D>().simulated = true;
                     }
-                    networkComunicator.SentInformation(false, true, false, itemInWheelbarrow.position,new Vector2(1,0),0);
+                    networkComunicator.SentInformation(false, true, false,0, itemInWheelbarrow);
                 }
             }
 
@@ -163,10 +163,11 @@ public class holding : MonoBehaviour
                    //     return;
                    // }
                     what_damage = 1;
-                    
 
-                   // player_Animator.SetBool("holding", false);
-                    
+
+                    // player_Animator.SetBool("holding", false);
+
+
                     FindObjectOfType<movement>().changespeed(2f);
 
                     
@@ -180,6 +181,7 @@ public class holding : MonoBehaviour
                         holdedthing.GetComponent<Rigidbody2D>().simulated = true;
                     }
                     pick = false;
+                    networkComunicator.SentInformation(false, true, false,0, holdedthing);
                 }
             }
         }

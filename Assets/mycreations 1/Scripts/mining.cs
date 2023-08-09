@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class mining : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     public Sprite[] DestroyPictures;
     SpriteRenderer m_SpriteRenderer;
     Animator m_Animator;
@@ -119,8 +120,10 @@ public class mining : MonoBehaviour
                     duplicated.transform.position = new Vector3(gameObject.transform.position.x + Random.Range(-0.5f, 0.5f), gameObject.transform.position.y + Random.Range(-0.5f, 0.5f), 0);
                     duplicated.transform.eulerAngles = Vector3.forward * Random.Range(0.01f, 360f);
                     duplicated.transform.parent = folderitems.transform;
+                    NetworkComunicator.SentInformation(false,true,false,0, duplicated.transform);
                 }              
-                Destroy(gameObject);
+ 
+                
             }
             /////////////////////////////////////////////////////////////////////item2
             if (health < 1 & item2)
@@ -132,8 +135,9 @@ public class mining : MonoBehaviour
                     duplicated.transform.position = new Vector3(gameObject.transform.position.x + Random.Range(-0.5f, 0.5f), gameObject.transform.position.y + Random.Range(-0.5f, 0.5f), 0);
                     duplicated.transform.eulerAngles = Vector3.forward * Random.Range(0.01f, 360f);
                     duplicated.transform.parent = folderitems.transform;
+                    NetworkComunicator.SentInformation(false, true, false,0, duplicated.transform);
                 }
-                Destroy(gameObject);
+                
             }
             ////////////////////////////////////////////////////////////////////////////item3
             if (health < 1 & item3)
@@ -145,7 +149,13 @@ public class mining : MonoBehaviour
                     duplicated.transform.position = new Vector3(gameObject.transform.position.x + Random.Range(-0.5f, 0.5f), gameObject.transform.position.y + Random.Range(-0.5f, 0.5f), 0);
                     duplicated.transform.eulerAngles = Vector3.forward * Random.Range(0.01f, 360f);
                     duplicated.transform.parent = folderitems.transform;
+                    NetworkComunicator.SentInformation(false, true, false,0, duplicated.transform);
                 }
+
+            }
+            if (health < 1)
+            {
+                NetworkComunicator.SentInformation(false, false, true,0, transform);
                 Destroy(gameObject);
             }
         }

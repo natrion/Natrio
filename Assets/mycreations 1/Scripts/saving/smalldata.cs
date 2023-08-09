@@ -78,7 +78,7 @@ public class smalldata : MonoBehaviour
         sellScript.autoseling = gd.autoseling;
         sellScript.Startcript();
         seedOfLastGame = gd.seed;
-        transform.parent.position = new Vector3(gd.playerPosition[0], gd.playerPosition[1], 0);
+        if (QuitPlayCreateButton.joinToAtheGame == false) transform.parent.position = new Vector3(gd.playerPosition[0], gd.playerPosition[1], 0);
         coinsobject.how_many_coins = gd.playerCoins;
         FindObjectOfType<showingtext>().showtext(coinsobject.how_many_coins);
 

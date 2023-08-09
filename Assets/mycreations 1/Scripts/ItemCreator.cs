@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemCreator : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     private GameObject copy;
 
     private AudioSource[] Audio;
@@ -163,6 +164,7 @@ public class ItemCreator : MonoBehaviour
     }
     IEnumerator BuildModeItemCreate()
     {
+        NetworkComunicator.SentInformation(false, false, true, 0, transform);
         PositionOnStrat = transform.position;
         yield return new WaitForSeconds(0.01f);
 
@@ -241,7 +243,7 @@ public class ItemCreator : MonoBehaviour
         transform.GetComponent<BoxCollider2D>().isTrigger = false;
         m_Animator.SetBool("SelectRed", false);
         m_Animator.SetBool("Select", false);
-
+        NetworkComunicator.SentInformation(false, true, false, 0, transform);
     }
     IEnumerator CreteItems()
     {

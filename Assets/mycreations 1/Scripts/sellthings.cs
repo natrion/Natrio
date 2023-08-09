@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class sellthings : MonoBehaviour
 {
+    [SerializeField] private NetworkComunicator NetworkComunicator;
     private float Xdistance;
     private float Ydistance;
     private float Distance;
@@ -22,7 +23,7 @@ public class sellthings : MonoBehaviour
     public Transform FolderForItems;
     private int price_ofchildTransportItem;
     private Transform child;
-    private bool seling = false;
+    public bool seling = false;
 
     IEnumerator pressed()
     {
@@ -78,6 +79,7 @@ public class sellthings : MonoBehaviour
         on_platform_text.text = whatshowstring;
         coinsfromloop = 0;
     }
+
     void OnMouseOver()
     {
         if (PauseScript.paused == true)
@@ -114,20 +116,23 @@ public class sellthings : MonoBehaviour
             foldersell = new GameObject("thingsforsell");
             foldersell.transform.parent = gameObject.transform.parent;
 
+            NetworkComunicator.SentInformation(false, false, false, 1, null);
+
             addcoinspotencial();
         }
 
         if (Input.GetMouseButtonDown(0) & seling == false)
         {
+            NetworkComunicator.SentInformation(false, false, false, 2, null);
             autoseling = true;
-            on_platform_text2.enabled = true;
             seling = true;
-            StartCoroutine(Autosell()); 
+            StartCoroutine(Autosell(false)); 
             
         }else if(Input.GetMouseButtonDown(0))
         {
             seling = false;
             autoseling = true;
+            NetworkComunicator.SentInformation(false, false, false, 3, null);
         }
     }
 
@@ -138,19 +143,24 @@ public class sellthings : MonoBehaviour
 
             on_platform_text2.enabled = true;
             seling = true;
-            StartCoroutine(Autosell());
+            StartCoroutine(Autosell(false));
         }
         foldersell = new GameObject("thingsforsell");
         foldersell.transform.parent = gameObject.transform.parent;
         FindObjectOfType<showingtext>().showtext(how_many_coins);
     }
-
-    IEnumerator Autosell ()
+ 
+    public IEnumerator Autosell (bool SellJustOnce)
     {
+        
+
         yield return new WaitForSeconds(1f);
 
-        while (seling == true)
+ 
+
+        while (seling == true | SellJustOnce ==true)
         {
+            
             StartCoroutine(pressed());
 
             Destroy(foldersell);
@@ -178,6 +188,10 @@ public class sellthings : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.25f);
+
+            if (SellJustOnce == true) yield break;
+
+            on_platform_text2.enabled = true;
         }
         on_platform_text2.enabled = false;
 
@@ -185,5 +199,6 @@ public class sellthings : MonoBehaviour
 
         seling = false;
         autoseling = false;
+       
     }
 }
