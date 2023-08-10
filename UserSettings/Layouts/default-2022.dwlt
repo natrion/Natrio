@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1382.4
     height: 774
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 48423
+  controlID: 55
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 48365
+  controlID: 56
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 48366
+  controlID: 45
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 709.60004
     height: 461.2
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 360
     height: 724
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 687d0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 8a4ffdff0056fdff449bfdff7824feffb824feff5827feff9a27feffc04afeff004bfeffa04dfeffe24dfeff4e4ffeff686dfeff707cfeffb27cfeff527ffeff947ffeff5685feff2087feff90cafeffa8cbfeff4a00ffff8a00ffff2e03ffff7803ffff8821ffffb243ffff0645ffff126fffff2c8effff5099ffffe899ffffcadbffff6ee6ffff74e6ffff2ee8fffffae8ffff4ce9ffffbcecffffdef4ffff6cf8ffffe8fafffff4ffffff027e0000dc830000548400002686000094890000d695000072b00000e0d40000b6df0000ac23010016240100ec8b0100568c0100849d01001c930200ee940200
+      m_SelectedIDs: 54ed0000
+      m_LastClickedID: 60756
+      m_ExpandedIDs: d4dfffff66e5ffffa8e5ffffb4e7ffff7ce8ffffcce9ffff22ebffff3eefffffc8f3ffff0cf4ffffacf6ffffeef6ffffe8faffff54ed0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -835,9 +835,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.620424, y: 2.0335681, z: 7.5030413}
+    m_Target: {x: -0.02429864, y: -0.16960855, z: 2.9295857}
     speed: 2
-    m_Value: {x: 2.620424, y: 2.0335681, z: 7.5030413}
+    m_Value: {x: -0.026984775, y: -0.17390637, z: 2.9285467}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -887,9 +887,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.9258056
+    m_Target: 2.204982
     speed: 2
-    m_Value: 3.9258056
+    m_Value: 2.3088818
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/mycreations 1/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -968,16 +968,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets
+  - Assets/mycreations 1/Scripts
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\matus\Documents\GitHub\Natrio
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 32.200012}
-    m_SelectedIDs: f67c0000
-    m_LastClickedID: 31990
-    m_ExpandedIDs: 00000000f67c0000087d000000ca9a3bffffff7f
+    m_SelectedIDs: 9ced0000
+    m_LastClickedID: 60828
+    m_ExpandedIDs: 00000000726e0000846e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f67c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000726e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
