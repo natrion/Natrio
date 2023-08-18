@@ -187,7 +187,7 @@ public class PG : MonoBehaviour
     {
         Copy.transform.position = new Vector3(Mathf.Round(chunkCopy.transform.position.x + Random.Range(-2.5f, 2.5f) * 1), Mathf.Round(chunkCopy.transform.position.y + Random.Range(-2.5f, 2.5f) * 1) + Yplus, 0);
         Copy.transform.parent = transform;
-        Copy.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y*-1) + Layer;
+        Copy.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(Copy.transform.position.y*-1) + Layer;
     }
 
 }

@@ -4561,7 +4561,7 @@ SpriteRenderer:
   m_SortingLayer: -8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5d908790f71d02c40a403450be736b71, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 1, g: 0.73333335, b: 0.43137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6073,7 +6073,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328545554}
-  m_Text: 160
+  m_Text: 650
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -10454,12 +10454,12 @@ MonoBehaviour:
       YplusHight: 0
       Comoness: 1
       NatureGameObject: {fileID: 380955648}
-      SpawningLayerNatureObject: 2
+      SpawningLayerNatureObject: 0
     - Ratate: 0
       YplusHight: 0
       Comoness: 2
       NatureGameObject: {fileID: 62460651}
-      SpawningLayerNatureObject: 1
+      SpawningLayerNatureObject: 0
     - Ratate: 0
       YplusHight: 0
       Comoness: 3
@@ -10510,7 +10510,7 @@ MonoBehaviour:
       YplusHight: 0.2
       Comoness: 3
       NatureGameObject: {fileID: 1113496025}
-      SpawningLayerNatureObject: 2
+      SpawningLayerNatureObject: 0
     - Ratate: 1
       YplusHight: 0
       Comoness: 5
@@ -10525,12 +10525,12 @@ MonoBehaviour:
       YplusHight: 0.2
       Comoness: 2
       NatureGameObject: {fileID: 2025740323}
-      SpawningLayerNatureObject: 2
+      SpawningLayerNatureObject: 0
     - Ratate: 0
       YplusHight: 0.2
       Comoness: 3
       NatureGameObject: {fileID: 1378947634}
-      SpawningLayerNatureObject: 2
+      SpawningLayerNatureObject: 0
     Deposits: []
     biomFromTo: {x: 1, y: 1.5}
   copyChunk: {fileID: 350423832}
@@ -11570,7 +11570,7 @@ SpriteRenderer:
   m_SortingLayer: -8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a8e788dbe1ed95d45aaaf0f2b74812ed, type: 3}
-  m_Color: {r: 1, g: 0.881909, b: 0.7490566, a: 1}
+  m_Color: {r: 1, g: 0.73333335, b: 0.43137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23946,7 +23946,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52ce633249a2ccd49a45213f07352e41, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 0.98039216, g: 0.6313726, b: 0.23529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -28558,7 +28558,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305155785}
-  m_Text: 120
+  m_Text: 450
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -30131,7 +30131,7 @@ GameObject:
   - component: {fileID: 1378947637}
   - component: {fileID: 1378947636}
   m_Layer: 0
-  m_Name: blue_berry_small_bushes (1)
+  m_Name: blue_berry_small_bushes
   m_TagString: OldBerryBiomSmallBushes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30240,7 +30240,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 30f1cd0a5a5e2044ba9f88a5f7366447, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 1, g: 0.8277761, b: 0.63773584, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -34465,7 +34465,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657435038}
-  m_Text: 160
+  m_Text: 650
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
@@ -39054,7 +39054,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 52ce633249a2ccd49a45213f07352e41, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 0.9811321, g: 0.6321376, b: 0.23695272, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -40917,7 +40917,7 @@ GameObject:
   - component: {fileID: 1900793013}
   - component: {fileID: 1900793012}
   m_Layer: 0
-  m_Name: blueberry_bush_full (1)
+  m_Name: OldBerryBiomSmallBush_full
   m_TagString: OldBerryBiomSmallBush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41023,7 +41023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
-  health: 160
+  health: 650
   item: {fileID: 655980637}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -41096,7 +41096,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d87ac1eeffb05d144ae68ff582314616, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 1, g: 0.7764706, b: 0.5254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -42743,7 +42743,7 @@ GameObject:
   - component: {fileID: 2001505946}
   - component: {fileID: 2001505945}
   m_Layer: 0
-  m_Name: blue_berry_small_bushes_full (1)
+  m_Name: OldBerryBiomSmallBushes_full
   m_TagString: OldBerryBiomSmallBushes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42824,7 +42824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NetworkComunicator: {fileID: 2134321551}
   DestroyPictures: []
-  health: 120
+  health: 450
   item: {fileID: 655980637}
   folderitems: {fileID: 73329804}
   select_zone: {fileID: 2011064110}
@@ -42897,7 +42897,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 30f1cd0a5a5e2044ba9f88a5f7366447, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 1, g: 0.81880605, b: 0.61886793, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -43362,7 +43362,7 @@ GameObject:
   - component: {fileID: 2025740325}
   - component: {fileID: 2025740324}
   m_Layer: 0
-  m_Name: blueberrybush  (1)
+  m_Name: blueberrybush
   m_TagString: OldBerryBiomSmallBush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43480,7 +43480,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d87ac1eeffb05d144ae68ff582314616, type: 3}
-  m_Color: {r: 1, g: 0.88235295, b: 0.7490196, a: 1}
+  m_Color: {r: 1, g: 0.776046, b: 0.5245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -44287,7 +44287,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109320771}
-  m_Text: 120
+  m_Text: 450
   m_OffsetZ: 0
   m_CharacterSize: 0.003
   m_LineSpacing: 1
