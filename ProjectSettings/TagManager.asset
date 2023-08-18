@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - oak_tree
+  - oak_bush
+  - smallbushes
+  - blue_berry_small_bushes
+  - blueberry_bush
+  - appletree
+  - Axe
+  - wheelbarrow
+  - OakLog
+  - Leaves
+  - berryLog
+  - BerryLeaves
+  - Apple
+  - PurpleBerry
+  - BlueBerry
+  - Chunk
+  - OakBiomPoppy
+  - OakBiomGrass
+  - BerryBiomPoppy
+  - BerryBiomGrass
+  - OldOakTree
+  - OldOakBush
+  - OldOaksmallbushes
+  - OldOakBiomGrass
+  - OldOakLog
+  - OldOakleaves
+  - OldOakBiomPoppy
+  - AxeT2
+  - wheelbarrowT2
+  - wheelbarrowT3
+  - OakFarmPlot
+  - T1conveyorBelt
+  - T1conveyorBeltRight
+  - T1conveyorBeltLeft
+  - T2conveyorBelt
+  - T2conveyorBeltRight
+  - T2conveyorBeltLeft
+  - T2BerryFarmPlot
+  - ItemSorter
+  - AutomatickSaw
+  - oakPlanks
+  - T2AutomatickSaw
+  - BerryPlanks
+  - WoodFloor
+  - WoodBox
+  - T3conveyorBelt
+  - T3conveyorBeltRight
+  - T3conveyorBeltLeft
+  - T3OldOakFarmPlot
+  - T3AutomatickSaw
+  - Stone
+  - T1Miner
+  - DirtDrop
+  - StoneDrop
+  - OldAppleTree
+  - OldBerryBiomGrass
+  - oldBerryBiomFlower
+  - OldBerryLog
+  - OldBerryLeavs
+  - AxeT3
+  - OldBerryBiomSmallBushes
+  - OldBerryBiomSmallBush
+  - T4conveyorBelt
+  - T4conveyorBeltLeft
+  - T4conveyorBeltRight
+  - OldBerryPlank
+  - T4FarmPlot
+  - T4AutomatickSaw
+  - WeelBarowT4
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: grass
+    uniqueID: 1170760141
+    locked: 0
+  - name: nature0
+    uniqueID: 2444078099
+    locked: 0
+  - name: nature1
+    uniqueID: 3802738017
+    locked: 0
+  - name: machine1
+    uniqueID: 2805201515
+    locked: 0
+  - name: machine2
+    uniqueID: 1883796377
+    locked: 0
+  - name: playerbehinditem
+    uniqueID: 3823514307
+    locked: 0
+  - name: item
+    uniqueID: 3578979481
+    locked: 0
+  - name: item2
+    uniqueID: 4098636027
+    locked: 0
+  - name: player
+    uniqueID: 3400685083
+    locked: 0
+  - name: mechine3
+    uniqueID: 407452415
+    locked: 0
+  - name: machine4
+    uniqueID: 664289233
+    locked: 0
+  - name: machine5
+    uniqueID: 4000803507
+    locked: 0
+  - name: nature2
+    uniqueID: 198583925
+    locked: 0
+  - name: nature3
+    uniqueID: 4130865331
+    locked: 0
+  - name: nature4
+    uniqueID: 211346255
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

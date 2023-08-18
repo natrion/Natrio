@@ -1,0 +1,65 @@
+type object----------------------------------
+int     |   name of tag
+0 = null
+
+1 = Axe
+2 = wheelbarrow 
+
+3 = OakLog
+4 = berryLog 
+
+5 = Leaves
+6 = BerryLeaves
+
+7 = Apple
+8 = PurpleBerry
+9 = BlueBerry
+
+10 = OldOakLog
+11 = OldOakleaves
+
+12 = AxeT2
+13 = wheelbarrowT2
+14 = wheelbarrowT3
+
+15 = OakFarmPlot
+16 = T1conveyorBelt
+17 = T1conveyorBeltRight
+18 = T1conveyorBeltLeft
+
+19 = T2conveyorBelt
+20 = T2conveyorBeltRight
+21 = T2conveyorBeltLeft
+22 = T2BerryFarmPlot
+
+23 = ItemSorter
+
+24 = AutomatickSaw
+25 = oakPlanks
+
+26 = T2AutomatickSaw
+27 = BerryPlanks
+
+28 = WoodFloor
+29 = WoodBox
+
+30 = T3conveyorBelt
+31 = T3conveyorBeltRight
+32 = T3conveyorBeltLeft
+33 = T3OldOakFarmPlot
+34 = T3AutomatickSaw
+
+35 = T1Miner
+36 = DirtDrop
+37 = StoneDrop 
+ 
+
+type folder----------------------------------
+int     |   name 
+0 = null
+
+1 = items                                                                           (itemfolder)
+
+2 = thingsforsell
+
+3 = playerfolder
