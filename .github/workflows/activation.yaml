@@ -1,4 +1,4 @@
-name: 'Natrio Build'
+name: 'Activate unity license'
 on:
   workflow_dispatch: {}
 jobs:
