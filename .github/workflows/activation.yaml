@@ -1,3 +1,6 @@
+name: 'Natrio Build'
+on:
+  workflow_dispatch: {}
 jobs:
   acquire_ulf:
     name: Acquire .ulf file
