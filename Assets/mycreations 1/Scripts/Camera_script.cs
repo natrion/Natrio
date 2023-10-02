@@ -10,6 +10,6 @@ public class Camera_script : MonoBehaviour
     {
         transform.position = player.transform.position + new Vector3(0, 0, -1);
         
-        Camera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * Camera.orthographicSize;        
+        Camera.orthographicSize += Input.GetAxis("Mouse ScrollWheel") * Camera.orthographicSize;        
     }
 }

@@ -202,7 +202,7 @@ public class item : MonoBehaviour
     }
     void OnMouseEnter()
     {
-        if (player.transform.position.y - transform.position.y < PickUpRadius & player.transform.position.y - transform.position.y > PickUpRadius*-1 & player.transform.position.x - transform.position.x > PickUpRadius * -1 & player.transform.position.x - transform.position.x < PickUpRadius)
+        if (Vector3.Distance(player.transform.position, transform.position) < PickUpRadius)
         {
             
 
@@ -238,18 +238,22 @@ public class item : MonoBehaviour
         {
             if(/*Input.GetMouseButtonDown(1) |*/ Input.GetMouseButtonDown(2))
             {
-                if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & isItForTransportingItems == false)
+                if ( Vector3.Distance(player.transform.position, transform.position)<PickUpRadius)
                 {
-                    if (transform.GetComponent<Rigidbody2D>() != null)
+                    if (player.GetChild(0).GetComponent<item>().isItForTransportingItems == true & player.GetChild(0).GetComponent<item>().howMuchItemsTransporting > player.GetChild(0).childCount & isItForTransportingItems == false)
                     {
-                        transform.GetComponent<Rigidbody2D>().simulated = false;
-                    }
+                        if (transform.GetComponent<Rigidbody2D>() != null)
+                        {
+                            transform.GetComponent<Rigidbody2D>().simulated = false;
+                        }
 
-                    transform.parent = player.GetChild(0);
-                    transform.position = player.position;
-                    transform.position += player.up * HoldingDistanceFromPlayer * 2;
-                    transform.eulerAngles = player.eulerAngles - new Vector3(0, 0, StartRotation);
+                        transform.parent = player.GetChild(0);
+                        transform.position = player.position;
+                        transform.position += player.up * HoldingDistanceFromPlayer * 2;
+                        transform.eulerAngles = player.eulerAngles - new Vector3(0, 0, StartRotation);
+                    }
                 }
+
             }                       
         }
         return;    

@@ -73,6 +73,8 @@ TagManager:
   - T4FarmPlot
   - T4AutomatickSaw
   - WeelBarowT4
+  - compresor
+  - PlankPile
   layers:
   - Default
   - TransparentFX
