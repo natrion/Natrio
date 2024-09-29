@@ -2,34 +2,34 @@
 1 verbose cli [ 'C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'view',
-1 verbose cli   'com.unity.2d.psdimporter',
+1 verbose cli   'com.unity.services.relay',
 1 verbose cli   '--registry',
 1 verbose cli   'https://packages.unity.com/' ]
 2 info using npm@3.10.10
 3 info using node@v6.10.0
-4 silly mapToRegistry name com.unity.2d.psdimporter
+4 silly mapToRegistry name com.unity.services.relay
 5 silly mapToRegistry using default registry
 6 silly mapToRegistry registry https://packages.unity.com/
 7 silly mapToRegistry data Result {
-7 silly mapToRegistry   raw: 'com.unity.2d.psdimporter',
+7 silly mapToRegistry   raw: 'com.unity.services.relay',
 7 silly mapToRegistry   scope: null,
-7 silly mapToRegistry   escapedName: 'com.unity.2d.psdimporter',
-7 silly mapToRegistry   name: 'com.unity.2d.psdimporter',
+7 silly mapToRegistry   escapedName: 'com.unity.services.relay',
+7 silly mapToRegistry   name: 'com.unity.services.relay',
 7 silly mapToRegistry   rawSpec: '',
 7 silly mapToRegistry   spec: 'latest',
 7 silly mapToRegistry   type: 'tag' }
-8 silly mapToRegistry uri https://packages.unity.com/com.unity.2d.psdimporter
-9 verbose request uri https://packages.unity.com/com.unity.2d.psdimporter
+8 silly mapToRegistry uri https://packages.unity.com/com.unity.services.relay
+9 verbose request uri https://packages.unity.com/com.unity.services.relay
 10 verbose request no auth needed
-11 info attempt registry request try #1 at 11:39:03
-12 verbose request id 51976e8f867370eb
-13 http request GET https://packages.unity.com/com.unity.2d.psdimporter
+11 info attempt registry request try #1 at 09:47:15
+12 verbose request id 16ca7e3b5796bca4
+13 http request GET https://packages.unity.com/com.unity.services.relay
 14 info retry will retry, error on last attempt: Error: certificate signature failure
-15 info attempt registry request try #2 at 11:39:14
-16 http request GET https://packages.unity.com/com.unity.2d.psdimporter
+15 info attempt registry request try #2 at 09:47:25
+16 http request GET https://packages.unity.com/com.unity.services.relay
 17 info retry will retry, error on last attempt: Error: certificate signature failure
-18 info attempt registry request try #3 at 11:40:15
-19 http request GET https://packages.unity.com/com.unity.2d.psdimporter
+18 info attempt registry request try #3 at 09:48:26
+19 http request GET https://packages.unity.com/com.unity.services.relay
 20 verbose stack Error: certificate signature failure
 20 verbose stack     at Error (native)
 20 verbose stack     at TLSSocket.<anonymous> (_tls_wrap.js:1085:38)
@@ -38,8 +38,8 @@
 20 verbose stack     at TLSSocket._finishInit (_tls_wrap.js:603:8)
 20 verbose stack     at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:433:38)
 21 verbose cwd C:\Users\matus\Documents\GitHub\Natrio
-22 error Windows_NT 10.0.22621
-23 error argv "C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node.exe" "C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "view" "com.unity.2d.psdimporter" "--registry" "https://packages.unity.com/"
+22 error Windows_NT 10.0.22631
+23 error argv "C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node.exe" "C:\\Program Files\\Unity\\Hub\\Editor\\2022.3.6f1\\Editor\\Data\\Tools\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "view" "com.unity.services.relay" "--registry" "https://packages.unity.com/"
 24 error node v6.10.0
 25 error npm  v3.10.10
 26 error code CERT_SIGNATURE_FAILURE

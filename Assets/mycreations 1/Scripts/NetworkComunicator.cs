@@ -74,8 +74,10 @@ public class NetworkComunicator : NetworkBehaviour
     {
         MultyPlayerON = false;
     }
+    [SerializeField] private relley relay;
     public void StartServer()
     {
+        relay.ceateRelley();
         MultyPlayerON = true;
         Players.Add(null);
         ConectedPlayers.Add(true);

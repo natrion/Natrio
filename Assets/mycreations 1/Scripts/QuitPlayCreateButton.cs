@@ -17,18 +17,35 @@ public class QuitPlayCreateButton : MonoBehaviour
 
     void Start()
     {
+        
         AdressAndportChangeWindow.SetActive(false);
         joinToAtheGame = false;
         CreateNewWorldWindow.SetActive(false);
-        if (File.Exists(SL.getFileName()))
+        if (SL.SaveNormal == true)
         {
-            PlaingFirstTime = false;          
+            if (File.Exists(SL.getFileName()))
+            {
+                PlaingFirstTime = false;
+            }
+            else
+            {
+                PlaingFirstTime = true;
+                CreateNewWorldButton.SetActive(false);
+            }
         }
-        else 
-        {           
-            PlaingFirstTime = true;
-            CreateNewWorldButton.SetActive(false);   
+        else
+        {
+            if (PlayerPrefs.HasKey("gameData"))
+            {
+                PlaingFirstTime = false;
+            }
+            else
+            {
+                PlaingFirstTime = true;
+                CreateNewWorldButton.SetActive(false);
+            }
         }
+
     }
     public void PlayGame()
     {
@@ -39,7 +56,7 @@ public class QuitPlayCreateButton : MonoBehaviour
         }else
         {
             Restart = false;
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("univers");
         }
     }
     
